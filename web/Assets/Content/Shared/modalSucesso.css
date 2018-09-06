@@ -1,0 +1,74 @@
+﻿#modal-sucesso .modal-content
+
+{
+    margin-top: 20%;
+}
+
+#modal-sucesso .modal-footer {
+    border: none !important;
+    height: 80px;
+    text-align: center !important;
+}
+
+#modal-sucesso .modal-body {
+    min-height: 200px;
+    max-height: 400px;
+    overflow: hidden;
+    padding-bottom: 0px;
+}
+
+#modal-sucesso .icone-sucesso-modal {
+    color: #74fd67;
+    font-size: 70px !important;
+}
+
+#modal-sucesso #container-icone {
+    height: 120px;
+    display: block;
+    text-align: center;
+}
+
+#modal-sucesso #container-mensagem-externo {
+    display: table;
+    width: 100%;
+}
+
+#modal-sucesso #container-mensagem-interno {
+    height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+}
+
+#modal-sucesso .titulo-atencao {
+    color: #a4b3b7;
+    font-family: "Avenir Next";
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.06px;
+    text-transform: uppercase;
+    padding-top: 15px;
+}
+
+#modal-sucesso .mensagem-sucesso {
+    color: #7e949a;
+    font-family: "Avenir Next";
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#modal-sucesso .modal-dialog {
+    position: absolute !important;
+    width: 430px !important;
+    margin-left: calc(50% - 215px);
+    margin-top: 10% !important;
+    z-index: 500;
+}
+
+#modal-sucesso .input-escondido {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}

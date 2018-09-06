@@ -1,0 +1,44 @@
+﻿.nome-aplicacao {
+    color: #4A4A4A;
+    font-family: "Avenir Next Medium";
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 59px;
+    margin-left: -5%;
+}
+
+.cabecalho-online {
+    background-color: #48CFAE;
+    height: 60px;
+    text-align: center;
+    line-height: 59px;
+    cursor: pointer;
+}
+
+.cabecalho-offline {
+    background-color: #FF6C6C;
+    height: 60px;
+    text-align: center;
+    line-height: 59px;
+    cursor: pointer;
+}
+
+.cabecalho-atualizando {
+    background-color: #FFBD74;
+    height: 60px;
+    text-align: center;
+    line-height: 59px;
+    cursor: pointer;
+}
+
+.icone-cabecalho {
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.texto-cabecalho {
+    color: #FFFFFF;
+    font-family: "Avenir Next Medium";
+    font-size: 16px;
+    cursor: pointer;
+}

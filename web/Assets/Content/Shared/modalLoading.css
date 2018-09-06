@@ -1,0 +1,199 @@
+﻿@keyframes loadingRotate {
+    0% {
+        transform: rotate(-45deg);
+    } 
+    35% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(135deg);
+    }
+    90% {
+        transform: rotate(135deg);
+    }
+    100% {
+        transform: rotate(315deg);
+    }
+}
+
+@keyframes loadingRed {
+    0% {
+        width: 0%;
+    } 
+    40% {
+        width: 50%;
+    }
+    50% {
+        width: 50%;
+    }
+    90% {
+        width: 50%;
+    }
+    95%{
+        width: 50%;
+        opacity:.8;
+    }
+    100% {
+        opacity:0;
+        width: 50%;
+    }
+}
+
+@keyframes loadingBlue {
+    0% {
+        width: 0%;
+    } 
+    40% {
+        width: 0%;
+    }
+    50% {
+        width: 0%;
+    }
+    90% {
+        width: 50%;
+    }
+    95%{
+        width: 50%;
+        opacity:.8;
+    }
+    100% {
+        opacity:0;
+        width: 50%;
+    }
+}
+.pilula-loading {
+    transform: rotate(-45deg);
+    animation-name: loadingRotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+    width: 130px;
+    height: 50px;
+    position:relative;
+    border-radius: 25px;
+    background-color:#EEE;
+    overflow:hidden;
+    border:1px solid #ccc;
+    margin:20px auto 0;
+}
+    .pilula-loading.pilula-mini {
+        width: 65px;
+        height: 25px;
+    }
+    
+    .pilula-loading.pilula-micro {
+        width: 32px;
+        height: 12px;
+    }
+
+    .pilula-loading:before {
+
+        animation-name: loadingRed;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+                
+        content:"";
+        position:absolute;
+        width:50%;
+        height:inherit;
+        background-color:#F00;
+        top:0;
+        opacity:.8;
+    }
+    .pilula-loading:after{
+        animation-name: loadingBlue;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+
+        content:"";
+        position:absolute;
+        width:50%;
+        height:inherit;
+        background-color:#0f5db8;
+        right:0;
+        top:0;
+        opacity:.8;
+    }
+
+.pilula-loading > div:first-child{
+    background-color: #000;
+    opacity: .1;
+    width: inherit;
+    height: 50%;
+    border-radius: 25px 25px 0 0;
+}
+.pilula-loading > div:last-child {
+    height:inherit;
+    width:2px;
+    position:absolute;
+    left:50%;
+    background-color:#ccc;    
+}
+
+
+
+#modal-loading .modal-dialog {
+    position: absolute !important;
+    width: 30% !important;
+    margin-left:35% !important;
+    margin-top: 15% !important;
+    z-index:500;
+}
+
+#modal-loading .modal-content {
+    height: 50%;
+    margin-top:5%;
+}
+
+#modal-loading .modal-footer{
+    border:none !important;
+    text-align: center !important;
+}
+
+#modal-loading .modal-header {
+    border: none !important;
+}
+
+#modal-loading .modal-body {
+    
+}
+
+#modal-loading .botao-modal{
+    background-color: #0a74c4;
+    color:#FFF;
+	border: 0;
+	border-radius: 4px;
+}
+
+#modal-loading .input-escondido{
+    opacity:0;
+    width:0;
+    height:0;
+    overflow:hidden;
+}
+
+#modal-loading .titulo-modal{
+    color: #a4b3b7;
+    font-family: "Avenir Next";
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: -0.04px;
+    text-transform: uppercase;
+}
+
+#modal-loading .icone-fechar{
+    color: #a4b3b7;
+    float: right!important;
+}
+
+#modal-loading hr {
+    width:90%;
+}
+
+#modal-loading #resumo-produto {
+    padding-top: 20px;
+}
+
+#modal-loading #resumo-produto tr td {
+    border: none;
+}

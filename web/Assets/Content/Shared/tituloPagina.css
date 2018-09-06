@@ -1,0 +1,46 @@
+﻿#container-titulo #icone-voltar {
+    color:#042a61;
+    font-size: 25px;
+    cursor:pointer;
+    margin-bottom: 7px;
+}
+
+#container-titulo span {
+    color:#042a61;
+    font-size: 20px;
+    font-family: "Avenir Next Medium";
+}
+
+    #container-titulo span:not(.dica-teclas) {
+        text-transform:uppercase;
+    }
+
+#container-titulo .dica-teclas {
+    color: #6e7373;
+    font-size: 12px;
+    font-family: "Avenir Next Medium";
+    padding-left: 15px;
+    display: inline-block;
+    max-height: 18px;
+    overflow: hidden;
+    max-width: 700px;
+    padding-top: 3px;
+}
+
+#container-titulo span {
+    color:#042a61;
+    font-size: 20px;
+    font-family: "Avenir Next Medium";
+}
+
+#container-titulo {
+    height: 80px;
+}
+
+#container-titulo .dica-teclas b {
+    font-family: "Avenir Next Bold";
+}
+
+#container-titulo {
+    height: 80px;
+}

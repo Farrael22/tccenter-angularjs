@@ -1,0 +1,426 @@
+﻿::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #fff;
+    background:transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background:#a4b3b7;
+}
+
+#container-orcamento{
+    height: 100%;
+    display:block;
+    min-height: 390px;
+    -webkit-transition: background 0.9s linear;
+    -moz-transition: background 0.9s linear;
+    -o-transition: background 0.9s linear;
+    transition: background 0.9s linear;
+    background-color: #fafafa;
+    background: linear-gradient(to right, #F1F1F1, #FAFAFA 10%, #FAFAFA);
+}
+
+.registro-kit {
+    background-color: #EAF5FC;
+}
+
+
+#container-orcamento.selecionado{
+    background-color: #ffffff;
+    background: initial;
+}
+
+#titulo-orcamento{
+    padding-top: 10px;
+    text-align:left;
+    height: 40px;
+}
+
+.label-orcamento-titulo{
+    color: #a4b3b7;
+    font-family: "Avenir Next Medium";
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.label-orcamento-subtitulo{
+    color: #a4b3b7;
+    font-family: "Avenir Next";
+    font-size: 10px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.label-orcamento-subtitulo b
+{
+    font-family: "Avenir Next Bold";
+}
+
+.dica-orcamento
+{
+    color: #484848;
+    font-family: "Avenir Next";
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.dica-orcamento b
+{
+    font-family: "Avenir Next Bold";
+}
+
+#itens-orcamento{
+    padding-top: 15px;
+}
+
+#orcamento-footer{
+    clear:both;
+    bottom:10px;
+    height: 54px;
+}
+
+#valores .label-orcamento-titulo {
+    margin-top:5px;
+}
+
+#valores span.titulo-secao {
+    font-size:14px;
+    margin:4px 0 0;
+}
+
+#total-orcamento {
+    color: #be000d;
+    font-family: "Avenir Next Medium";
+    font-size: 20px;
+    font-weight: 600;
+    margin: 4px 0 8px;
+    letter-spacing: -0.04px;
+    text-transform: uppercase;
+}
+
+.botao-orcamento {
+    background-color: #194283;
+    color: #FFF;
+    border: 0;
+    border-radius: 4px;
+    width: 100% !important;
+}
+
+/* GRID ORÇAMENTO */
+
+#container-grid-orcamento {
+    overflow:auto;
+    height: calc(100vh - 294px);
+    min-height: 150px;
+}
+
+#grid-orcamento {
+    width: 100%;
+}
+
+#grid-orcamento tr{
+    padding: 5px 0;
+    /*display: block;*/
+}
+
+    #grid-orcamento .nome-produto {
+        font-size: 12px;
+        color: #383838;
+        line-height: 16px;
+        padding-left: 5px;
+        max-height: 48px;
+    }
+
+#preco-kit{
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+#tabela-kit{
+    margin-top: 10px;
+    margin-bottom: 28px;
+    width: 100%;
+}
+
+#grid-orcamento .valores-produto {
+    line-height: 10px;
+    font-size: 10px;
+    color: #A4B3B7;
+    padding-left: 5px;
+}
+
+    #grid-orcamento .valores-produto .preco-fp {
+        color: #be000d;
+    }
+    #grid-orcamento .valores-produto span {
+        white-space: nowrap;
+    }
+
+#grid-orcamento .quantidade-produto-fp {
+    font-size:10px;
+}
+
+#grid-orcamento .td-quantidade-produto {
+    position: relative;
+    width: 50px;
+}
+
+#grid-orcamento .quantidade-produto {
+    width: 45px;
+    height: 36px;
+    font-size: 12px;
+    color: #55595A;
+    border-radius: 3px;
+    border: 1px solid #D6E1E4;
+    padding: 6px 22px 6px 6px;
+    text-align: right;
+    background-color: inherit;
+}
+
+
+#grid-orcamento .posologia-produto {
+    position: absolute;
+    top: 8px;
+    left: 26px;
+    width: 28px;
+    font-weight:normal;
+}
+
+#grid-orcamento .excluir-produto {
+    color:#CC020D;
+    font-size:14px;
+    font-weight:bold;
+    line-height:60px;
+    cursor:pointer;
+    padding-right:0 !important;
+}
+
+#grid-orcamento .especial-produto {
+    /*display:inline-block;*/
+    float:left;   margin: 2px 0;
+}
+
+#grid-orcamento .preco-kit{
+    float: left;
+    margin: 6px 0;
+}
+
+.td-excluir-produto {
+    width: 25px;
+    text-align: center;
+}
+
+.td-alinhamento {
+    width: 32px;
+    text-align: right;
+    padding-right: 4px;
+    font-family: "Avenir Next Bold";
+    color:#013a74;
+}
+
+.tag-kit {
+    background-color: #0286D9;
+    color: #FFF;
+    border-radius: 13px;
+    padding: 5px 10px;
+    min-width: 30px;
+    min-height: 15px;
+    max-height: 25px;
+    display: inline-block;
+}
+
+/*
+    ************************************* TEMP
+*/
+
+#container-grid-orcamento table tr:not(.destaque-inclusao) .nome-produto,
+#container-grid-orcamento table tr:not(.destaque-inclusao) .valores-produto{
+    transition: color 1.5s ease, border-color 1.5s ease;
+}
+
+#container-grid-orcamento table tr:not(.destaque-inclusao) input.quantidade-produto{
+    transition: background-color 1.5s ease, border-color 1.5s ease;
+}
+
+.destaque-inclusao .nome-produto,
+.destaque-inclusao .valores-produto{
+    color: #0286d9 !important;
+    transition: color .5s ease;
+}
+
+.destaque-inclusao  input.quantidade-produto{
+    background-color: #e6f2fa !important;
+    border-color: #0286d9 !important;
+
+    transition: background-color .5s ease, border-color .5s ease;
+}
+/*
+    ************************************* TEMP
+*/
+
+
+@keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.orcamento-formas-pagamento {
+    display: inline;
+    color: #a3b1b5;
+    position:relative;
+}
+
+    .orcamento-formas-pagamento .material-icons {
+        font-size:22px;
+    }
+    
+
+
+@media only screen and (max-width: 1280px){
+    #grid-orcamento .nome-produto {
+        font-size: 11px;
+        line-height: 12px;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+   input[type=button] {
+        height: 36px;
+        width: 140px;
+        font-size: 13px;
+    }
+    .dica-tabela {
+        font-size: 10px;
+        margin-top: 2px;
+    }
+}
+
+@media only screen and (max-width: 1023px){
+    .dica-orcamento {
+        font-size:8px;
+    }
+    #orcamento-footer{
+        height: 35px;
+    }
+    #container-grid-orcamento {
+        height: calc(100vh - 244px);
+    }
+    .label-orcamento-titulo{
+        font-size: 7px;
+    }
+    .label-orcamento-subtitulo{
+        font-size: 7px;
+    }
+    #grid-orcamento .nome-produto {
+        font-size: 7px;
+        color:#383838;
+        line-height: 10px;
+    }
+    #grid-orcamento .valores-produto {
+        line-height: 10px;
+        font-size:6px;
+    }
+    #grid-orcamento .quantidade-produto-fp {
+        font-size:6px;
+    }
+
+    #grid-orcamento .quantidade-produto {
+        width: 35px;
+        height: 20px;
+        font-size: 10px;
+        padding: 3px 12px 3px 3px;
+    }
+    #grid-orcamento .posologia-produto {
+        top: 7px;
+        left: 22px;
+        width: 20px;
+        font-size: 8px;
+    }
+    .td-quantidade-fp {
+        width: 23px;
+        text-align: right;
+        padding-right: 4px;
+        font-family: "Avenir Next Bold";
+        color:#013a74;
+    }
+    #grid-orcamento .excluir-produto {
+        font-size:12px;
+        font-weight:bold;
+        line-height:40px;
+    }
+    .td-excluir-produto {
+        width: 15px;
+        text-align: center;
+    }
+
+    #valores span.titulo-secao {
+        font-size:10px;
+        margin:4px 0 0;
+    }
+    #total-orcamento {
+        font-size: 12px;
+        margin: 4px 0 8px;
+    }
+    #grid-orcamento tr{
+        height:40px;
+    }
+}
+
+#container-orcamento #pbm {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#container-orcamento #pbm #botao-pbm {
+    width:100%;
+    height:32px;
+}
+
+#container-orcamento #pbm #botao-pbm.desabilitado{
+    background-color: #c6d3d6 !important;
+    outline:none !important;
+}
+
+#container-orcamento .balao-balcao table tbody tr td {
+    padding-top: 5px;
+}
+
+#container-orcamento .balao-balcao table tbody tr:first-child td {
+    padding-top: 10px !important;
+}
+
+#container-orcamento .orcamento-valor{
+    float:right;
+}
+
+#container-orcamento .balao-balcao-externo{
+    float:right;
+}
+
+#container-orcamento .balao-balcao-externo .balao-balcao{
+    left:-120px;
+}
+
+#container-orcamento .balao-balcao-externo i{
+    padding-right:10px;
+    margin-top: -4px;
+}
+
+#container-orcamento #orcamento-subtotal {
+    color: #383838!important;
+}
+#container-orcamento #orcamento-desconto {
+    color: #be000d!important;
+}
+#container-orcamento #orcamento-subsidio {
+    color: #0f5db8!important;
+}
+#container-orcamento #total-orcamento{
+    color: #383838!important;
+}

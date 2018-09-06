@@ -1,0 +1,6 @@
+﻿<script>
+    localStorage.setItem("ip-estacao", '@ViewBag.ipEstacao');
+    var dataDoServidor = new Date(@String.Format("{0:yyyy}", DateTime.Now), @String.Format("{0:MM}", DateTime.Now) - 1, @String.Format("{0:dd}", DateTime.Now));
+</script>
+
+<div ng-view style="min-height: 100%"></div>

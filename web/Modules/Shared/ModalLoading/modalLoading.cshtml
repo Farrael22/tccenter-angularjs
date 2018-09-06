@@ -1,0 +1,19 @@
+﻿<div id="modal-loading" class="modal fade" ng-controller="modalLoadingController as ctrl" ng-show="ctrl.exibirModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+                <div class="pilula-loading">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <input id="input-modal-loading" class="input-escondido" type="text" autocomplete="off">
+            <div class="modal-footer">
+                <h2 class="titulo-secao">{{ ctrl.titulo }}</h2>
+                <p>{{ ctrl.mensagem }}</p>
+            </div>
+        </div>
+    </div>
+</div>

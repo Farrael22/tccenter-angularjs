@@ -1,0 +1,19 @@
+﻿<div ng-repeat="(key, n) in ctrl.array"
+     class="container-notificacao cursor-pointer {{ n.tipo }} {{ !!n.expirado && 'expirado'}}  "
+     style="position:absolute !important; top: {{$parent.$parent.ctrl.calcPosicao(key)}}px; {{ n.callback != null && 'cursor:pointer'}}"
+     ng-click="$parent.$parent.ctrl.executarCallback(n)">
+
+    <div>
+        <div>
+            <i ng-if="n.tipo == 'sucesso'" class="material-icons icone-cabecalho cursor-pointer">wifi</i>
+            <i ng-if="n.tipo == 'erro'" class="material-icons icone-cabecalho cursor-pointer">signal_wifi_off</i>
+            <i ng-if="n.tipo == 'alerta'" class="material-icons icone-cabecalho cursor-pointer">sync</i>
+        </div>
+    </div>
+    <div>
+        <div>
+            <span class="texto-alerta cursor-pointer">{{ n.texto }}</span>
+        </div>
+    </div>
+    <i class="material-icons icone-fechar-notificacao cursor-pointer" ng-click="$event.stopPropagation(); $parent.$parent.ctrl.fecharNotificacao(n.idx)" ng-show="!n.bloqueado">clear</i>
+</div>

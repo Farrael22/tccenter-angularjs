@@ -1,0 +1,10 @@
+.vs/
+packages/
+TestResults/
+api.tests/bin/
+api.tests/obj/
+api/obj/
+api/bin/
+web/obj/
+web/bin/
+web/Properties/VersionInfo.cs

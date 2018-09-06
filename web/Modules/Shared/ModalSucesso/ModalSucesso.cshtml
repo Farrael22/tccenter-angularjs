@@ -1,0 +1,20 @@
+﻿<div id="modal-sucesso" class="modal fade" ng-controller="modalSucessoController as ctrl" ng-show="ctrl.exibirModal" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="container-icone">
+                    <i class="material-icons icone-sucesso-modal">{{ctrl.icone}}</i>
+                    <span class="col-xs-12 titulo-atencao">{{ctrl.titulo}}</span>
+                </div>
+                <div id="container-mensagem-externo">
+                    <div id="container-mensagem-interno"><span class="col-xs-12 mensagem-alerta-erro">{{ctrl.mensagem}}</span></div>
+                </div>
+            </div>
+            <input id="input-modal-sucesso" class="input-escondido" type="text" autocomplete="off">
+            <div class="modal-footer">
+                <input ng-if="ctrl.botoes.length == 0" type="button" class="botao-modal" value="OK" ng-click="$event.stopPropagation(); ctrl.fecharModal()">
+                <input ng-repeat="btn in ctrl.botoes" type="button" class="botao-modal" style="{{ctrl.botoes.length > 1 && 'margin-right:20px'}}" value="{{btn.texto}}" ng-click="$event.stopPropagation(); btn.callback ? btn.callback() : ctrl.fecharModal()">
+            </div>
+        </div>
+    </div>
+</div>

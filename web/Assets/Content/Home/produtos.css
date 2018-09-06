@@ -1,0 +1,162 @@
+﻿#container-produtos{
+    height: calc(100vh - 130px);
+    min-height: 150px;
+    padding-top: 15px;
+}
+
+#container-footer{
+    height: 70px;
+}
+
+#icone-busca{
+    font-size: 20px;
+    color: #93a4a8;
+}
+
+#resultado-busca {
+    /*padding-left: 0 !important;
+    padding-right: 0 !important;*/
+    outline: none;
+}
+
+    #resultado-busca thead tr th img {
+        height: 16px;
+        width: 16px;
+        padding-bottom: 2px;
+        padding-left: 1px;
+    }
+
+    #resultado-busca thead tr th img path {
+        fill: red;
+    }
+
+#resultado-busca tbody {
+    overflow-y: auto;
+    max-height: calc(100vh - 60px - 80px - 140px - 27px - 50px - 30px);
+    min-height: 50px;
+    display: block;
+    width: 100%
+}
+
+#resultado-busca #linha-equivalente{
+    border: 2px solid;
+    border-left: none;
+    border-right: none;
+    border-color: #0873c5;
+    margin-bottom: 5px;
+}
+
+.col-fp{
+	min-width: 50px
+}
+
+.dica-tabela
+{
+    color: #a4b3b7;
+    font-family: "Avenir Next";
+    font-size: 9px;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.dica-tabela b
+{
+    font-family: "Avenir Next Bold";
+}
+
+.botao-produtos{
+    background-color: inherit;
+    color: #194283;
+    border: 1px solid;
+    border-color:#93a4a8;
+    border-radius: 4px;
+    font-family: "Avenir Next";
+    font-weight: 600;
+}
+
+.botao-produtos[disabled]{
+    background-color: inherit !important;
+    color: #a3b1b5;
+    border: 1px solid;
+    border-color: #a4b3b7;
+}
+
+.icone-informacao{
+    cursor: pointer;
+    color: #acb9bd;
+    padding-right: 0 !important;
+}
+
+.borda-icone-kit{
+    display:inline-block;
+    border: 2px solid #0f5db8;;
+    width: 20px;
+    height: 20px;
+    border-radius:50%;
+}
+
+.icone-kit{
+    color: #0f5db8;
+    margin-left: 1px;
+    margin-bottom: 3px;
+    font-size:14px;
+}
+
+.icone-popup{
+    font-size:15px !important;
+    color: black;
+    cursor:pointer;
+}
+
+.icone-uso-continuo{
+    padding: 0 !important;
+    vertical-align: top !important;
+    font-size:12px !important;
+    color: #0f5db8;
+}
+
+.icone-refrigeracao{
+    padding: 0 !important;
+    vertical-align: top !important;
+    font-size:12px !important;
+    color: #0f5db8;
+}
+
+.item-centralizado {
+	text-align:center;
+}
+
+.classificacao {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background-color: #c20e1a;
+	color: #FFF;
+	text-align: center;
+	padding: 3.5px;
+    font-size: 10px;
+    display:inline-block;
+}
+
+.classificacao:before{
+	text-transform: uppercase; 
+}
+
+
+.container-externo-alinhamento {
+    display:table; 
+    width:100%;
+}
+
+.container-interno-alinhamento {
+    display:table-cell;
+    vertical-align:middle;
+}
+.material-icons{
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+span.inativo{
+    color: #acb9bd;
+}

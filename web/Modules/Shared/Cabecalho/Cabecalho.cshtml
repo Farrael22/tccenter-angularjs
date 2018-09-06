@@ -1,0 +1,28 @@
+﻿<div class="cabecalho-araujo" style="background-color: {{ctrl.corCabecalho}} !important" ng-controller="cabecalhoController as ctrl" ng-init="ctrl.iniciarCabecalhoController()">
+    <notificacao ng-if="ctrl.nofiticacaoDisponibilidade.length > 0" array="ctrl.nofiticacaoDisponibilidade"></notificacao>
+
+    <div class="col-xs-12 col-sem-pad">
+        <div class="col-xs-2 col-sem-pad" id="cabecalho-logo">
+            <div>
+                <img class="logo-araujo" src="~/Assets/Images/logoAraujo.png" ng-click="ctrl.home()">
+            </div>
+        </div>
+        <div class="col-xs-8 col-sem-pad">
+            <span class="nome-aplicacao">BALCÃO OFFLINE</span>
+        </div>
+        <div ng-show="!ctrl.isOnline && !ctrl.atualizandoBanco" ng-click="ctrl.mostrarNotificacao($event)" class="col-xs-2 col-sem-pad cabecalho-offline">
+            <i class="material-icons icone-cabecalho">signal_wifi_off</i>
+            <span class="texto-cabecalho">OFFLINE</span>
+        </div>
+        <div ng-show="ctrl.isOnline && !ctrl.atualizandoBanco" ng-click="ctrl.mostrarNotificacao($event)" class="col-xs-2 col-sem-pad cabecalho-online">
+            <i class="material-icons icone-cabecalho">wifi</i>
+            <span class="texto-cabecalho">ONLINE</span>
+        </div>
+        <div ng-show="ctrl.atualizandoBanco" ng-click="ctrl.mostrarNotificacao($event)" class="col-xs-2 col-sem-pad cabecalho-atualizando">
+            <i class="material-icons icone-cabecalho">sync</i>
+            <span class="texto-cabecalho">ATUALIZANDO</span>
+        </div>
+    </div>
+</div>
+
+

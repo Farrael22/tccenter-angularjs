@@ -1,0 +1,138 @@
+﻿#modal-informacao .modal-dialog {
+    position: absolute !important;
+    width: 700px !important;
+    left:50% !important;
+    margin-left:-350px;
+    margin-top: 10% !important;
+    z-index:500;
+}
+
+#modal-informacao .modal-content {
+    height: 50%;
+    margin-top:5%;
+}
+
+#modal-informacao .modal-footer{
+    border:none !important;
+    padding-top:0;
+}
+
+#modal-informacao .modal-header {
+    border: none !important;
+}
+
+#modal-informacao .modal-body {
+    padding-top:0;
+}
+
+#modal-informacao .botao-modal{
+    background-color: #0a74c4;
+    color:#FFF;
+	border: 0;
+	border-radius: 4px;
+}
+
+#modal-informacao .input-escondido{
+    opacity:0;
+    width:0;
+    height:0;
+    overflow:hidden;
+}
+
+#modal-informacao .icone-fechar{
+    color: #a4b3b7;
+    float: right!important;
+    cursor:pointer;
+    padding-right: 0;
+}
+
+#modal-informacao hr{
+    width: calc(100% - 60px);
+    float: left;
+    margin-left: 30px;
+    border-top:none;
+    border-bottom: 1px solid;
+    border-color: #dddfe0 !important;
+}
+
+#modal-informacao #resumo-produto {
+    padding-bottom:10px;
+}
+
+#modal-informacao thead tr th img {
+    height: 16px;
+    width: 16px;
+    padding-bottom: 2px;
+    padding-left: 1px;
+}
+
+#modal-informacao #resumo-produto tr td {
+    border: none;
+}
+
+#resumo-produto table tr td > div{
+	height: inherit;
+	width: inherit;
+	margin: 2px 0;
+	line-height: 15px;
+    font-family: 'Avenir Next';
+}
+
+#resumo-produto table tr td .texto-vermelho{
+	color: #be000d;
+    font-weight: 600;
+}
+
+#resumo-produto table tr td > div *{
+	line-height: normal;
+}
+
+#resumo-produto table thead tr th{
+	text-align: left;
+	color: #848888;
+    border:none;
+    height:25px;
+}
+
+#resumo-produto table thead tr th:first-child{
+	min-width: 10px;
+    
+}
+
+#resumo-produto table tbody tr{
+    height: 35px;
+}
+
+#modal-informacao .subtitulo-modal{
+    padding-top: 0;
+}
+
+#modal-informacao .subtitulo-modal span{
+    color: #848888;
+    padding-left: 0;
+}
+
+#modal-informacao #mais-informacoes{
+    padding-top:10px;
+}
+
+#modal-informacao #informacoes-gecom {
+    text-align:initial;
+    padding-top:10px;
+}
+
+#modal-informacao .subtitulo-modal {
+    height:30px;
+}
+
+#modal-informacao span .informacao-produto {
+    color: #484848;
+    font-family: "Avenir Next";
+    font-size: 12px;
+    font-weight: 400;
+    border:none;
+    resize: none;
+    width: 90%;
+    display: inline-block;
+    padding-top:2px;
+}

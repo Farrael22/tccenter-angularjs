@@ -1,0 +1,9 @@
+﻿{
+  "appSettings": {
+    "SISTEMA_ONLINE": "https://balcao.araujo.com.br/",
+    "API_URL": "https://balcao.araujo.com.br/api/",
+    "API_ARAUJO_PRODUTOS": "https://balcao.araujo.com.br/api-araujo/canaisvenda/produtos/v1/",
+    "API_ARAUJO_FILIAIS": "https://balcao.araujo.com.br/api-araujo/canaisvenda/filiais/v1/",
+    "API_ARAUJO_KITVIRTUAL": "https://balcao.araujo.com.br/api-araujo/canaisvenda/kitvirtual/v1/"
+  }
+}
