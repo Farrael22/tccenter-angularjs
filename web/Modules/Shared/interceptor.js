@@ -1,7 +1,7 @@
 ﻿(function(){
     'use strict';
 
-    angular.module("balcao").factory('Interceptor', function Interceptor($rootScope, $q) {
+    angular.module("tccenter").factory('Interceptor', function Interceptor($rootScope, $q) {
             return {
                 request: function (config) {
                     //config.headers['X-TOKEN'] = "exemplo";

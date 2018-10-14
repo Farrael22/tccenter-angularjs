@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module("balcao").factory('EventosFactory', function EventosFactory($timeout, $rootScope, ElementoAtivoFactory) {
+    angular.module("tccenter").factory('EventosFactory', function EventosFactory($timeout, $rootScope, ElementoAtivoFactory) {
         return {
             mensagemDeErro: function (scope, mensagem, elemento, config) {
                 ElementoAtivoFactory.definirElementoFocoRetornoModal('AlertaErro', elemento);

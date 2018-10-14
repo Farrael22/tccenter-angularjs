@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module("balcao").factory('AtalhosFactory', function AtalhosFactory($timeout, $rootScope, ElementoAtivoFactory) {
+    angular.module("tccenter").factory('AtalhosFactory', function AtalhosFactory($timeout, $rootScope, ElementoAtivoFactory) {
 
         var at = Atalho().init();
 

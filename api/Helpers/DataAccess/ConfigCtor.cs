@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace balcao.offline.api.Helpers.DataAccess
+namespace tccenter.api.Helpers.DataAccess
 {
     /// <summary>
     /// Parametros de configuracao comuns a todos Models. 

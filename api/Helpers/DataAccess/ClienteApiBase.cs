@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 
-namespace balcao.offline.api.Helpers.DataAccess
+namespace tccenter.api.Helpers.DataAccess
 {
     public class ClienteApiBase
     {

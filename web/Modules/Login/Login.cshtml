@@ -1,0 +1,71 @@
+﻿<cabecalho></cabecalho>
+
+<div ng-controller="LoginController as ctrl">
+    <modalAlertaErro></modalAlertaErro>
+    <div class="container-principal">
+        <div class="row" >
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4" style="text-align: center">
+                <br />
+                <h1><strong>Bem vindo ao TCCenter!</strong></h1>
+                <br />
+                <div class="col-sm-12 espacamento-formulario">
+                    <div class="col-sm-2">
+                        <label class="label-20">E-mail:</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input ng-model="ctrl.email"
+                        id="email-login"
+                        class="form-control {{ctrl.emailValido ? '' : 'input-valor-invalido'}}"
+                        type="email"
+                        placeholder="Digite seu e-mail...">
+                    </div>
+                    <br />
+                    <div>
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-10 alinhamento-esquerda">
+                            <label class="aviso-erro" ng-show="!ctrl.emailValido">E-mail informado inválido!</label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 espacamento-formulario">
+                    <div class="col-sm-2">
+                        <label class="label-20">Senha:</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <input ng-model="ctrl.senha"
+                               id="senha-login"
+                               class="form-control {{ctrl.senhaValida ? '' : 'input-valor-invalido'}}"
+                               type="password"
+                               placeholder="Digite sua senha...">
+                    </div>
+                    <br />
+                    <div>
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-10 alinhamento-esquerda">
+                            <label class="aviso-erro" ng-show="!ctrl.senhaValida">A senha informada deve conter no mínimo 6 caracteres</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 espacamento-formulario">
+
+                </div>
+                <br />
+                <div class="row centralizar">
+                    <div class="col-md-12 espacamento-formulario">
+                        <input class="btn btn-secondary" type="submit" value="Entrar" ng-click="ctrl.efetuarLogin();" />
+                    </div>
+                    <label class="aviso-erro label-20 espacamento-formulario" ng-show="ctrl.loginInvalido">E-mail e senha inválidos. Favor tentar novamente</label>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div>
+
+<rodape></rodape>

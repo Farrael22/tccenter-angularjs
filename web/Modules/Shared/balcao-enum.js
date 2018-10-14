@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module("balcao").factory('BalcaoEnum', function BalcaoEnum() {
+    angular.module("tccenter").factory('BalcaoEnum', function BalcaoEnum() {
 
         return {
             CODIGO_FORMULA_MANIPULADA: '900001',

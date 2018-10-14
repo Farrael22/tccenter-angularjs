@@ -1,9 +1,15 @@
-﻿using balcao.offline.api.Business;
-using balcao.offline.api.DataAccess.Repository;
+﻿using tccenter.api.Business;
+using tccenter.api.DataAccess.Repository;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using System.Web.Http;
 using System;
+using tccenter.api.DataAccess.Repository.Login;
+using tccenter.api.Business.Login;
+using tccenter.api.DataAccess.Repository.Usuario;
+using tccenter.api.DataAccess.Repository.TopicosInteressantes;
+using tccenter.api.Business.Usuario;
+using tccenter.api.Business.TopicosInteressantes;
 
 namespace IoC
 {
@@ -14,14 +20,14 @@ namespace IoC
             Injetor.Iniciar(container => 
             {
                 //Repositorio
-                container.Register<IProdutosRepository, ProdutosRepository>();
-                container.Register<IEstacaoRepository, EstacaoRepository>();
-                container.Register<IKitVirtualRepository, KitVirtualRepository>();
+                container.Register<ILoginRepository, LoginRepository>();
+                container.Register<IUsuarioRepository, UsuarioRepository>();
+                container.Register<ITopicosInteressantesRepository, TopicosInteressantesRepository>();
 
                 //Business
-                container.Register<IProdutosBusiness, ProdutosBusiness>();
-                container.Register<IEstacaoBusiness, EstacaoBusiness>();
-                container.Register<IKitVirtualBusiness, KitVirtualBusiness>();
+                container.Register<ILoginBusiness, LoginBusiness>();
+                container.Register<IUsuarioBusiness, UsuarioBusiness>();
+                container.Register<ITopicosInteressantesBusiness, TopicosInteressantesBusiness>();
             });
         }
     }

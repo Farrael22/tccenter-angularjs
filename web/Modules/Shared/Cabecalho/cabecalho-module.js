@@ -1,1 +1,1 @@
-﻿angular.module('balcao.cabecalho', []);
+﻿angular.module('tccenter.cabecalho', []);

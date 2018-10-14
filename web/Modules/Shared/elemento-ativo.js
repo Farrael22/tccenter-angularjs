@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module("balcao").factory('ElementoAtivoFactory', function ElementoAtivoFactory($timeout, $rootScope) {
+    angular.module("tccenter").factory('ElementoAtivoFactory', function ElementoAtivoFactory($timeout, $rootScope) {
 
         var elementoAtivo = '';
         var pilhaElementosFocoModal = [];

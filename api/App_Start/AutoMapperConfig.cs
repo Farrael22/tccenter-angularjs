@@ -1,4 +1,4 @@
-﻿namespace balcao.offline.api.AutoMapper
+﻿namespace tccenter.api.AutoMapper
 {
     public static class AutoMapperConfig
     {

@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
-namespace balcao.offline.api.Domain.Enum
+namespace tccenter.api.Domain.Enum
 {
     public enum SqlExceptionEnum
     {

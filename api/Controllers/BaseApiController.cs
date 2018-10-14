@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace balcao.offline.api.Controllers
+namespace tccenter.api.Controllers
 {
     public class BaseApiController : ApiController
     {

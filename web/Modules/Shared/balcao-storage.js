@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module("balcao").factory('BalcaoStorage', function BalcaoStorage($timeout, $rootScope, Util) {
+    angular.module("tccenter").factory('BalcaoStorage', function BalcaoStorage($timeout, $rootScope, Util) {
         return {
             
             // VERIFICAR SE DEVE LIMPAR BALCAO STORAGE COM BASE NA DATA ARMAZENADA

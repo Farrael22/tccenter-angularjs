@@ -1,4 +1,4 @@
-﻿angular.module("balcao").directive("notificacao", function () {
+﻿angular.module("tccenter").directive("notificacao", function () {
     return {
         templateUrl: "Shared/notificacao/notificacao",
         replace: true,

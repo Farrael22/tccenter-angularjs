@@ -1,0 +1,100 @@
+﻿<cabecalho></cabecalho>
+
+<div ng-controller="CadastroClienteController as ctrl">
+    <modalAlertaErro></modalAlertaErro>
+    <div class="container-principal">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6" style="text-align: center">
+                <br />
+                <h1><strong>Bem vindo ao TCCenter!</strong></h1>
+                <br />
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-2 label-20 alinhamento-esquerda">
+                            Nome: <span class="campo-obrigatorio">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input ng-model="ctrl.Usuario.Nome"
+                                   id="nome-cadastro"
+                                   class="form-control {{ctrl.nomeValido ? '' : 'input-valor-invalido'}}"
+                                   type="text"
+                                   placeholder="Informe seu Nome...">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group row">
+                        <label class="col-sm-2 label-20 alinhamento-esquerda">
+                            E-mail: <span class="campo-obrigatorio">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input ng-model="ctrl.Usuario.Email"
+                                   id="email-cadastro"
+                                   class="form-control {{ctrl.emailValido ? '' : 'input-valor-invalido'}}"
+                                   type="email"
+                                   placeholder="Informe seu E-mail....">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group row">
+                        <label class="col-sm-2 label-20 alinhamento-esquerda">
+                            Senha: <span class="campo-obrigatorio">*</span>
+                        </label>
+                        <div class="col-sm-10" style="text-align: left">
+                            <input ng-model="ctrl.Usuario.Senha"
+                                   id="senha-cadastro"
+                                   class="form-control {{ctrl.senhaValida ? '' : 'input-valor-invalido'}}"
+                                   type="password"
+                                   placeholder="Informe sua Senha...">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group row">
+                        <label class="col-sm-2 label-20 alinhamento-esquerda">
+                            Profissão: <span class="campo-obrigatorio">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input ng-model="ctrl.Usuario.Profissao"
+                                   id="profissao-cadastro"
+                                   class="form-control {{ctrl.profissaoValida ? '' : 'input-valor-invalido'}}"
+                                   type="text"
+                                   placeholder="Informe sua Profissão...">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group row">
+                        <label class="col-sm-2 label-20 alinhamento-esquerda">
+                            Avatar:
+                        </label>
+                        <div class="col-sm-10">
+                            <input ng-model="ctrl.Usuario.Avatar" type="file" name="avatarUsu" id="avatarUsu" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group row">
+                        <label class="label-20 col-sm-2 alinhamento-esquerda">Interesses:</label>
+                        <br />
+                        <ul class="list-inline col-sm-12" style="text-align: left">
+                            <div class="row">
+                                <div class="col-sm-3" style="margin-bottom: 12px; margin-left: 50px" ; text-align left>
+                                    <input type="checkbox" value="" />
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Enviar" class="btn btn-secondary" id="Enviar" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<rodape></rodape>

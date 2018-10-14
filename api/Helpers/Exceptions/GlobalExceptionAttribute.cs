@@ -5,11 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Filters;
-using balcao.offline.api.Domain.Enum;
-using balcao.offline.api.Helpers.Controllers;
+using tccenter.api.Domain.Enum;
+using tccenter.api.Helpers.Controllers;
 //using NLog;
 
-namespace balcao.offline.api.Helpers.Exceptions
+namespace tccenter.api.Helpers.Exceptions
 {
     public class GlobalExceptionAttribute : ExceptionFilterAttribute
     {

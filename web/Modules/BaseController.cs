@@ -11,7 +11,6 @@ namespace web.Modules
 {
     public class BaseController : Controller
     {
-        // TODO: COLOCAR AQUI TUDO QUE FOR COMUM PARA AS CONTROLLERS
 
         public ActionResult Shared(string modulo, string view)
         {

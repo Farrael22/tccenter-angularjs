@@ -1,4 +1,4 @@
-﻿angular.module("balcao.modalAlertaErro").controller("modalAlertaErroController", function ($scope, $rootScope, $timeout, Util, ElementoAtivoFactory, AtalhosFactory) {
+﻿angular.module("tccenter.modalAlertaErro").controller("modalAlertaErroController", function ($scope, $rootScope, $timeout, Util, ElementoAtivoFactory, AtalhosFactory) {
     var vm = this;
 
     vm.exibirModal = false;

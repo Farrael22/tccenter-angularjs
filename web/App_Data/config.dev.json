@@ -1,9 +1,0 @@
-﻿{
-  "appSettings": {
-    "SISTEMA_ONLINE": "http://windhtfloja:8082/",
-    "API_URL": "http://windhtfloja:8082/api/",
-    "API_ARAUJO_PRODUTOS": "http://apidev.araujo.com.br/canaisvenda/produtos/v1/",
-    "API_ARAUJO_FILIAIS": "http://apidev.araujo.com.br/canaisvenda/filiais/v1/",
-    "API_ARAUJO_KITVIRTUAL": "http://apidev.araujo.com.br/canaisvenda/kitvirtual/v1/"
-  }
-}

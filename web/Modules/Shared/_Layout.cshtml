@@ -1,9 +1,8 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-br" ng-app="balcao">
+<html lang="pt-br" ng-app="tccenter">
 <head>
-    <link rel="icon" href="favicon.ico" />
     <meta charset="utf-8">
-    <title ng-bind="tituloPagina">Balcão @Html.Raw(Model.Version) - Drogaria Araujo S.A</title>
+    <title>TCCenter</title>
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="~/Assets/Content/main.css?v=@Html.Raw(Model.Version)" />
@@ -29,12 +28,7 @@
         var GLOBAL_SERVER = {
             WEB_URL: '@Html.Raw(Model.WebUrl)',
             API_URL: '@Html.Raw(Model.ApiUrl)',
-            SISTEMA_ONLINE: '@Html.Raw(Model.SistemaOnline)',
-            API_ARAUJO_PRODUTOS: '@Html.Raw(Model.ApiAraujoProdutosUrl)',
-            API_ARAUJO_FILIAIS: '@Html.Raw(Model.ApiAraujoFiliaisUrl)',
-            API_ARAUJO_KITVIRTUAL: '@Html.Raw(Model.ApiAraujoKitVirtualUrl)',
             DATA : new Date(@String.Format("{0:yyyy}", DateTime.Now), @String.Format("{0:MM}", DateTime.Now) - 1, @String.Format("{0:dd}", DateTime.Now)),
-            IP_ESTACAO: '@Html.Raw(Model.IpEstacao)',
             VERSAO: '@Html.Raw(Model.Version)',
             LIMPAR_LOCAL_STORAGE: @Html.Raw(Model.LimparLocalStorage)
         };
@@ -48,52 +42,34 @@
 
     <!-- Bibliotécas próprias de atalhos -->
     <script src="@Html.Raw(Model.WebUrl)/assets/scripts/araujo-balcao-atalho.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/assets/scripts/araujo-balcao-leitor-optico.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-
     <!-- Configuracao do Angular -->
     <script src="@Html.Raw(Model.WebUrl)/assets/scripts/angular.min.js" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/assets/scripts/angular-route.min.js" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/assets/scripts/angular-locale_pt-br.js" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/assets/scripts/bugsnag-3.min.js" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/app-module.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/shared/balcao-config.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/shared/tccenter-config.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/interceptor.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/util.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/balcao-storage.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/balcao-enum.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/shared/navegacao-tabela.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/elemento-ativo.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/shared/eventos.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/atalhos.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/shared/kitvirtual.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/shared/eventos.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
 
     <script src="@Html.Raw(Model.WebUrl)/assets/scripts/angular-ui/mask.js" type="text/javascript"></script>
 
-    @*<script src="~/Assets/Scripts/angular-ui/ui-bootstrap.js" type="text/javascript"></script>*@
+    <!-- Modulo Login -->
+    <script src="@Html.Raw(Model.WebUrl)/modules/login/login-module.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/login/login-service.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/login/login-router.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/login/login-controller.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
 
-    <!-- TELA HOME -->
-    <!-- Modulo Home -->
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/home-module.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/home-service.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/home-router.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/home-controller.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-
-    <!-- Modulo de Produtos -->
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/produto/produto-module.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/produto/produto-service.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/produto/produto-router.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/produto/produto-controller.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-
-    <!-- Modulo de Orcamento -->
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/orcamento/orcamento-module.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/orcamento/orcamento-service.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/orcamento/orcamento-router.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/orcamento/orcamento-controller.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-
-    <!-- Modulo de Modal de Informação -->
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/modalinformacao/modalInformacao-module.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/modalinformacao/modalInformacao-directive.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    <script src="@Html.Raw(Model.WebUrl)/modules/home/modalinformacao/modalInformacao-controller.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <!-- Modulo Cadastro de Cliente -->
+    <script src="@Html.Raw(Model.WebUrl)/modules/cadastroCliente/cadastroCliente-module.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/cadastroCliente/cadastroCliente-service.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/cadastroCliente/cadastroCliente-router.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/cadastroCliente/cadastroCliente-controller.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
 
     <!-- SHARED -->
     <!-- Modulo Cabecalho -->
@@ -101,6 +77,12 @@
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/cabecalho/cabecalho-service.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/cabecalho/cabecalho-directive.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/cabecalho/cabecalho-controller.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+
+    <!-- Modulo Rodape -->
+    <script src="@Html.Raw(Model.WebUrl)/modules/shared/rodape/rodape-module.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/shared/rodape/rodape-service.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/shared/rodape/rodape-directive.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
+    <script src="@Html.Raw(Model.WebUrl)/modules/shared/rodape/rodape-controller.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
 
     <!-- Modulo de Modal de Alertas e Erros -->
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/modalalertaerro/modalAlertaErro-module.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
@@ -112,20 +94,8 @@
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/modalloading/modalLoading-directive.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/modalloading/modalLoading-controller.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
 
-    <!-- Diretiva titulo página -->
-    <script src="@Html.Raw(Model.WebUrl)/modules/shared/titulopagina/tituloPagina-directive.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-
-    <!-- Diretiva leitura ótica -->
-    <script src="@Html.Raw(Model.WebUrl)/modules/shared/leituraotica/leituraOtica-directive.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-
-    <!-- Diretiva campo busca -->
-    <script src="@Html.Raw(Model.WebUrl)/modules/shared/campobusca/campoBusca-directive.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-
     <!-- Diretiva Notificação -->
     <script src="@Html.Raw(Model.WebUrl)/modules/shared/notificacao/notificacao-directive.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
-    
-    <!-- Diretiva Checkbox -->
-    <script src="@Html.Raw(Model.WebUrl)/modules/shared/checkbox/checkbox-directive.js?v=@Html.Raw(Model.Version)" type="text/javascript"></script>
 
 </body>
 </html>

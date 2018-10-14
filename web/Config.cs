@@ -49,11 +49,7 @@ namespace web
 
         public class AppSetting
         {
-            public string SISTEMA_ONLINE { get; set; }
             public string API_URL { get; set; }
-            public string API_ARAUJO_PRODUTOS { get; set; }
-            public string API_ARAUJO_FILIAIS { get; set; }
-            public string API_ARAUJO_KITVIRTUAL { get; set; }
         }
 
         private class Data

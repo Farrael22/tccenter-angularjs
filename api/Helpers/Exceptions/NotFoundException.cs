@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace balcao.offline.api.Helpers.Exceptions
+namespace tccenter.api.Helpers.Exceptions
 {
     public class NotFoundException : Exception
     {

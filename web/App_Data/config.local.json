@@ -1,9 +1,5 @@
 ﻿{
   "appSettings": {
-    "SISTEMA_ONLINE": "http://balcaolocal.araujo.com.br/",
-    "API_URL": "http://balcaoofflinelocal.araujo.com.br/apioffline/",
-    "API_ARAUJO_PRODUTOS": "http://balcaoofflinelocal.araujo.com.br/apioffline/",
-    "API_ARAUJO_FILIAIS": "http://apidev.araujo.com.br/canaisvenda/filiais/v1/",
-    "API_ARAUJO_KITVIRTUAL": "http://apidev.araujo.com.br/canaisvenda/kitvirtual/v1/"
+    "API_URL": "http://tccenter.com.br/api/",
   }
 }

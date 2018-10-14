@@ -26,38 +26,6 @@ namespace web.Modules
             }
         }
 
-        public string SistemaOnline
-        {
-            get
-            {
-                return Config.AppSettings.SISTEMA_ONLINE;
-            }
-        }
-
-        public string ApiAraujoProdutosUrl
-        {
-            get
-            {
-                return Config.AppSettings.API_ARAUJO_PRODUTOS;
-            }
-        }
-
-        public string ApiAraujoFiliaisUrl
-        {
-            get
-            {
-                return Config.AppSettings.API_ARAUJO_FILIAIS;
-            }
-        }
-
-        public string ApiAraujoKitVirtualUrl
-        {
-            get
-            {
-                return Config.AppSettings.API_ARAUJO_KITVIRTUAL;
-            }
-        }
-
         public string Version
         {
             get

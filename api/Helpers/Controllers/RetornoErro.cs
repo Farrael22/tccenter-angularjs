@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace balcao.offline.api.Helpers.Controllers
+namespace tccenter.api.Helpers.Controllers
 {
     /// <summary>
     /// Retorno de Erro

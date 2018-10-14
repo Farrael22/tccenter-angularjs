@@ -1,44 +1,30 @@
-﻿.nome-aplicacao {
-    color: #4A4A4A;
-    font-family: "Avenir Next Medium";
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 59px;
-    margin-left: -5%;
+﻿.div-botoes-cabecalho {
+    text-align: right;
+    padding-top: 13px;
+    width: 200px;
+    display: inline-block;
+    padding-right: 20px;
 }
 
-.cabecalho-online {
-    background-color: #48CFAE;
-    height: 60px;
+.div-pesquisa-cabecalho {
     text-align: center;
-    line-height: 59px;
-    cursor: pointer;
+    width: calc(100% - 330px);
+    display: inline-block;
 }
 
-.cabecalho-offline {
-    background-color: #FF6C6C;
-    height: 60px;
-    text-align: center;
-    line-height: 59px;
-    cursor: pointer;
+.input-pesquisa-cabecalho {
+    width: 30%;
+    display: inline;
+    height: 38px;
+    padding-top: 4px;
 }
 
-.cabecalho-atualizando {
-    background-color: #FFBD74;
-    height: 60px;
-    text-align: center;
-    line-height: 59px;
-    cursor: pointer;
+.padding-top-10px {
+    padding-top: 10px;
 }
 
-.icone-cabecalho {
-    color: #FFFFFF;
-    cursor: pointer;
-}
-
-.texto-cabecalho {
-    color: #FFFFFF;
-    font-family: "Avenir Next Medium";
-    font-size: 16px;
-    cursor: pointer;
+.logo-tccenter {
+    width: 120px;
+    display: inline-block;
+    padding-left: 20px;
 }

@@ -1,1 +1,1 @@
-﻿angular.module('balcao.modalAlertaErro', []);
+﻿angular.module('tccenter.modalAlertaErro', []);

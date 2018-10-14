@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace balcao.offline.api.Helpers.Controllers
+namespace tccenter.api.Helpers.Controllers
 {
     /// <summary>
     /// Retorno padrao para objeto

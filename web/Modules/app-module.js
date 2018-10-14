@@ -10,33 +10,25 @@ Colocar neste arquivo toda configuracao global relacionada ao Angular
 (function(){
     'use strict';
 
-    var app = angular.module('balcao', [
+    var app = angular.module('tccenter', [
         "ngRoute",
         "ui.mask",
         //SHARED
-        "balcao.cabecalho",
-        "balcao.modalLoading",
-        "balcao.modalAlertaErro",
-        //HOME
-        "balcao.home",
-        "balcao.produto",
-        "balcao.orcamento",
-        "balcao.modalInformacao",
+        "tccenter.login",
+        "tccenter.cabecalho",
+        "tccenter.rodape",
+        "tccenter.modalAlertaErro",
+        "tccenter.cadastroCliente",
     ]);
     
     app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         $locationProvider.hashPrefix('');
-        $routeProvider.otherwise({ redirectTo: "/home" });
+        $routeProvider.otherwise({ redirectTo: "/login" });
         $httpProvider.interceptors.push('Interceptor');
     });
 
     app.config(['uiMask.ConfigProvider', function (uiMaskConfigProvider) {
         uiMaskConfigProvider.addDefaultPlaceholder(false);
-        //uiMaskConfigProvider.maskDefinitions({'A': /[a-z]/, '*': /[a-zA-Z0-9]/});
-        //uiMaskConfigProvider.clearOnBlur(true);
-        //uiMaskConfigProvider.clearOnBlurPlaceholder(false);
-        //uiMaskConfigProvider.allowInvalidValue(true);
-        //uiMaskConfigProvider.eventsToHandle(['input', 'keyup', 'click']); 
     }]);
 
     app.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {

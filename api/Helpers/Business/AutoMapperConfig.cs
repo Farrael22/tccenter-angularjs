@@ -1,8 +1,8 @@
-﻿using balcao.offline.api.DTO;
-using balcao.offline.api.Entity;
-using AutoMapper;
+﻿using AutoMapper;
+using tccenter.api.Domain.DTO;
+using tccenter.api.Domain.Entity;
 
-namespace balcao.offline.api.Helpers.Business
+namespace tccenter.api.Helpers.Business
 {
     public static class AutoMapperConfig
     {
@@ -10,7 +10,7 @@ namespace balcao.offline.api.Helpers.Business
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<ProdutoEntity, ProdutoDTO>();
+                cfg.CreateMap<LoginEntity, LoginDTO>();
             });
         }
 

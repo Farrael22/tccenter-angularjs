@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module("balcao").factory('Util', function Util($timeout) {
+    angular.module("tccenter").factory('Util', function Util($timeout) {
 
         return {
             isNullOrUndefined: isNullOrUndefined,
@@ -153,6 +153,31 @@
                 else if (produto) {
                     return produto.PrecoPor;
                 }
+            },
+            validarNomeUsuario: function (data) {
+                if (data && data.length > 0) {
+                    return true;
+                }
+                return false;
+            },
+            validarEmailUsuario: function (data) {
+                var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (re.test(data)) {
+                    return true;
+                }
+                return false;
+            },
+            validarSenhaUsuario: function (data) {
+                if (data && data.length >= 6) {
+                    return true;
+                }
+                return false;
+            },
+            validarProfisssaoUsuario: function (data) {
+                if (data && data.length > 0) {
+                    return true;
+                }
+                return false;
             }
         };
 

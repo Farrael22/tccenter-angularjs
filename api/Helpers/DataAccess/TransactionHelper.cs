@@ -8,14 +8,14 @@ using Dapper;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using balcao.offline.api.Domain.Enum;
+using tccenter.api.Domain.Enum;
 
-namespace balcao.offline.api.Helpers.DataAccess
+namespace tccenter.api.Helpers.DataAccess
 {
     public class TransactionHelperBaseGerente : TransactionHelperBase
     {
         public TransactionHelperBaseGerente()
-            : base(ConfigurationManager.ConnectionStrings["CSMBLCGERDBS"].ConnectionString)
+            : base(ConfigurationManager.ConnectionStrings["TCCenter"].ConnectionString)
         {
 
         }

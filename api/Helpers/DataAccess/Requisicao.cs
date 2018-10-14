@@ -1,4 +1,4 @@
-﻿namespace balcao.offline.api.Helpers.DataAccess
+﻿namespace tccenter.api.Helpers.DataAccess
 {
     public class Requisicao<T>
     {

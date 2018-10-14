@@ -1,7 +1,7 @@
 using Swashbuckle.Application;
 using System.Web.Http;
 
-namespace balcao.offline.api
+namespace tccenter.api
 {
     public static class SwaggerConfig
     {

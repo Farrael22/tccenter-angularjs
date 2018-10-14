@@ -2,15 +2,15 @@
 using System.Web.Http.Cors;
 using System.Net.Http.Headers;
 using Swashbuckle.Application;
-using balcao.offline.api.Helpers.Exceptions;
+using tccenter.api.Helpers.Exceptions;
 
-namespace balcao.offline.api
+namespace tccenter.api
 {
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
         {
-            RegisterPrivate(config, "v1", "API Balcão Offline", @"{0}\bin\balcao.offline.api.XML");
+            RegisterPrivate(config, "v1", "API TCCenter", @"{0}\bin\tccenter.api.XML");
         }
 
         private static void RegisterPrivate(HttpConfiguration config, string version, string title, string xmlCommentsPath)

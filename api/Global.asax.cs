@@ -1,8 +1,8 @@
 ﻿using System.Web.Http;
-using balcao.offline.api.Helpers.Business;
+using tccenter.api.Helpers.Business;
 using IoC;
 
-namespace balcao.offline.api
+namespace tccenter.api
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
