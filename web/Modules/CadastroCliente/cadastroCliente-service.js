@@ -2,16 +2,15 @@
     var that = this;
     var cancelarAnterior = $q.defer();
 
-    this.efetuarLogin = function (data, callbackSucesso, callbackErro) {
+    this.buscarTopicosInteressantes = function (callbackSucesso, callbackErro) {
         cancelarAnterior.resolve();
         cancelarAnterior = $q.defer();
 
         var request = $http({
-            method: "POST",
-            url: config.urlAPITccenter + 'login/efetuarLogin',
-            data: data
+            method: "GET",
+            url: config.urlAPITccenter + 'topicosInteressantes/obter'
         });
 
-        Interceptor.executarCallbacks(request, data, callbackSucesso, callbackErro);
+        Interceptor.executarCallbacks(request, null, callbackSucesso, callbackErro);
     };
 });

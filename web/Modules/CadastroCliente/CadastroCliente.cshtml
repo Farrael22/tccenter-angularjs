@@ -1,6 +1,6 @@
 ﻿<cabecalho></cabecalho>
 
-<div ng-controller="CadastroClienteController as ctrl">
+<div ng-controller="CadastroClienteController as ctrl" ng-init="ctrl.iniciarCadastroCliente();">
     <modalAlertaErro></modalAlertaErro>
     <div class="container-principal">
         <div class="row">
@@ -68,24 +68,29 @@
                             Avatar:
                         </label>
                         <div class="col-sm-10">
-                            <input ng-model="ctrl.Usuario.Avatar" type="file" name="avatarUsu" id="avatarUsu" />
+                            <input type="file" id="avatarUsu" onchange="ctrl.obterImagemAvatar(this)"/>
                         </div>
                     </div>
                     <br />
                     <div class="form-group row">
                         <label class="label-20 col-sm-2 alinhamento-esquerda">Interesses:</label>
                         <br />
-                        <ul class="list-inline col-sm-12" style="text-align: left">
-                            <div class="row">
-                                <div class="col-sm-3" style="margin-bottom: 12px; margin-left: 50px" ; text-align left>
-                                    <input type="checkbox" value="" />
+                        <div class="col-sm-12">
+                            <div ng-repeat="(idx, item) in ctrl.topicosInteressantes">
+                                <div class="col-sm-3 nopad chk-topicos-interessantes">
+                                    <div class="chk-id-topico">
+                                        <input id="chk-topico-{{idx}}" type="checkbox" value="{{item.IdTopicosInteressantes}}" ng-click="ctrl.marcarCheck(item)" />
+                                    </div>
+                                    <div class="chk-descricao-topico alinhamento-esquerda">
+                                        <label>{{item.DescricaoTopico}}</label>
+                                    </div>
                                 </div>
                             </div>
-                        </ul>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Enviar" class="btn btn-secondary" id="Enviar" />
+                        <div class="col-md-12">
+                            <input type="submit" value="Enviar" class="btn btn-secondary" id="Enviar" ng-click="ctrl.cadastrarUsuario();" />
                         </div>
                     </div>
                 </form>

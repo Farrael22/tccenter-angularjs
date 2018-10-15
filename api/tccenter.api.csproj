@@ -205,6 +205,7 @@
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TopicosInteressantesController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DataAccess\Queries\LoginQueries.cs" />
     <Compile Include="DataAccess\Queries\TopicosInteressantesQueries.cs" />
     <Compile Include="DataAccess\Queries\UsuarioQueries.cs" />
