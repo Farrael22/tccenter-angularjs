@@ -230,7 +230,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Exceptions\BadRequestException.cs" />
-    <Compile Include="Helpers\Exceptions\DataAtualizacaoException.cs" />
+    <Compile Include="Helpers\Exceptions\InsertFailedException.cs" />
     <Compile Include="Helpers\Exceptions\NotFoundException.cs" />
     <Compile Include="Helpers\DataAccess\Requisicao.cs" />
     <Compile Include="Helpers\Controllers\RetornoErro.cs" />

@@ -9,7 +9,7 @@ namespace tccenter.api.DataAccess.Repository.Login
     {
         public IEnumerable<int> ValidarInformacoesLogin(string email, string senha)
         {
-            using (var transaction = new TransactionHelperBaseGerente())
+            using (var transaction = new TransactionHelperTccenter())
             {
                 return transaction.Query<int>(LoginQueries.VALIDAR_INFORMACOES_LOGIN,
                     new { Email = email, Senha = senha });

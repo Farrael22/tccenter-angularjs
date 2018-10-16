@@ -9,7 +9,7 @@ namespace tccenter.api.DataAccess.Repository.TopicosInteressantes
     {
         public IEnumerable<TopicosInteressantesEntity> ObterTopicosInteressantes()
         {
-            using (var transaction = new TransactionHelperBaseGerente())
+            using (var transaction = new TransactionHelperTccenter())
             {
                 return transaction.Query<TopicosInteressantesEntity>(TopicosInteressantesQueries.OBTER_TOPICOS_INTERESSANTES);
             }

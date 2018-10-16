@@ -8,15 +8,15 @@ namespace tccenter.api.Business.TopicosInteressantes
 {
     public class TopicosInteressantesBusiness : ITopicosInteressantesBusiness
     {
-        private readonly ITopicosInteressantesRepository _loginRepository;
+        private readonly ITopicosInteressantesRepository _topicosRepository;
         public TopicosInteressantesBusiness(ITopicosInteressantesRepository loginRepository)
         {
-            _loginRepository = loginRepository;
+            _topicosRepository = loginRepository;
         }
 
         public IEnumerable<TopicosInteressantesDTO> ObterTopicosInteressantes()
         {
-            var listaTopicosEntity = _loginRepository.ObterTopicosInteressantes();
+            var listaTopicosEntity = _topicosRepository.ObterTopicosInteressantes();
 
             return Mapper.Map<IEnumerable<TopicosInteressantesEntity>, IEnumerable<TopicosInteressantesDTO>>(listaTopicosEntity);
         }

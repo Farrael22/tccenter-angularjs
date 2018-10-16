@@ -23,7 +23,7 @@ namespace tccenter.api.Helpers.Exceptions
             if (actionExecutedContext.Exception is NotFoundException)
                 throw new HttpResponseException(actionExecutedContext.Request.CreateResponse(HttpStatusCode.NotFound, new RetornoErro { ErroDeNegocio = true, Mensagem = actionExecutedContext.Exception.Message }));
 
-            if (actionExecutedContext.Exception is DataAtualizacaoException)
+            if (actionExecutedContext.Exception is InsertFailedException)
                 throw new HttpResponseException(actionExecutedContext.Request.CreateResponse(HttpStatusCode.PreconditionFailed, new RetornoErro { ErroDeNegocio = true, Mensagem = actionExecutedContext.Exception.Message }));
             
             if (actionExecutedContext.Exception is SqlException)

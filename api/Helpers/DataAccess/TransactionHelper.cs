@@ -12,9 +12,9 @@ using tccenter.api.Domain.Enum;
 
 namespace tccenter.api.Helpers.DataAccess
 {
-    public class TransactionHelperBaseGerente : TransactionHelperBase
+    public class TransactionHelperTccenter : TransactionHelperBase
     {
-        public TransactionHelperBaseGerente()
+        public TransactionHelperTccenter()
             : base(ConfigurationManager.ConnectionStrings["TCCenter"].ConnectionString)
         {
 

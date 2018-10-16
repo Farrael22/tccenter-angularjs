@@ -19,8 +19,6 @@ namespace tccenter.api.Business.Login
 
         public int EfetuarLogin(LoginDTO infoLogin)
         {
-            LoginEntity loginEntity = null;
-
             if (string.IsNullOrWhiteSpace(infoLogin.Email) || string.IsNullOrWhiteSpace(infoLogin.Senha))
                 throw new BadRequestException("A lista de produtos deve ser enviada");
 
