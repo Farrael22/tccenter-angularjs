@@ -70,7 +70,10 @@
         if (vm.nomeValido && vm.emailValido && vm.senhaValida && vm.profissaoValida) {
             for (var i = 0; i < vm.topicosInteressantes.length; i++) {
                 if (vm.topicosInteressantes[i].checked) {
-                    topicos.push(vm.topicosInteressantes[i].IdTopicosInteressantes);
+                    topicos.push({
+                        IdUsuario: '0',
+                        IdTopicos: vm.topicosInteressantes[i].IdTopicosInteressantes
+                    });
                 }
             }
 
@@ -79,22 +82,23 @@
                 Email: vm.Usuario.Email,
                 Senha: vm.Usuario.Senha,
                 Profissao: vm.Usuario.Profissao,
-                Avatar: imagem,
-                TopicosInteressantes: topicos
+                InteressesUsuario: topicos
             };
             CadastroClienteService.realizarCadastro(param, realizarCadastroSucessoCallback, realizarCadastroErroCallback);
         }
     };
 
     function realizarCadastroSucessoCallback() {
-
+        $location.path("login");
     }
 
-    function realizarCadastroErroCallback() {
-
+    function realizarCadastroErroCallback(mensagem) {
+        mensagemDeErro(mensagem);
     }
 
-
+    function mensagemDeErro(mensagem) {
+        EventosFactory.mensagemDeErro($scope, mensagem);
+    }
 
     AtalhosFactory.criarAtalho($scope, ['enter'], function () {
         vm.cadastrarUsuario();

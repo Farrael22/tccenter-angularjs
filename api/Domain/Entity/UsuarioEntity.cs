@@ -1,4 +1,6 @@
-﻿namespace tccenter.api.Domain.Entity
+﻿using System.Collections.Generic;
+
+namespace tccenter.api.Domain.Entity
 {
     public class UsuarioEntity
     {

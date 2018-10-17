@@ -206,9 +206,12 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TopicosInteressantesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="DataAccess\Queries\InteressesUsuariosQueries.cs" />
     <Compile Include="DataAccess\Queries\LoginQueries.cs" />
     <Compile Include="DataAccess\Queries\TopicosInteressantesQueries.cs" />
     <Compile Include="DataAccess\Queries\UsuarioQueries.cs" />
+    <Compile Include="DataAccess\Repository\InteressesUsuarios\IInteressesUsuarios.cs" />
+    <Compile Include="DataAccess\Repository\InteressesUsuarios\InteressesUsuarios.cs" />
     <Compile Include="DataAccess\Repository\Login\ILoginRepository.cs" />
     <Compile Include="DataAccess\Repository\Login\LoginRepository.cs" />
     <Compile Include="DataAccess\Repository\TopicosInteressantes\ITopicosInteressantesRepository.cs" />
@@ -218,6 +221,7 @@
     <Compile Include="Domain\DTO\LoginDTO.cs" />
     <Compile Include="Domain\DTO\TopicosInteressantesDTO.cs" />
     <Compile Include="Domain\DTO\UsuarioDTO.cs" />
+    <Compile Include="Domain\DTO\InteressesUsuariosDTO.cs" />
     <Compile Include="Domain\Entity\LoginEntity.cs" />
     <Compile Include="Domain\Entity\TopicosInteressantesEntity.cs" />
     <Compile Include="Domain\Entity\UsuarioEntity.cs" />
