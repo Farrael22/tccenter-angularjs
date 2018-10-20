@@ -164,6 +164,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="Modules\BaseController.cs" />
     <Compile Include="Modules\CadastroCliente\CadastroClienteController.cs" />
+    <Compile Include="Modules\Home\HomeController.cs" />
     <Compile Include="Modules\Login\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\bootstrap.min.css" />
+    <Content Include="Assets\Content\bootstrap.min.css" />
     <Content Include="Assets\Content\Shared\cabecalho.css" />
     <Content Include="Assets\Content\Home\modalInformacao.css" />
     <Content Include="Assets\Content\Shared\modalAlertaErro.css" />
@@ -206,6 +208,10 @@
     <Content Include="Modules\CadastroCliente\cadastroCliente-module.js" />
     <Content Include="Modules\CadastroCliente\cadastroCliente-router.js" />
     <Content Include="Modules\CadastroCliente\cadastroCliente-service.js" />
+    <Content Include="Modules\Home\home-controller.js" />
+    <Content Include="Modules\Home\home-module.js" />
+    <Content Include="Modules\Home\home-router.js" />
+    <Content Include="Modules\Home\home-service.js" />
     <Content Include="Modules\Shared\atalhos.js" />
     <Content Include="Modules\Shared\Cabecalho\cabecalho-controller.js" />
     <Content Include="Modules\Shared\Cabecalho\cabecalho-directive.js" />
@@ -281,6 +287,7 @@
     <Content Include="Modules\Shared\Notificacao\notificacao.cshtml" />
     <Content Include="Modules\Shared\Rodape\Rodape.cshtml" />
     <Content Include="Modules\CadastroCliente\CadastroCliente.cshtml" />
+    <Content Include="Modules\Home\Home.cshtml" />
     <None Include="Properties\PublishProfiles\araujo.balcao.pubxml" />
     <None Include="Properties\PublishProfiles\araujo.web.pubxml" />
     <None Include="Properties\PublishProfiles\LOCAL.pubxml" />

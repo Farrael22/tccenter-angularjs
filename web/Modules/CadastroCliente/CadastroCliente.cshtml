@@ -75,13 +75,12 @@
                     <div class="form-group row">
                         <label class="label-16 col-sm-2 alinhamento-esquerda nopad">Interesses:</label>
                         <br />
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 alinhamento-esquerda">
                             <div ng-repeat="(idx, item) in ctrl.topicosInteressantes">
-                                <div class="col-sm-3 nopad chk-topicos-interessantes">
-                                    <div class="chk-id-topico">
+                                <div class="col-sm-4 nopad chk-topicos-interessantes alinhamento-esquerda" style="height:50px">
+                                    <div class="chk-id-topico alinhamento-esquerda">
                                         <input id="chk-topico-{{idx}}" type="checkbox" value="{{item.IdTopicosInteressantes}}" ng-click="ctrl.marcarCheck(item)" />
-                                    </div>
-                                    <div class="chk-descricao-topico alinhamento-esquerda">
+                                    </div><div class="chk-descricao-topico">
                                         <label>{{item.DescricaoTopico}}</label>
                                     </div>
                                 </div>

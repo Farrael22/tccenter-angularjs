@@ -7,22 +7,57 @@ namespace tccenter.api.DataAccess.Queries
 {
     public class UsuarioQueries
     {
+        public static string VALIDAR_INFORMACOES_LOGIN
+        {
+            get
+            {
+                return @"
+                    SELECT 
+                    	IdUsuario
+                    FROM USUARIO
+                    WHERE EmailUsuario = @Email 
+                    AND SenhaUsuario = @Senha
+            ";
+            }
+        }
+
         public static string CADASTRAR_USUARIO
         {
             get
             {
                 return @"
-                    INSERT INTO 
-                        USUARIO
-                    VALUES(
-                        @Nome, 
-                        @Avatar, 
-                        @Email, 
-                        @Senha, 
-                        @Profissao);
+                        INSERT INTO 
+                            USUARIO
+                        VALUES(
+                            @Nome, 
+                            @Avatar, 
+                            @Email, 
+                            @Senha, 
+                            @Profissao);
 
-                    SELECT SCOPE_IDENTITY()
-            ";
+                        SELECT SCOPE_IDENTITY()";
+            }
+        }
+
+        public static string BUSCAR_INFORMACOES_USUARIO
+        {
+            get
+            {
+                return @"
+                        SELECT
+                        	usu.IdUsuario as Id,
+                        	NomeUsuario as Nome,
+                        	AvatarUsuario as Avatar,
+                        	EmailUsuario as Email,
+                        	ProfissaoUsuario as Profissao,
+                        	topicos.IdTopicosInteressantes as IdTopicosInteressantes,
+                        	topicos.DescTopico as DescricaoTopico
+                        FROM Usuario usu
+                        LEFT JOIN InteresseUsuario interesses
+                        	ON usu.IdUsuario = interesses.IdUsuario
+                        INNER JOIN TopicosInteressantes topicos
+                        	ON interesses.IdTopicosInteressantes = topicos.IdTopicosInteressantes
+                        WHERE usu.IdUsuario = @IdUsuario";
             }
         }
     }

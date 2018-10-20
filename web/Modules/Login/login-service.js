@@ -8,7 +8,7 @@
 
         var request = $http({
             method: "POST",
-            url: config.urlAPITccenter + 'login/efetuarLogin',
+            url: config.urlAPITccenter + 'usuario/login',
             data: data
         });
 

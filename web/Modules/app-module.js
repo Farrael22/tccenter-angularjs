@@ -19,6 +19,7 @@ Colocar neste arquivo toda configuracao global relacionada ao Angular
         "tccenter.rodape",
         "tccenter.modalAlertaErro",
         "tccenter.cadastroCliente",
+        "tccenter.home",
     ]);
     
     app.config(function ($routeProvider, $locationProvider, $httpProvider) {

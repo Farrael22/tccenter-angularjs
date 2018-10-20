@@ -11,6 +11,9 @@ namespace tccenter.api.Helpers.Business
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<LoginEntity, LoginDTO>();
+                cfg.CreateMap<UsuarioEntity, UsuarioDTO>();
+                cfg.CreateMap<UsuarioDTO, UsuarioEntity>();
+                cfg.CreateMap<TopicosInteressantesEntity, TopicosInteressantesDTO>();
             });
         }
 

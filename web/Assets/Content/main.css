@@ -58,17 +58,21 @@ a {
 
 .chk-topicos-interessantes {
     margin-top: 10px;
+    display: inline-block;
+    height: 50px;
 }
 
 .chk-id-topico {
     width: 8%;
     display: inline-block;
+    top:0;
+    vertical-align: top;
 }
 
 .chk-descricao-topico {
     width: 90%;
     display: inline-block;
-    word-wrap: break-word;
+    font-weight: 100 !important;
 }
 
 textarea:focus, input:not([type=button]):focus, select:focus {

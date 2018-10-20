@@ -29,7 +29,7 @@
     };
 
     function efetuarLoginSucessoCallback(data) {
-        var debug = 1;
+        $location.path("home");
     }
 
     function efetuarLoginErroCallback(mensagem) {

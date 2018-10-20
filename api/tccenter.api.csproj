@@ -196,24 +196,18 @@
   <ItemGroup>
     <Compile Include="App_Start\InjetorConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Business\Login\ILoginBusiness.cs" />
-    <Compile Include="Business\Login\LoginBusiness.cs" />
     <Compile Include="Business\TopicosInteressantes\ITopicosInteressantesBusiness.cs" />
     <Compile Include="Business\TopicosInteressantes\TopicosInteressantesBusiness.cs" />
     <Compile Include="Business\Usuario\IUsuarioBusiness.cs" />
     <Compile Include="Business\Usuario\UsuarioBusiness.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TopicosInteressantesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DataAccess\Queries\InteressesUsuariosQueries.cs" />
-    <Compile Include="DataAccess\Queries\LoginQueries.cs" />
     <Compile Include="DataAccess\Queries\TopicosInteressantesQueries.cs" />
     <Compile Include="DataAccess\Queries\UsuarioQueries.cs" />
     <Compile Include="DataAccess\Repository\InteressesUsuarios\IInteressesUsuarios.cs" />
     <Compile Include="DataAccess\Repository\InteressesUsuarios\InteressesUsuarios.cs" />
-    <Compile Include="DataAccess\Repository\Login\ILoginRepository.cs" />
-    <Compile Include="DataAccess\Repository\Login\LoginRepository.cs" />
     <Compile Include="DataAccess\Repository\TopicosInteressantes\ITopicosInteressantesRepository.cs" />
     <Compile Include="DataAccess\Repository\TopicosInteressantes\TopicosInteressantesRepository.cs" />
     <Compile Include="DataAccess\Repository\Usuario\IUsuarioRepository.cs" />

@@ -4,6 +4,7 @@ namespace tccenter.api.Business.Usuario
 {
     public interface IUsuarioBusiness
     {
+        UsuarioDTO EfetuarLogin(LoginDTO infoLogin);
         int CadastrarUsuario(UsuarioDTO infoUsuario);
     }
 }

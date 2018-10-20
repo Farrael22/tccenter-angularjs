@@ -4,8 +4,6 @@ using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using System.Web.Http;
 using System;
-using tccenter.api.DataAccess.Repository.Login;
-using tccenter.api.Business.Login;
 using tccenter.api.DataAccess.Repository.Usuario;
 using tccenter.api.DataAccess.Repository.TopicosInteressantes;
 using tccenter.api.Business.Usuario;
@@ -21,13 +19,11 @@ namespace IoC
             Injetor.Iniciar(container => 
             {
                 //Repositorio
-                container.Register<ILoginRepository, LoginRepository>();
                 container.Register<IUsuarioRepository, UsuarioRepository>();
                 container.Register<ITopicosInteressantesRepository, TopicosInteressantesRepository>();
                 container.Register<IInteressesUsuarios, InteressesUsuarios>();
 
                 //Business
-                container.Register<ILoginBusiness, LoginBusiness>();
                 container.Register<IUsuarioBusiness, UsuarioBusiness>();
                 container.Register<ITopicosInteressantesBusiness, TopicosInteressantesBusiness>();
             });

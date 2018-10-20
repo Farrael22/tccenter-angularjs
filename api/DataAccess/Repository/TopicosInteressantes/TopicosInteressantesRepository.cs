@@ -14,5 +14,14 @@ namespace tccenter.api.DataAccess.Repository.TopicosInteressantes
                 return transaction.Query<TopicosInteressantesEntity>(TopicosInteressantesQueries.OBTER_TOPICOS_INTERESSANTES);
             }
         }
+
+        public IEnumerable<TopicosInteressantesEntity> ObterTopicosInteressantesPorUsuario(int idUsuario)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.Query<TopicosInteressantesEntity>(TopicosInteressantesQueries.OBTER_TOPICOS_INTERESSANTES_POR_USUARIO,
+                    new { IdUsuario = idUsuario });
+            }
+        }
     }
 }
