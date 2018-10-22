@@ -11,6 +11,7 @@
                     	IdTopicosInteressantes,
                         DescTopico as DescricaoTopico
                     FROM TOPICOSINTERESSANTES
+                    WHERE IdTopicoMestre = @IdTopicoMestre
             ";
             }
         }

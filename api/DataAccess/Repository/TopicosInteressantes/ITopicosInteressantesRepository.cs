@@ -5,7 +5,7 @@ namespace tccenter.api.DataAccess.Repository.TopicosInteressantes
 {
     public interface ITopicosInteressantesRepository
     {
-        IEnumerable<TopicosInteressantesEntity> ObterTopicosInteressantes();
+        IEnumerable<TopicosInteressantesEntity> ObterTopicosInteressantes(int idTopicoMestre);
         IEnumerable<TopicosInteressantesEntity> ObterTopicosInteressantesPorUsuario(int idUsuario);
     }
 }

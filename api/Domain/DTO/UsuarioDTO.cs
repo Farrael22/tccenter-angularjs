@@ -10,6 +10,6 @@ namespace tccenter.api.Domain.DTO
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Profissao { get; set; }
-        public List<TopicosInteressantesDTO> TopicosInteressantes { get; set; }
+        public List<TopicoMestreDTO> TopicosInteressesMestre { get; set; }
     }
 }

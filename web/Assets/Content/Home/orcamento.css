@@ -289,18 +289,11 @@
     }
 }
 
-@media only screen and (min-width: 1280px){
    input[type=button] {
         height: 36px;
         width: 140px;
         font-size: 13px;
     }
-    .dica-tabela {
-        font-size: 10px;
-        margin-top: 2px;
-    }
-}
-
 @media only screen and (max-width: 1023px){
     .dica-orcamento {
         font-size:8px;

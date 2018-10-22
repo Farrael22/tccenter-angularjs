@@ -12,10 +12,12 @@
                 <br />
                 <form>
                     <div class="form-group row">
-                        <label class="col-sm-2 label-16 alinhamento-esquerda nopad">
-                            Nome: <span class="campo-obrigatorio">*</span>
-                        </label>
-                        <div class="col-sm-10">
+                        <div class="alinhamento-esquerda inline">
+                            <label class="label-formulario label-16 alinhamento-esquerda">
+                                Nome: <span class="campo-obrigatorio">*</span>
+                            </label>
+                        </div>
+                        <div class="input-formulario">
                             <input ng-model="ctrl.Usuario.Nome"
                                    id="nome-cadastro"
                                    class="form-control {{ctrl.nomeValido ? '' : 'input-valor-invalido'}}"
@@ -25,10 +27,12 @@
                     </div>
                     <br />
                     <div class="form-group row">
-                        <label class="col-sm-2 label-16 alinhamento-esquerda nopad">
-                            E-mail: <span class="campo-obrigatorio">*</span>
-                        </label>
-                        <div class="col-sm-10">
+                        <div class="alinhamento-esquerda inline">
+                            <label class="label-formulario label-16 alinhamento-esquerda">
+                                E-mail: <span class="campo-obrigatorio">*</span>
+                            </label>
+                        </div>
+                        <div class="input-formulario">
                             <input ng-model="ctrl.Usuario.Email"
                                    id="email-cadastro"
                                    class="form-control {{ctrl.emailValido ? '' : 'input-valor-invalido'}}"
@@ -38,10 +42,12 @@
                     </div>
                     <br />
                     <div class="form-group row">
-                        <label class="col-sm-2 label-16 alinhamento-esquerda nopad">
-                            Senha: <span class="campo-obrigatorio">*</span>
-                        </label>
-                        <div class="col-sm-10" style="text-align: left">
+                        <div class="alinhamento-esquerda inline">
+                            <label class="label-formulario label-16 alinhamento-esquerda">
+                                Senha: <span class="campo-obrigatorio">*</span>
+                            </label>
+                        </div>
+                        <div class="input-formulario" style="text-align: left">
                             <input ng-model="ctrl.Usuario.Senha"
                                    id="senha-cadastro"
                                    class="form-control {{ctrl.senhaValida ? '' : 'input-valor-invalido'}}"
@@ -51,10 +57,12 @@
                     </div>
                     <br />
                     <div class="form-group row">
-                        <label class="col-sm-2 label-16 alinhamento-esquerda nopad">
-                            Profissão: <span class="campo-obrigatorio">*</span>
-                        </label>
-                        <div class="col-sm-10">
+                        <div class="alinhamento-esquerda inline">
+                            <label class="label-formulario label-16 alinhamento-esquerda">
+                                Profissão: <span class="campo-obrigatorio">*</span>
+                            </label>
+                        </div>
+                        <div class="input-formulario">
                             <input ng-model="ctrl.Usuario.Profissao"
                                    id="profissao-cadastro"
                                    class="form-control {{ctrl.profissaoValida ? '' : 'input-valor-invalido'}}"
@@ -64,24 +72,31 @@
                     </div>
                     <br />
                     <div class="form-group row">
-                        <label class="col-sm-2 label-16 alinhamento-esquerda nopad">
-                            Avatar:
-                        </label>
-                        <div class="col-sm-10">
-                            <input type="file" id="avatarUsu" onchange="ctrl.obterImagemAvatar(this)"/>
+                        <div class="alinhamento-esquerda inline">
+                            <label class="label-formulario label-16">
+                                Avatar:
+                            </label>
+                        </div>
+                        <div class="input-formulario">
+                            <input type="file" id="avatarUsu" onchange="ctrl.obterImagemAvatar(this)" />
                         </div>
                     </div>
                     <br />
                     <div class="form-group row">
-                        <label class="label-16 col-sm-2 alinhamento-esquerda nopad">Interesses:</label>
+                        <div class="alinhamento-esquerda">
+                            <label class="label-16 label-formulario">Interesses:</label>
+                        </div>
                         <br />
-                        <div class="col-sm-12 alinhamento-esquerda">
-                            <div ng-repeat="(idx, item) in ctrl.topicosInteressantes">
-                                <div class="col-sm-4 nopad chk-topicos-interessantes alinhamento-esquerda" style="height:50px">
-                                    <div class="chk-id-topico alinhamento-esquerda">
-                                        <input id="chk-topico-{{idx}}" type="checkbox" value="{{item.IdTopicosInteressantes}}" ng-click="ctrl.marcarCheck(item)" />
-                                    </div><div class="chk-descricao-topico">
-                                        <label>{{item.DescricaoTopico}}</label>
+                        <div class="col-sm-12 alinhamento-esquerda scroll-topicos">
+                            <div class="espacamento-formulario" ng-repeat="(idx, item) in ctrl.topicoMestre">
+                                <label class="label-14">{{idx+1}} - {{item.DescricaoTopicoMestre}}:</label>
+                                <div ng-repeat="(idx, item) in item.TopicosInteressantes">
+                                    <div class="col-sm-4 nopad chk-topicos-interessantes alinhamento-esquerda" style="height:50px">
+                                        <div class="chk-id-topico alinhamento-esquerda">
+                                            <input type="checkbox" value="{{item.IdTopicosInteressantes}}" ng-click="ctrl.marcarCheck(item)" />
+                                        </div><div class="chk-descricao-topico">
+                                            <label>{{item.DescricaoTopico}}</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -13,7 +13,7 @@ namespace tccenter.api.DataAccess.Queries
             {
                 return @"
                     INSERT INTO InteresseUsuario
-                    VALUES (@IdUsuario, @IdTopico)
+                    VALUES (@IdUsuario, @IdTopicoMestre, @IdTopicoInteresse)
 
                     SELECT SCOPE_IDENTITY()
             ";

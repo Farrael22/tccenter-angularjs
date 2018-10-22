@@ -3,6 +3,10 @@
     background-color: #ffe5e5 !important;
 }
 
+.inline{
+    display: inline-block;
+}
+
 .aviso-erro {
     color: red;
 }
@@ -21,7 +25,7 @@
 
 .container-principal {
     width: 100%;
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 103px);
 }
 
 .cabecalho-tccenter {
@@ -42,6 +46,12 @@ a {
 
 .label-16 {
     font-size: 16px;
+    font-weight: 700;
+}
+
+.label-14 {
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .margin-50{
@@ -52,8 +62,24 @@ a {
     text-align: center !important;
 }
 
+.label-formulario{
+    display: inline-block;
+    width: 100px;
+}
+
+.input-formulario {
+    display: inline-block;
+    width: calc(100% - 120px);
+}
+
 .texto-branco {
     color: white;
+    cursor: pointer;
+}
+
+.scroll-topicos {
+    height: 300px;
+    overflow-y: scroll;
 }
 
 .chk-topicos-interessantes {
@@ -73,6 +99,7 @@ a {
     width: 90%;
     display: inline-block;
     font-weight: 100 !important;
+    padding-left: 2px;
 }
 
 textarea:focus, input:not([type=button]):focus, select:focus {
@@ -652,7 +679,7 @@ select {
 }
 
 .botao-modal {
-    background-color: #0a74c4;
+    background-color: #212529;
     color: #FFF;
     border: 0;
     border-radius: 4px;

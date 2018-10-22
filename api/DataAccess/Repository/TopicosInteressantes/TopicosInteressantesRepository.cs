@@ -7,11 +7,12 @@ namespace tccenter.api.DataAccess.Repository.TopicosInteressantes
 {
     public class TopicosInteressantesRepository : ITopicosInteressantesRepository
     {
-        public IEnumerable<TopicosInteressantesEntity> ObterTopicosInteressantes()
+        public IEnumerable<TopicosInteressantesEntity> ObterTopicosInteressantes(int idTopicoMestre)
         {
             using (var transaction = new TransactionHelperTccenter())
             {
-                return transaction.Query<TopicosInteressantesEntity>(TopicosInteressantesQueries.OBTER_TOPICOS_INTERESSANTES);
+                return transaction.Query<TopicosInteressantesEntity>(TopicosInteressantesQueries.OBTER_TOPICOS_INTERESSANTES,
+                    new { IdTopicoMestre = idTopicoMestre});
             }
         }
 

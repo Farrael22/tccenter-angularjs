@@ -25,7 +25,10 @@ namespace tccenter.api.Helpers.Exceptions
 
             if (actionExecutedContext.Exception is InsertFailedException)
                 throw new HttpResponseException(actionExecutedContext.Request.CreateResponse(HttpStatusCode.PreconditionFailed, new RetornoErro { ErroDeNegocio = true, Mensagem = actionExecutedContext.Exception.Message }));
-            
+
+            if (actionExecutedContext.Exception is SearchFailedException)
+                throw new HttpResponseException(actionExecutedContext.Request.CreateResponse(HttpStatusCode.ExpectationFailed, new RetornoErro { ErroDeNegocio = true, Mensagem = actionExecutedContext.Exception.Message }));
+
             if (actionExecutedContext.Exception is SqlException)
             {
                 var exception = actionExecutedContext.Exception as SqlException;

@@ -1,4 +1,4 @@
-﻿angular.module("tccenter.cadastroCliente").controller("CadastroClienteController", function ($scope, $rootScope, $location, $timeout, CadastroClienteService, ElementoAtivoFactory, EventosFactory, BalcaoStorage, Util, AtalhosFactory) {
+﻿angular.module("tccenter.cadastroCliente").controller("CadastroClienteController", function ($scope, $rootScope, $location, $timeout, CadastroClienteService, ElementoAtivoFactory, EventosFactory, TccenterStorage, Util, AtalhosFactory) {
 
     var vm = this;
 
@@ -22,7 +22,7 @@
     };
 
     function buscarTopicosInteressantesSucesso(data) {
-        vm.topicosInteressantes = data;
+        vm.topicoMestre = data;
     }
 
     vm.validarNomeUsuario = function () {
@@ -62,18 +62,26 @@
 
     vm.cadastrarUsuario = function () {
         var topicos = [];
+        var topicosInteressantes = [];
         vm.validarNomeUsuario();
         vm.validarEmailUsuario();
         vm.validarSenhaUsuario();
         vm.validarProfisssaoUsuario();
 
         if (vm.nomeValido && vm.emailValido && vm.senhaValida && vm.profissaoValida) {
-            for (var i = 0; i < vm.topicosInteressantes.length; i++) {
-                if (vm.topicosInteressantes[i].checked) {
-                    topicos.push({
-                        IdUsuario: '0',
-                        IdTopicos: vm.topicosInteressantes[i].IdTopicosInteressantes
-                    });
+            for (var i = 0; i < vm.topicoMestre.length; i++) {
+                topicos.push({
+                    IdTopicoMestre: vm.topicoMestre[i].IdTopicoMestre,
+                    DescricaoTopicoMestre: vm.topicoMestre[i].DescricaoTopicoMestre,
+                    TopicosInteressantes: []
+                });
+
+                for (var j = 0; j < vm.topicoMestre[i].TopicosInteressantes.length; j++) {
+                    if (vm.topicoMestre[i].TopicosInteressantes[j].checked) {
+                        topicos[i].TopicosInteressantes.push({
+                            IdTopicosInteressantes: vm.topicoMestre[i].TopicosInteressantes[j].IdTopicosInteressantes
+                        });
+                    }
                 }
             }
 
@@ -82,7 +90,7 @@
                 Email: vm.Usuario.Email,
                 Senha: vm.Usuario.Senha,
                 Profissao: vm.Usuario.Profissao,
-                InteressesUsuario: topicos
+                TopicosInteressesMestre: topicos
             };
             CadastroClienteService.realizarCadastro(param, realizarCadastroSucessoCallback, realizarCadastroErroCallback);
         }
@@ -102,6 +110,6 @@
 
     AtalhosFactory.criarAtalho($scope, ['enter'], function () {
         vm.cadastrarUsuario();
-    },'#submitFormulario');
+    }, '#submitFormulario');
 
 });

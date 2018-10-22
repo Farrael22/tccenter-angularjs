@@ -2,7 +2,7 @@
 {
     public class TopicosInteressantesEntity
     {
-        public string IdTopicosInteressantes { get; set; }
+        public int IdTopicosInteressantes { get; set; }
         public string DescricaoTopico { get; set; }
     }
 }

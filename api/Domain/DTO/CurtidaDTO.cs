@@ -5,9 +5,7 @@ using System.Web;
 
 namespace tccenter.api.Domain.DTO
 {
-    public class InteressesUsuariosDTO
+    public class CurtidaDTO
     {
-        public string IdUsuario { get; set; }
-        public string IdTopicos { get; set; }
     }
 }

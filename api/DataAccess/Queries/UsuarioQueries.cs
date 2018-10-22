@@ -49,14 +49,8 @@ namespace tccenter.api.DataAccess.Queries
                         	NomeUsuario as Nome,
                         	AvatarUsuario as Avatar,
                         	EmailUsuario as Email,
-                        	ProfissaoUsuario as Profissao,
-                        	topicos.IdTopicosInteressantes as IdTopicosInteressantes,
-                        	topicos.DescTopico as DescricaoTopico
-                        FROM Usuario usu
-                        LEFT JOIN InteresseUsuario interesses
-                        	ON usu.IdUsuario = interesses.IdUsuario
-                        INNER JOIN TopicosInteressantes topicos
-                        	ON interesses.IdTopicosInteressantes = topicos.IdTopicosInteressantes
+                        	ProfissaoUsuario as Profissao
+                        FROM Usuario usu                        
                         WHERE usu.IdUsuario = @IdUsuario";
             }
         }

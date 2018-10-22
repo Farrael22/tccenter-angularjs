@@ -1,5 +1,10 @@
-﻿angular.module("tccenter.home").controller("HomeController", function ($scope, $rootScope, $timeout, $location, HomeService, ElementoAtivoFactory, EventosFactory, BalcaoStorage, Util, AtalhosFactory) {
+﻿angular.module("tccenter.home").controller("HomeController", function ($scope, $rootScope, $timeout, $location, HomeService, ElementoAtivoFactory, EventosFactory, TccenterStorage, Util, AtalhosFactory) {
 
-    var vm = this;
-    
+    if (!TccenterStorage.obterUsuario()) {
+        $location.path("login");
+    }
+
+        var vm = this;
+
+        
 });

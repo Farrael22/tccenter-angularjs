@@ -1,4 +1,4 @@
-﻿angular.module("tccenter.login").controller("LoginController", function ($scope, $rootScope, $timeout, $location, LoginService, ElementoAtivoFactory, EventosFactory, BalcaoStorage, Util, AtalhosFactory) {
+﻿angular.module("tccenter.login").controller("LoginController", function ($scope, $rootScope, $timeout, $location, LoginService, ElementoAtivoFactory, EventosFactory, TccenterStorage, Util, AtalhosFactory) {
 
     var vm = this;
     vm.emailValido = true;
@@ -29,6 +29,8 @@
     };
 
     function efetuarLoginSucessoCallback(data) {
+        TccenterStorage.salvarUsuario(data);
+        $rootScope.$emit('UsuarioLogado');
         $location.path("home");
     }
 

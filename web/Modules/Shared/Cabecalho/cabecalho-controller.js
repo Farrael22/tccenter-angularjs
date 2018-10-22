@@ -1,13 +1,26 @@
-﻿angular.module("tccenter.cabecalho").controller("cabecalhoController", function ($scope, $rootScope, $timeout, $filter, $location, CabecalhoService, EventosFactory, BalcaoStorage, config, $window) {
+﻿angular.module("tccenter.cabecalho").controller("cabecalhoController", function ($scope, $rootScope, $timeout, $filter, $location, CabecalhoService, EventosFactory, TccenterStorage, config, $window) {
 
     var vm = this;
     
     vm.iniciarCabecalhoController = function () {
-        vm.usuarioLogado = $rootScope.Usuario ? true : false;
+        verificarUsuarioLogado();
     };
 
-    vm.redirecionarTelaHome = function () {
+    $scope.$on('UsuarioLogado', function () {
+        verificarUsuarioLogado();
+    });
 
+    function verificarUsuarioLogado() {
+        if (TccenterStorage.obterUsuario()) {
+            vm.usuarioLogado = true;
+        }
+        else {
+            vm.usuarioLogado = false;
+        }
+    }
+
+    vm.redirecionarTelaHome = function () {
+        $location.path("home");
     };
 
     vm.redirecionarTelaLogin = function () {
@@ -17,4 +30,11 @@
     vm.redirecionarTelaCadastro = function () {
         $location.path("cadastroCliente");
     };
+
+    vm.realizarLogout = function () {
+        TccenterStorage.removerUsuario();
+        verificarUsuarioLogado();
+        $location.path("login");
+    };
+   
 });

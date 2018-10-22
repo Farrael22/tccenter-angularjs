@@ -8,10 +8,10 @@ using tccenter.api.Helpers.Controllers;
 namespace tccenter.api.Controllers
 {
     [RoutePrefix("topicosInteressantes")]
-    public class TopicosInteressantesController : BaseApiController
+    public class TopicoMestreController : BaseApiController
     {
-        private readonly ITopicosInteressantesBusiness _camadaBusiness;
-        public TopicosInteressantesController(ITopicosInteressantesBusiness camadaBusiness)
+        private readonly ITopicoMestreBusiness _camadaBusiness;
+        public TopicoMestreController(ITopicoMestreBusiness camadaBusiness)
         {
             _camadaBusiness = camadaBusiness;
         }
@@ -29,7 +29,7 @@ namespace tccenter.api.Controllers
         [AllowAnonymous]
         [Route("obter", Name = "obter")]
         [HttpGet]
-        [SwaggerResponse(HttpStatusCode.OK, Description = "ObterTopicosInteressantes", Type = typeof(TopicosInteressantesDTO))]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "ObterTopicosInteressantes", Type = typeof(TopicoMestreDTO))]
         [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
         public IHttpActionResult ObterTopicosInteressantes()
         {

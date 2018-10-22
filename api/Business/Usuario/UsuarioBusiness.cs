@@ -31,6 +31,9 @@ namespace tccenter.api.Business.Usuario
 
             var idUsuarioCadastrado = _usuarioRepository.ValidarInformacoesLogin(infoLogin.Email, infoLogin.Senha);
 
+            if (idUsuarioCadastrado.Count() == 0)
+                throw new SearchFailedException("As informações de login estão inválidas");
+
             var usuarioDTO = this.BuscarInformacoesUsuario(idUsuarioCadastrado.First());
 
             if (usuarioDTO == null)
@@ -48,14 +51,17 @@ namespace tccenter.api.Business.Usuario
 
             var idUsuarioCadastrado = _usuarioRepository.CadastarUsuario(usuarioEntity);
 
-            foreach (var item in infoUsuario.TopicosInteressantes)
+            foreach (var item in infoUsuario.TopicosInteressesMestre)
             {
-                if(string.IsNullOrWhiteSpace(item.IdTopicosInteressantes))
-                    throw new BadRequestException("Não foi possível realizar o cadastro dos Topicos de Interesse");
+                foreach (var topico in item.TopicosInteressantes)
+                {
+                    if (topico.IdTopicosInteressantes == 0)
+                        throw new BadRequestException("Não foi possível realizar o cadastro dos Topicos de Interesse");
 
-                _interesseUsuarioRepositoy.CadastrarTopicoInteressante(idUsuarioCadastrado, Convert.ToInt32(item.IdTopicosInteressantes));
+                    _interesseUsuarioRepositoy.CadastrarTopicoInteressante(idUsuarioCadastrado, item.IdTopicoMestre, topico.IdTopicosInteressantes);
+                }
             }
-            
+
             return idUsuarioCadastrado;
         }
 
@@ -65,7 +71,7 @@ namespace tccenter.api.Business.Usuario
             var usuarioDTO = Mapper.Map<UsuarioDTO>(usuarioEntity.First());
 
             var listaTopicosEntity = _topicosRepository.ObterTopicosInteressantesPorUsuario(idUsuario);
-            usuarioDTO.TopicosInteressantes = Mapper.Map<List<TopicosInteressantesDTO>>(listaTopicosEntity);
+            //usuarioDTO.TopicosInteressantes = Mapper.Map<List<TopicosInteressantesDTO>>(listaTopicosEntity);
 
             return usuarioDTO;
         }

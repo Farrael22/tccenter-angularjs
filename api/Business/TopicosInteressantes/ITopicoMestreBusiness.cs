@@ -3,8 +3,8 @@ using tccenter.api.Domain.DTO;
 
 namespace tccenter.api.Business.TopicosInteressantes
 {
-    public interface ITopicosInteressantesBusiness
+    public interface ITopicoMestreBusiness
     {
-        IEnumerable<TopicosInteressantesDTO> ObterTopicosInteressantes();
+        IEnumerable<TopicoMestreDTO> ObterTopicosInteressantes();
     }
 }

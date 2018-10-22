@@ -1,6 +1,6 @@
 ﻿<div class="cabecalho-tccenter" ng-controller="cabecalhoController as ctrl" ng-init="ctrl.iniciarCabecalhoController()">
     <div class="logo-tccenter">
-        <a href="" class="texto-branco">
+        <a ng-click="ctrl.redirecionarTelaHome()" class="texto-branco">
             TCCenter
         </a>
     </div>
@@ -13,7 +13,7 @@
     <div class="div-botoes-cabecalho">
         <div ng-show="ctrl.usuarioLogado">
             <button class="btn btn-light" ng-click="ctrl.redirecionarTelaHome()">Home</button>
-            <button class="btn btn-light" ng-click="ctrl.redirecionarTelaLogin()">Logout</button>
+            <button class="btn btn-light" ng-click="ctrl.realizarLogout()">Logout</button>
         </div>
         <div ng-show="!ctrl.usuarioLogado">
             <button class="btn btn-light" ng-click="ctrl.redirecionarTelaCadastro()">Cadastrar</button>
