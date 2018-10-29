@@ -22,6 +22,9 @@
                         else if (error.status === 404 && error.data && error.data.Mensagem) {
                             error.message = error.data.Mensagem;
                         }
+                        else if (error.status === 409 && error.data && error.data.Mensagem) {
+                            error.message = error.data.Mensagem;
+                        }
                         else if (error.status === 412 && error.data && error.data.Mensagem) {
                             error.message = error.data.Mensagem;
                         }

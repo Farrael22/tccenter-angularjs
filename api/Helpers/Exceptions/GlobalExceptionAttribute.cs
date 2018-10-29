@@ -25,16 +25,13 @@ namespace tccenter.api.Helpers.Exceptions
 
             if (actionExecutedContext.Exception is InsertFailedException)
                 throw new HttpResponseException(actionExecutedContext.Request.CreateResponse(HttpStatusCode.PreconditionFailed, new RetornoErro { ErroDeNegocio = true, Mensagem = actionExecutedContext.Exception.Message }));
-
-            if (actionExecutedContext.Exception is SearchFailedException)
-                throw new HttpResponseException(actionExecutedContext.Request.CreateResponse(HttpStatusCode.ExpectationFailed, new RetornoErro { ErroDeNegocio = true, Mensagem = actionExecutedContext.Exception.Message }));
-
+        
             if (actionExecutedContext.Exception is SqlException)
             {
                 var exception = actionExecutedContext.Exception as SqlException;
 
-                if(exception.Number == Convert.ToInt32(SqlExceptionEnum.AccessDeniedException) || exception.Number == Convert.ToInt32(SqlExceptionEnum.ErrorLoginException))
-                    throw new HttpResponseException(actionExecutedContext.Request.CreateResponse(HttpStatusCode.ServiceUnavailable, new RetornoErro { ErroDeNegocio = true, Mensagem = MessageHelper.BANCO_INDISPONIVEL }));
+                if(exception.Number == (int)SqlExceptionEnum.UniqueKeyNumberException && exception.Class == (byte)SqlExceptionEnum.UniqueKeyClassException)
+                    throw new HttpResponseException(actionExecutedContext.Request.CreateResponse(HttpStatusCode.Conflict, new RetornoErro { ErroDeNegocio = true, Mensagem = "Já existe usuário cadastrado para o E-mail informado." }));
             }
 
             //Logger.Error(new

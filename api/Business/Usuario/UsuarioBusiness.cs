@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using tccenter.api.DataAccess.Repository.InteressesUsuarios;
 using tccenter.api.DataAccess.Repository.TopicosInteressantes;
@@ -27,12 +25,12 @@ namespace tccenter.api.Business.Usuario
         public UsuarioDTO EfetuarLogin(LoginDTO infoLogin)
         {
             if (string.IsNullOrWhiteSpace(infoLogin.Email) || string.IsNullOrWhiteSpace(infoLogin.Senha))
-                throw new BadRequestException("A lista de produtos deve ser enviada");
+                throw new BadRequestException("A informação de Email e Senha devem ser enviados");
 
             var idUsuarioCadastrado = _usuarioRepository.ValidarInformacoesLogin(infoLogin.Email, infoLogin.Senha);
 
             if (idUsuarioCadastrado.Count() == 0)
-                throw new SearchFailedException("As informações de login estão inválidas");
+                throw new BadRequestException("As informações de login estão inválidas");
 
             var usuarioDTO = this.BuscarInformacoesUsuario(idUsuarioCadastrado.First());
 

@@ -18,7 +18,13 @@ namespace tccenter.api.Domain.Enum
         FatalErrorException = 0,
 
         [Description("Fatal error during the query execution class")]
-        FatalErrorClassException = 11
+        FatalErrorClassException = 11,
+
+        [Description("Unique Key violation class")]
+        UniqueKeyClassException = 14,
+
+        [Description("Unique Key violation number")]
+        UniqueKeyNumberException = 2627
 
     }
 }
