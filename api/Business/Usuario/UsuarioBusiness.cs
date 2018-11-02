@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System.Collections.Generic;
 using System.Linq;
 using tccenter.api.DataAccess.Repository.InteressesUsuarios;
 using tccenter.api.DataAccess.Repository.TopicosInteressantes;
@@ -68,8 +69,21 @@ namespace tccenter.api.Business.Usuario
             var usuarioEntity = _usuarioRepository.BuscarInformacoesUsuario(idUsuario);
             var usuarioDTO = Mapper.Map<UsuarioDTO>(usuarioEntity.First());
 
-            var listaTopicosEntity = _topicosRepository.ObterTopicosInteressantesPorUsuario(idUsuario);
-            //usuarioDTO.TopicosInteressantes = Mapper.Map<List<TopicosInteressantesDTO>>(listaTopicosEntity);
+            var listaTopicoMestre = Mapper.Map<List<TopicoMestreDTO>>(_topicosRepository.ObterTopicosMestrePorUsuario(idUsuario));
+            var listaTopicosInteresse = _topicosRepository.ObterTopicosInteressantesPorUsuario(idUsuario);
+
+            foreach (var item in listaTopicosInteresse)
+            {
+                var topicoMestre = listaTopicoMestre.Where(x => x.IdTopicoMestre == item.IdTopicoMestre).FirstOrDefault();
+
+                if (topicoMestre.TopicosInteressantes == null)
+                    topicoMestre.TopicosInteressantes = new List<TopicosInteressantesDTO>();
+
+                topicoMestre.TopicosInteressantes.Add(new TopicosInteressantesDTO()
+                                                        { IdTopicosInteressantes = item.IdTopicosInteressantes,
+                                                          DescricaoTopico = item.DescricaoTopico });
+            }
+            usuarioDTO.TopicosInteressesMestre = listaTopicoMestre;
 
             return usuarioDTO;
         }
