@@ -204,11 +204,14 @@
     <Compile Include="Controllers\TopicoMestreController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DataAccess\Queries\InteressesUsuariosQueries.cs" />
+    <Compile Include="DataAccess\Queries\PublicacaoQueries.cs" />
     <Compile Include="DataAccess\Queries\TopicoMestreQueries.cs" />
     <Compile Include="DataAccess\Queries\TopicosInteressantesQueries.cs" />
     <Compile Include="DataAccess\Queries\UsuarioQueries.cs" />
     <Compile Include="DataAccess\Repository\InteressesUsuarios\IInteressesUsuarios.cs" />
     <Compile Include="DataAccess\Repository\InteressesUsuarios\InteressesUsuarios.cs" />
+    <Compile Include="DataAccess\Repository\Publicacao\IPublicacaoRepository.cs" />
+    <Compile Include="DataAccess\Repository\Publicacao\PublicacaoRepository.cs" />
     <Compile Include="DataAccess\Repository\TopicoMestre\ITopicoMestreRepository.cs" />
     <Compile Include="DataAccess\Repository\TopicoMestre\TopicoMestreRepository.cs" />
     <Compile Include="DataAccess\Repository\TopicosInteressantes\ITopicosInteressantesRepository.cs" />

@@ -54,5 +54,45 @@ namespace tccenter.api.DataAccess.Queries
                         WHERE usu.IdUsuario = @IdUsuario";
             }
         }
+
+        public static string BUSCAR_QUANTIDADE_PUBLICACAO
+        {
+            get
+            {
+                return @"
+                        SELECT 
+                            count(IdUsuario) 
+                        FROM Publicacao
+                        where IdUsuario = @IdUsuario";
+            }
+        }
+
+        public static string BUSCAR_QUANTIDADE_SEGUIDORES
+        {
+            get
+            {
+                return @"
+                        SELECT 
+                            count(IdUsuarioSeguir) 
+                        FROM UsuarioSeguido
+                        where IdUsuarioSeguir = @IdUsuario";
+            }
+        }
+
+        public static string BUSCAR_USUARIOS_SEGUIDOS
+        {
+            get
+            {
+                return @"
+                        SELECT 
+                        	u.IdUsuario as Id,
+                        	u.NomeUsuario as Nome,
+                        	AvatarUsuario as Avatar
+                        FROM UsuarioSeguido us
+                        	INNER JOIN Usuario u
+                        	ON us.IdUsuarioSeguir = u.IdUsuario
+                        WHERE IdUsuarioSeguidor = @IdUsuario";
+            }
+        }
     }
 }

@@ -2,15 +2,72 @@
 
 <div ng-controller="HomeController as ctrl">
     <modalAlertaErro></modalAlertaErro>
-    <div class="row">
+    <div class="row container-principal">
         <div class="col-md-3">
             <informacaoperfil usuario="ctrl.Usuario"></informacaoperfil>
         </div>
         <div class="col-md-6">
-            
+            <div class="borda-publicacao">
+                <div class="row">
+                    <div class="col-md-3 alinhamento-esquerda">
+                        <strong>Título:</strong> <span class="campo-obrigatorio">*</span>
+                    </div>
+                    <div class="col-md-9"
+                         ng-model="ctrl.CadastroPublicacao.Titulo">
+                        <input type="text" 
+                               class="form-control {{ctrl.tituloPublicacaoValido ? '' : 'input-valor-invalido'}}"
+                               placeholder="Informe o Título da Publicação..." />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3 alinhamento-esquerda">
+                        <strong>Resumo:</strong> <span class="campo-obrigatorio">*</span>
+                    </div>
+                    <div class="col-md-9">
+                        <textarea type="text" class="form-control" id="resumo"></textarea>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3 alinhamento-esquerda">
+                        <strong>Resultado:</strong> <span class="campo-obrigatorio">*</span>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="produtoGerado" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3 alinhamento-esquerda">
+                        <strong><i>Link:</i></strong> <span class="campo-obrigatorio">*</span>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" style="width: 100%; height: 70%;" id="link">
+                    </div>
+                </div>
+                <div class="row espacamento-formulario">
+                    <div class="col-md-3 alinhamento-esquerda">
+                        <strong>Interesses:</strong> <span class="campo-obrigatorio">*</span>
+                    </div>
+                    <div class="col-md-9">
+                        <select ng-options="ctrl.TopicosInteressantes"></select>
+                    </div>                    
+                </div>
+                <div class="row espacamento-formulario">
+                    <div class="col-md-12 inline" style="text-align: end;">
+                        <a ng-click="ctrl.editarUsuario(ctrl.Usuario)">
+                            <i style="cursor: pointer" class="material-icons">done</i>
+                        </a>
+                        <a ng-click="ctrl.editarUsuario(ctrl.Usuario)">
+                            <i style="cursor: pointer" class="material-icons">clear</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-3">
-            
+
         </div>
     </div>
 </div>

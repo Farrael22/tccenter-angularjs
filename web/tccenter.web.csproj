@@ -184,6 +184,7 @@
     <Content Include="Assets\Content\Shared\notificacao.css" />
     <Content Include="Assets\Content\Shared\tituloPagina.css" />
     <Content Include="Assets\Images\find-in-page.png" />
+    <Content Include="Assets\Images\foto.jpg" />
     <Content Include="Assets\Images\google.png" />
     <Content Include="Assets\Images\image-multiple.svg" />
     <Content Include="Assets\Images\leitorCodigoBarras.png" />
@@ -217,6 +218,7 @@
     <Content Include="Modules\Shared\Cabecalho\cabecalho-directive.js" />
     <Content Include="Modules\Shared\Cabecalho\cabecalho-module.js" />
     <Content Include="Modules\Shared\Cabecalho\cabecalho-service.js" />
+    <Content Include="Modules\Shared\InformacaoPerfil\informacaoperfil-service.js" />
     <Content Include="Modules\Shared\InformacaoPerfil\informacaoperfil-directive.js" />
     <Content Include="Modules\Shared\ModalAlertaErro\modalAlertaErro-controller.js" />
     <Content Include="Modules\Shared\ModalAlertaErro\modalAlertaErro-directive.js" />

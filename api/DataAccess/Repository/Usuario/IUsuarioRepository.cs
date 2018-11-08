@@ -8,5 +8,8 @@ namespace tccenter.api.DataAccess.Repository.Usuario
         IEnumerable<int> ValidarInformacoesLogin(string email, string senha);
         int CadastarUsuario(UsuarioEntity usuario);
         IEnumerable<UsuarioEntity> BuscarInformacoesUsuario(int idUsuario);
+        int BuscarQuantidadePublicacao(int idUsuario);
+        int BuscarQuantidadeSeguidores(int idUsuario);
+        IEnumerable<UsuarioEntity> BuscarUsuariosSeguidos(int idUsuario);
     }
 }

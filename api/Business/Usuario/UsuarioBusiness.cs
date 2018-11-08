@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using tccenter.api.DataAccess.Repository.InteressesUsuarios;
+using tccenter.api.DataAccess.Repository.Publicacao;
 using tccenter.api.DataAccess.Repository.TopicosInteressantes;
 using tccenter.api.DataAccess.Repository.Usuario;
 using tccenter.api.Domain.DTO;
@@ -15,12 +16,14 @@ namespace tccenter.api.Business.Usuario
         private readonly IUsuarioRepository _usuarioRepository;
         private readonly IInteressesUsuarios _interesseUsuarioRepositoy;
         private readonly ITopicosInteressantesRepository _topicosRepository;
+        private readonly IPublicacaoRepository _publicacaoRepository;
 
-        public UsuarioBusiness(IUsuarioRepository usuarioRepository, IInteressesUsuarios interesseUsuarioRepositoy, ITopicosInteressantesRepository topicosRepository)
+        public UsuarioBusiness(IUsuarioRepository usuarioRepository, IInteressesUsuarios interesseUsuarioRepositoy, ITopicosInteressantesRepository topicosRepository, IPublicacaoRepository publicacaoRepository)
         {
             _usuarioRepository = usuarioRepository;
             _interesseUsuarioRepositoy = interesseUsuarioRepositoy;
             _topicosRepository = topicosRepository;
+            _publicacaoRepository = publicacaoRepository;
         }
 
         public UsuarioDTO EfetuarLogin(LoginDTO infoLogin)
@@ -86,6 +89,22 @@ namespace tccenter.api.Business.Usuario
             usuarioDTO.TopicosInteressesMestre = listaTopicoMestre;
 
             return usuarioDTO;
+        }
+
+        public int BuscarQuantidadePublicacao(int idUsuario)
+        {
+            return _usuarioRepository.BuscarQuantidadePublicacao(idUsuario);
+        }
+
+        public int BuscarQuantidadeSeguidores(int idUsuario)
+        {
+            return _usuarioRepository.BuscarQuantidadeSeguidores(idUsuario);
+        }
+
+        public List<UsuarioDTO> BuscarUsuariosSeguidos(int idUsuario)
+        {
+            var listaUsuarios = Mapper.Map<List<UsuarioDTO>>(_usuarioRepository.BuscarUsuariosSeguidos(idUsuario));
+            return listaUsuarios.ToList();
         }
     }
 }

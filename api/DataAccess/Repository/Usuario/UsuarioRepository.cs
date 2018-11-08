@@ -32,5 +32,32 @@ namespace tccenter.api.DataAccess.Repository.Usuario
                     new { IdUsuario = idUsuario });
             }
         }
+
+        public int BuscarQuantidadePublicacao(int idUsuario)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.ExecuteScalar<int>(UsuarioQueries.BUSCAR_QUANTIDADE_PUBLICACAO,
+                    new { IdUsuario = idUsuario });
+            }
+        }
+
+        public int BuscarQuantidadeSeguidores(int idUsuario)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.ExecuteScalar<int>(UsuarioQueries.BUSCAR_QUANTIDADE_SEGUIDORES,
+                    new { IdUsuario = idUsuario });
+            }
+        }
+
+        public IEnumerable<UsuarioEntity> BuscarUsuariosSeguidos(int idUsuario)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.Query<UsuarioEntity>(UsuarioQueries.BUSCAR_USUARIOS_SEGUIDOS,
+                    new { IdUsuario = idUsuario });
+            }
+        }
     }
 }

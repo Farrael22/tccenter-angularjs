@@ -1,21 +1,21 @@
-﻿<div class="borda-perfil" style="margin-top:5px;">
+﻿<div class="borda-perfil" style="margin-top:15px;">
     <div class="row">
         <div class="col-md-12">
             <div class="row" style="text-align: center">
                 <div class="col-md-3">
                     <a ng-click="ctrl.exibirPerfilUsuario(ctrl.Usuario.Id)">
-                        <img src="~/Images/Profile/{{ctrl.Usuario.Avatar}}" class="fotinha-perfil">
+                        <img src="~/Assets/Images/foto.jpg" @*src="~/Images/Profile/{{ctrl.Usuario.Avatar}}"*@ class="fotinha-perfil">
                     </a>
                 </div>
                 <div class="col-md-6">
 
-                    <h3 style="margin-top:5%">
+                    <h4 style="margin-top:5%">
                         <a ng-click="ctrl.exibirPerfilUsuario(ctrl.Usuario.Id)">
                             {{ctrl.Usuario.Nome}}
                         </a>
-                    </h3>
+                    </h4>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 espacamento-formulario">
                     <a ng-click="ctrl.editarUsuario(ctrl.Usuario)">
                         <i class="material-icons">edit</i>
                     </a>
@@ -25,14 +25,11 @@
     </div>
     <br />
     <div class="row" style=" text-align: center">
-        <div class="col-md-4">
-            <p style="text-align:center">Publicações <br /><span>{{ctrl.Usuario.Publicacao.length}}</span></p>
+        <div class="col-md-6">
+            <p style="text-align:center">Publicações <br /><span>{{ctrl.quantidadePublicacoes}}</span></p>
         </div>
-        <div class="col-md-4">
-            <p style="text-align:center">Curtidas <br /><span>{{ctrl.Usuario.Curtidas.length}}</span></p>
-        </div>
-        <div class="col-md-4">
-            <p style="text-align:center">Seguidores <br /><span>{{ctrl.Usuario.Seguidores.length}}</span></p>
+        <div class="col-md-6">
+            <p style="text-align:center">Seguidores <br /><span>{{ctrl.quantidadeSeguidores}}</span></p>
         </div>
     </div>
 
@@ -40,11 +37,14 @@
     <div class="row">
         <div class="col-md-12">
             <strong>Seguindo</strong>
-            <ul class="list-inline" style="text-align: center">
-                <li class="list-inline-item fotinha" ng-repeat="item in ctrl.Usuario.Seguidos">
-                    <a ng-click="ctrl.exibirPerfilUsuario(item.Usuario.Id)">
-                        <img src="~/Images/Profile/{{item.Usuario.avatarUsu}}" class="fotinha" style="width: 100%">
-                    </a>
+            <ul class="list-inline">
+                <li class="list-inline-item fotinha" ng-repeat="item in ctrl.usuariosSeguidos" style="width: 25%">
+                    <div style="text-align: center">
+                        <a ng-click="ctrl.exibirPerfilUsuario(item.Id)">
+                            <img src="~/Assets/Images/foto.jpg" @*src="~/Images/Profile/{{item.Avatar}}"*@ class="fotinha">
+                        </a>
+                    </div>
+                    <span>{{ctrl.exibirPrimeiroNome(item.Nome)}}</span>
                 </li>
             </ul>
         </div>

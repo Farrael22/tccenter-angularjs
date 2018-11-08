@@ -10,6 +10,7 @@ using tccenter.api.Business.Usuario;
 using tccenter.api.Business.TopicosInteressantes;
 using tccenter.api.DataAccess.Repository.InteressesUsuarios;
 using tccenter.api.DataAccess.Repository.TopicoMestre;
+using tccenter.api.DataAccess.Repository.Publicacao;
 
 namespace IoC
 {
@@ -24,6 +25,7 @@ namespace IoC
                 container.Register<ITopicosInteressantesRepository, TopicosInteressantesRepository>();
                 container.Register<IInteressesUsuarios, InteressesUsuarios>();
                 container.Register<ITopicoMestreRepository, TopicoMestreRepository>();
+                container.Register<IPublicacaoRepository, PublicacaoRepository>();
 
                 //Business
                 container.Register<IUsuarioBusiness, UsuarioBusiness>();

@@ -1,4 +1,5 @@
 ﻿using Swashbuckle.Swagger.Annotations;
+using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
 using tccenter.api.Business.Usuario;
@@ -22,7 +23,7 @@ namespace tccenter.api.Controllers
         [HttpPost]
         [SwaggerResponse(HttpStatusCode.OK, Description = "Cadastro realizado com sucesso", Type = typeof(int))]
         [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
-        public IHttpActionResult EfetuarLogin([FromBody] UsuarioDTO infoUsuario)
+        public IHttpActionResult CadastrarUsuario([FromBody] UsuarioDTO infoUsuario)
         {
            var result = _camadaBusiness.CadastrarUsuario(infoUsuario);
 
@@ -37,6 +38,42 @@ namespace tccenter.api.Controllers
         public IHttpActionResult EfetuarLogin([FromBody] LoginDTO infoLogin)
         {
             var result = _camadaBusiness.EfetuarLogin(infoLogin);
+
+            return Encontrado(result);
+        }
+
+        [AllowAnonymous]
+        [Route("quantidadePublicacao", Name = "quantidadePublicacao")]
+        [HttpGet]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "ObterListagemKitsVirtuais", Type = typeof(int))]
+        [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
+        public IHttpActionResult BuscarQuantidadePublicacao([FromUri] int idUsuario)
+        {
+            var result = _camadaBusiness.BuscarQuantidadePublicacao(idUsuario);
+
+            return Encontrado(result);
+        }
+
+        [AllowAnonymous]
+        [Route("quantidadeSeguidores", Name = "quantidadeSeguidores")]
+        [HttpGet]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "ObterListagemKitsVirtuais", Type = typeof(int))]
+        [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
+        public IHttpActionResult BuscarQuantidadeSeguidores([FromUri] int idUsuario)
+        {
+            var result = _camadaBusiness.BuscarQuantidadeSeguidores(idUsuario);
+
+            return Encontrado(result);
+        }
+
+        [AllowAnonymous]
+        [Route("usuariosSeguidos", Name = "usuariosSeguidos")]
+        [HttpGet]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "ObterListagemKitsVirtuais", Type = typeof(List<UsuarioDTO>))]
+        [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
+        public IHttpActionResult BuscarUsuariosSeguidos([FromUri] int idUsuario)
+        {
+            var result = _camadaBusiness.BuscarUsuariosSeguidos(idUsuario);
 
             return Encontrado(result);
         }
