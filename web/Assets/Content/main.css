@@ -63,6 +63,13 @@
     height: 43px;
 }
 
+.div-cadastro-publicacao {
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+
 a {
     color: black !important;
     cursor: pointer;

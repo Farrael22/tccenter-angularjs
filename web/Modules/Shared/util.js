@@ -178,6 +178,12 @@
                     return true;
                 }
                 return false;
+            },
+            validarCampoPreenchido: function (data) {
+                if (data && data.length > 0) {
+                    return true;
+                }
+                return false;
             }
         };
 

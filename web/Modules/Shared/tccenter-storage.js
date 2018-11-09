@@ -16,7 +16,16 @@
             removerUsuario: function () {
                 removerItem('usuario');
             },
-
+            //TOPICOS INTERESSANTES
+            salvarTopicosInteressantes: function (topicos) {
+                salvarItemJson('TopicosInteressantes', topicos);
+            },
+            obterTopicosInteressantes: function () {
+                if (obterItemJson('TopicosInteressantes'))
+                    return obterItemJson('TopicosInteressantes');
+                else
+                    return false;
+            },
         };
 
         // MÉTODOS PRIVADOS

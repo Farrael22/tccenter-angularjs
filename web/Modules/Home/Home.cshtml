@@ -7,14 +7,24 @@
             <informacaoperfil usuario="ctrl.Usuario"></informacaoperfil>
         </div>
         <div class="col-md-6">
-            <div class="borda-publicacao">
+            <div class="div-cadastro-publicacao" ng-click="ctrl.exibirEsconderCadastro()">
+                <div ng-show="!ctrl.exibirCadastroPublicacao">
+                    Exibir Cadastro de Publicacao (CTRL + P)
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </div>
+                <div ng-show="ctrl.exibirCadastroPublicacao">
+                    Ocultar Cadastro de Publicacao (CTRL + P)
+                    <i class="material-icons">keyboard_arrow_up</i>
+                </div>
+            </div>
+            <div class="borda-publicacao" ng-show="ctrl.exibirCadastroPublicacao">
                 <div class="row">
                     <div class="col-md-3 alinhamento-esquerda">
                         <strong>Título:</strong> <span class="campo-obrigatorio">*</span>
                     </div>
-                    <div class="col-md-9"
-                         ng-model="ctrl.CadastroPublicacao.Titulo">
-                        <input type="text" 
+                    <div class="col-md-9">
+                        <input type="text"
+                               ng-model="ctrl.CadastroPublicacao.Titulo"
                                class="form-control {{ctrl.tituloPublicacaoValido ? '' : 'input-valor-invalido'}}"
                                placeholder="Informe o Título da Publicação..." />
                     </div>
@@ -25,7 +35,10 @@
                         <strong>Resumo:</strong> <span class="campo-obrigatorio">*</span>
                     </div>
                     <div class="col-md-9">
-                        <textarea type="text" class="form-control" id="resumo"></textarea>
+                        <textarea type="text"
+                                  ng-model="ctrl.CadastroPublicacao.Resumo"
+                                  class="form-control {{ctrl.resumoPublicacaoValido ? '' : 'input-valor-invalido'}}"
+                                  placeholder="Informe o Resumo da Publicação..."></textarea>
                     </div>
                 </div>
                 <br />
@@ -34,7 +47,10 @@
                         <strong>Resultado:</strong> <span class="campo-obrigatorio">*</span>
                     </div>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" id="produtoGerado" />
+                        <input type="text"
+                               ng-model="ctrl.CadastroPublicacao.Resultado"
+                               class="form-control {{ctrl.resultadoPublicacaoValido ? '' : 'input-valor-invalido'}}"
+                               placeholder="Informe o Resultado da Publicação..." />
                     </div>
                 </div>
                 <br />
@@ -43,23 +59,27 @@
                         <strong><i>Link:</i></strong> <span class="campo-obrigatorio">*</span>
                     </div>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" style="width: 100%; height: 70%;" id="link">
+                        <input type="text"
+                               style="width: 100%; height: 70%;"
+                               ng-model="ctrl.CadastroPublicacao.Link"
+                               class="form-control {{ctrl.linkPublicacaoValido ? '' : 'input-valor-invalido'}}"
+                               placeholder="Informe o Link da Publicação..." />
                     </div>
                 </div>
                 <div class="row espacamento-formulario">
                     <div class="col-md-3 alinhamento-esquerda">
-                        <strong>Interesses:</strong> <span class="campo-obrigatorio">*</span>
+                        <strong>Interesse:</strong> <span class="campo-obrigatorio">*</span>
                     </div>
                     <div class="col-md-9">
-                        <select ng-options="ctrl.TopicosInteressantes"></select>
-                    </div>                    
+                        <select ng-model="ctrl.CadastroPublicacao.TopicoSelecionado" ng-options="item.DescricaoTopico for item in ctrl.TopicosInteressantes"></select>
+                    </div>
                 </div>
                 <div class="row espacamento-formulario">
                     <div class="col-md-12 inline" style="text-align: end;">
-                        <a ng-click="ctrl.editarUsuario(ctrl.Usuario)">
+                        <a ng-click="ctrl.cadastrarPublicacao()">
                             <i style="cursor: pointer" class="material-icons">done</i>
                         </a>
-                        <a ng-click="ctrl.editarUsuario(ctrl.Usuario)">
+                        <a ng-click="ctrl.limparFormulario()">
                             <i style="cursor: pointer" class="material-icons">clear</i>
                         </a>
                     </div>
