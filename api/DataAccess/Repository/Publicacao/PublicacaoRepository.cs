@@ -15,5 +15,24 @@ namespace tccenter.api.DataAccess.Repository.Publicacao
                     new { IdUsuario = idUsuario });
             }
         }
+
+        public int CadastrarPublicacao(PublicacaoEntity publicacao)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.ExecuteScalar<int>(PublicacaoQueries.CADASTRAR_PUBLICACAO,
+                    new
+                    {
+                        IdUsuario = publicacao.IdUsuario,
+                        IdTopicosInteressantes = publicacao.TopicoInteresse.IdTopicosInteressantes,
+                        IdOrientador = publicacao.Orientador.IdOrientador,
+                        TituloPublicacao = publicacao.TituloPublicacao,
+                        LinkPublicacao = publicacao.LinkPublicacao,
+                        DescPublicacao = publicacao.DescPublicacao,
+                        DataPublicacao = publicacao.DataPublicacao,
+                        ResultadoPublicacao = publicacao.ResultadoPublicacao
+                    });
+            }
+        }
     }
 }

@@ -19,5 +19,10 @@ namespace web.Modules.Home
         {
             return PartialView("Home");
         }
+
+        public ActionResult ModalCadastroPublicacao()
+        {
+            return PartialView("ModalCadastroPublicacao/ModalCadastroPublicacao");
+        }
     }
 }

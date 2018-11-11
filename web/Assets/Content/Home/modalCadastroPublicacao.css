@@ -1,0 +1,16 @@
+﻿#modal-cadastro-publicacao .modal-content {
+    margin-top: 20%;
+}
+
+#modal-cadastro-publicacao .modal-footer {
+    border: none !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+#modal-cadastro-publicacao .modal-body {
+    min-height: 200px;
+    max-height: 400px;
+    overflow: hidden;
+    padding-bottom: 0px;
+}

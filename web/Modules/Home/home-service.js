@@ -20,7 +20,7 @@
 
         var request = $http({
             method: "POST",
-            url: config.urlAPITccenter + 'publicacao/cadastrar',
+            url: config.urlAPITccenter + 'publicacao/cadastrarPublicacao',
             data: param
         });
 

@@ -19,5 +19,26 @@
                     where IdUsuario = @IdUsuario";
             }
         }
+
+        public static string CADASTRAR_PUBLICACAO
+        {
+            get
+            {
+                return @"
+                    INSERT INTO Publicacao
+                    VALUES(
+                    	@IdUsuario,
+                    	@IdTopicosInteressantes,
+                    	@IdOrientador,
+                    	@TituloPublicacao,
+                    	@LinkPublicacao,
+                    	@DescPublicacao,
+                    	@DataPublicacao,
+                    	@ResultadoPublicacao
+                    );
+
+                    SELECT SCOPE_IDENTITY();";
+            }
+        }
     }
 }

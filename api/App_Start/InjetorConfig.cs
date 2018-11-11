@@ -11,6 +11,9 @@ using tccenter.api.Business.TopicosInteressantes;
 using tccenter.api.DataAccess.Repository.InteressesUsuarios;
 using tccenter.api.DataAccess.Repository.TopicoMestre;
 using tccenter.api.DataAccess.Repository.Publicacao;
+using tccenter.api.Business.Publicacao;
+using tccenter.api.DataAccess.Repository.Orientador;
+using tccenter.api.Business.Orientador;
 
 namespace IoC
 {
@@ -26,10 +29,13 @@ namespace IoC
                 container.Register<IInteressesUsuarios, InteressesUsuarios>();
                 container.Register<ITopicoMestreRepository, TopicoMestreRepository>();
                 container.Register<IPublicacaoRepository, PublicacaoRepository>();
+                container.Register<IOrientadorRepository, OrientadorRepository>();
 
                 //Business
                 container.Register<IUsuarioBusiness, UsuarioBusiness>();
                 container.Register<ITopicoMestreBusiness, TopicoMestreBusiness>();
+                container.Register<IPublicacaoBusiness, PublicacaoBusiness>();
+                container.Register<IOrientadorBusiness, OrientadorBusiness>();
             });
         }
     }

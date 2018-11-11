@@ -176,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\bootstrap.min.css" />
+    <Content Include="Assets\Content\Home\modalCadastroPublicacao.css" />
     <Content Include="Assets\Content\Shared\cabecalho.css" />
     <Content Include="Assets\Content\Home\modalInformacao.css" />
     <Content Include="Assets\Content\Shared\informacaoPerfil.css" />
@@ -213,6 +214,10 @@
     <Content Include="Modules\Home\home-module.js" />
     <Content Include="Modules\Home\home-router.js" />
     <Content Include="Modules\Home\home-service.js" />
+    <Content Include="Modules\Home\ModalCadastroPublicacao\modalCadastroPublicacao-service.js" />
+    <Content Include="Modules\Home\ModalCadastroPublicacao\modalCadastroPublicacao-controller.js" />
+    <Content Include="Modules\Home\ModalCadastroPublicacao\modalCadastroPublicacao-directive.js" />
+    <Content Include="Modules\Home\ModalCadastroPublicacao\modalCadastroPublicacao-module.js" />
     <Content Include="Modules\Shared\atalhos.js" />
     <Content Include="Modules\Shared\Cabecalho\cabecalho-controller.js" />
     <Content Include="Modules\Shared\Cabecalho\cabecalho-directive.js" />
@@ -292,6 +297,7 @@
     <Content Include="Modules\CadastroCliente\CadastroCliente.cshtml" />
     <Content Include="Modules\Home\Home.cshtml" />
     <Content Include="Modules\Shared\InformacaoPerfil\informacaoperfil.cshtml" />
+    <Content Include="Modules\Home\ModalCadastroPublicacao\ModalCadastroPublicacao.cshtml" />
     <None Include="Properties\PublishProfiles\araujo.balcao.pubxml" />
     <None Include="Properties\PublishProfiles\araujo.web.pubxml" />
     <None Include="Properties\PublishProfiles\LOCAL.pubxml" />

@@ -14,5 +14,7 @@ namespace tccenter.api.Domain.Entity
         public string DescPublicacao { get; set; }
         public DateTime DataPublicacao { get; set; }
         public string ResultadoPublicacao { get; set; }
+        public TopicosInteressantesEntity TopicoInteresse { get; set; }
+        public OrientadorEntity Orientador { get; set; }
     }
 }

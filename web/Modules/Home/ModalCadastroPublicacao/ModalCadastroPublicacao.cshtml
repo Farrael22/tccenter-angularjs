@@ -1,0 +1,84 @@
+﻿<div id="modal-cadastro-publicacao" class="modal fade" ng-controller="modalCadastroPublicacaoController as ctrl" ng-show="ctrl.exibirModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="borda-publicacao">
+                        <div class="row">
+                            <div class="col-md-3 alinhamento-esquerda">
+                                <strong>Título:</strong> <span class="campo-obrigatorio">*</span>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text"
+                                       ng-model="ctrl.CadastroPublicacao.TituloPublicacao"
+                                       class="form-control {{ctrl.tituloPublicacaoValido ? '' : 'input-valor-invalido'}}"
+                                       placeholder="Informe o Título da Publicação..." />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 alinhamento-esquerda">
+                                <strong>Resumo:</strong> <span class="campo-obrigatorio">*</span>
+                            </div>
+                            <div class="col-md-9">
+                                <textarea type="text"
+                                          ng-model="ctrl.CadastroPublicacao.DescPublicacao"
+                                          class="form-control {{ctrl.resumoPublicacaoValido ? '' : 'input-valor-invalido'}}"
+                                          placeholder="Informe o Resumo da Publicação..."></textarea>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 alinhamento-esquerda">
+                                <strong>Resultado:</strong> <span class="campo-obrigatorio">*</span>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text"
+                                       ng-model="ctrl.CadastroPublicacao.ResultadoPublicacao"
+                                       class="form-control {{ctrl.resultadoPublicacaoValido ? '' : 'input-valor-invalido'}}"
+                                       placeholder="Informe o Resultado da Publicação..." />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 alinhamento-esquerda">
+                                <strong><i>Link:</i></strong> <span class="campo-obrigatorio">*</span>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text"
+                                       style="width: 100%; height: 70%;"
+                                       ng-model="ctrl.CadastroPublicacao.LinkPublicacao"
+                                       class="form-control {{ctrl.linkPublicacaoValido ? '' : 'input-valor-invalido'}}"
+                                       placeholder="Informe o Link da Publicação..." />
+                            </div>
+                        </div>
+                        <div class="row espacamento-formulario">
+                            <div class="col-md-3 alinhamento-esquerda">
+                                <strong><i>Orientador:</i></strong> <span class="campo-obrigatorio">*</span>
+                            </div>
+                            <div class="col-md-9">
+                                <select ng-model="ctrl.CadastroPublicacao.Orientador" ng-options="item.NomeOrientador for item in ctrl.Orientadores"></select>
+                            </div>
+                        </div>
+                        <div class="row espacamento-formulario">
+                            <div class="col-md-3 alinhamento-esquerda">
+                                <strong>Interesse:</strong> <span class="campo-obrigatorio">*</span>
+                            </div>
+                            <div class="col-md-9">
+                                <select ng-model="ctrl.CadastroPublicacao.TopicoInteresse" ng-options="item.DescricaoTopico for item in ctrl.TopicosInteressantes"></select>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 20px;">
+                            <div class="col-md-12 inline centralizar">
+                                <input type="button" class="botao-modal" value="Cadastrar" ng-click="$event.stopPropagation(); ctrl.cadastrarPublicacao()">
+                                <input type="button" class="botao-modal" value="Fechar" ng-click="$event.stopPropagation(); ctrl.fecharModal()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>

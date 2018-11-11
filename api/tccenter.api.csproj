@@ -196,20 +196,29 @@
   <ItemGroup>
     <Compile Include="App_Start\InjetorConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Business\Orientador\IOrientadorBusiness.cs" />
+    <Compile Include="Business\Orientador\OrientadorBusiness.cs" />
+    <Compile Include="Business\Publicacao\IPublicacaoBusiness.cs" />
+    <Compile Include="Business\Publicacao\PublicacaoBusiness.cs" />
     <Compile Include="Business\TopicosInteressantes\ITopicoMestreBusiness.cs" />
     <Compile Include="Business\TopicosInteressantes\TopicoMestreBusiness.cs" />
     <Compile Include="Business\Usuario\IUsuarioBusiness.cs" />
     <Compile Include="Business\Usuario\UsuarioBusiness.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\OrientadorController.cs" />
+    <Compile Include="Controllers\PublicacaoController.cs" />
     <Compile Include="Controllers\TopicoMestreController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DataAccess\Queries\InteressesUsuariosQueries.cs" />
+    <Compile Include="DataAccess\Queries\OrientadorQueries.cs" />
     <Compile Include="DataAccess\Queries\PublicacaoQueries.cs" />
     <Compile Include="DataAccess\Queries\TopicoMestreQueries.cs" />
     <Compile Include="DataAccess\Queries\TopicosInteressantesQueries.cs" />
     <Compile Include="DataAccess\Queries\UsuarioQueries.cs" />
     <Compile Include="DataAccess\Repository\InteressesUsuarios\IInteressesUsuarios.cs" />
     <Compile Include="DataAccess\Repository\InteressesUsuarios\InteressesUsuarios.cs" />
+    <Compile Include="DataAccess\Repository\Orientador\IOrientadorRepository.cs" />
+    <Compile Include="DataAccess\Repository\Orientador\OrientadorRepository.cs" />
     <Compile Include="DataAccess\Repository\Publicacao\IPublicacaoRepository.cs" />
     <Compile Include="DataAccess\Repository\Publicacao\PublicacaoRepository.cs" />
     <Compile Include="DataAccess\Repository\TopicoMestre\ITopicoMestreRepository.cs" />
@@ -274,7 +283,9 @@
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FORNECEDORES.pubxml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Helpers\DTO\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
