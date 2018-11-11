@@ -1,0 +1,19 @@
+﻿<cabecalho></cabecalho>
+
+<div ng-controller="PesquisaController as ctrl" ng-init="ctrl.iniciarPesquisa()">
+    <modalcadastropublicacao></modalcadastropublicacao>
+    <modalAlertaErro></modalAlertaErro>
+    <div class="row container-principal">
+        <div class="col-md-3">
+            <informacaoperfil usuario="ctrl.Usuario"></informacaoperfil>
+        </div>
+        <div class="col-md-6 espacamento-formulario centralizar">
+            <input type="button" class="botao-modal" value="Cadastrar Publicação" ng-click="$event.stopPropagation(); ctrl.exibirCadastro()">
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+</div>
+
+<rodape></rodape>

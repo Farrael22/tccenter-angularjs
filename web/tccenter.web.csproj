@@ -171,6 +171,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Modules\BaseModel.cs" />
+    <Compile Include="Modules\Perfil\PerfilController.cs" />
+    <Compile Include="Modules\Pesquisa\PesquisaController.cs" />
+    <Compile Include="Modules\PublicacaoCompleta\PublicacaoCompletaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -224,6 +227,18 @@
     <Content Include="Modules\Home\ModalCadastroPublicacao\modalCadastroPublicacao-controller.js" />
     <Content Include="Modules\Home\ModalCadastroPublicacao\modalCadastroPublicacao-directive.js" />
     <Content Include="Modules\Home\ModalCadastroPublicacao\modalCadastroPublicacao-module.js" />
+    <Content Include="Modules\Perfil\perfil-controller.js" />
+    <Content Include="Modules\Perfil\perfil-module.js" />
+    <Content Include="Modules\Perfil\perfil-router.js" />
+    <Content Include="Modules\Perfil\perfil-service.js" />
+    <Content Include="Modules\Pesquisa\pesquisa-controller.js" />
+    <Content Include="Modules\Pesquisa\pesquisa-module.js" />
+    <Content Include="Modules\Pesquisa\pesquisa-router.js" />
+    <Content Include="Modules\Pesquisa\pesquisa-service.js" />
+    <Content Include="Modules\PublicacaoCompleta\publicacaoCompleta-controller.js" />
+    <Content Include="Modules\PublicacaoCompleta\publicacaoCompleta-module.js" />
+    <Content Include="Modules\PublicacaoCompleta\publicacaoCompleta-router.js" />
+    <Content Include="Modules\PublicacaoCompleta\publicacaoCompleta-service.js" />
     <Content Include="Modules\Shared\atalhos.js" />
     <Content Include="Modules\Shared\Cabecalho\cabecalho-controller.js" />
     <Content Include="Modules\Shared\Cabecalho\cabecalho-directive.js" />
@@ -253,10 +268,16 @@
     <Content Include="Modules\Shared\ModalSucesso\modalSucesso-controller.js" />
     <Content Include="Modules\Shared\ModalSucesso\modalSucesso-directive.js" />
     <Content Include="Modules\Shared\ModalSucesso\modalSucesso-module.js" />
+    <Content Include="Modules\Shared\Publicacao\publicacao-directive.js" />
+    <Content Include="Modules\Shared\Publicacao\publicacao-service.js" />
     <Content Include="Modules\Shared\Rodape\rodape-controller.js" />
     <Content Include="Modules\Shared\Rodape\rodape-directive.js" />
     <Content Include="Modules\Shared\Rodape\rodape-module.js" />
     <Content Include="Modules\Shared\Rodape\rodape-service.js" />
+    <Content Include="Modules\Shared\SugestaoPublicacao\sugestaoPublicacao-directive.js" />
+    <Content Include="Modules\Shared\SugestaoPublicacao\sugestaoPublicacao-service.js" />
+    <Content Include="Modules\Shared\SugestaoUsuario\sugestaoUsuario-directive.js" />
+    <Content Include="Modules\Shared\SugestaoUsuario\sugestaoUsuario-service.js" />
     <Content Include="Modules\Shared\tccenter-config.js" />
     <Content Include="Modules\Shared\balcao-enum.js" />
     <Content Include="Modules\Shared\interceptor.js" />
@@ -309,6 +330,12 @@
     <Content Include="Modules\Home\ModalCadastroPublicacao\ModalCadastroPublicacao.cshtml" />
     <Content Include="Modules\Shared\ModalSucesso\ModalSucesso.cshtml" />
     <Content Include="Modules\EditarPerfil\EditarPerfil.cshtml" />
+    <Content Include="Modules\Shared\Publicacao\publicacao.cshtml" />
+    <Content Include="Modules\Shared\SugestaoPublicacao\sugestaopublicacao.cshtml" />
+    <Content Include="Modules\Shared\SugestaoUsuario\sugestaousuario.cshtml" />
+    <Content Include="Modules\Perfil\Perfil.cshtml" />
+    <Content Include="Modules\Pesquisa\Pesquisa.cshtml" />
+    <Content Include="Modules\PublicacaoCompleta\PublicacaoCompleta.cshtml" />
     <None Include="Properties\PublishProfiles\araujo.balcao.pubxml" />
     <None Include="Properties\PublishProfiles\araujo.web.pubxml" />
     <None Include="Properties\PublishProfiles\LOCAL.pubxml" />

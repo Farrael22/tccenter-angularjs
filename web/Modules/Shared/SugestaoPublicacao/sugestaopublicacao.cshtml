@@ -1,0 +1,52 @@
+﻿<div class="borda-perfil" style="margin-top:15px;" ng-init="ctrl.iniciarSugestaoPublicacao()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row" style="text-align: center">
+                <div class="col-md-3">
+                    <a ng-click="ctrl.exibirPerfilUsuario(ctrl.Usuario.Id)">
+                        <img src="~/Assets/Images/foto.jpg" @*src="~/Images/Profile/{{ctrl.Usuario.Avatar}}"*@ class="fotinha-perfil">
+                    </a>
+                </div>
+                <div class="col-md-6">
+
+                    <h4 style="margin-top:5%">
+                        <a ng-click="ctrl.exibirPerfilUsuario(ctrl.Usuario.Id)">
+                            {{ctrl.Usuario.Nome}}
+                        </a>
+                    </h4>
+                </div>
+                <div class="col-md-3 espacamento-formulario">
+                    <a ng-click="ctrl.editarUsuario()">
+                        <i class="material-icons" style="cursor: pointer">edit</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row" style=" text-align: center">
+        <div class="col-md-6">
+            <p style="text-align:center">Publicações <br /><span>{{ctrl.quantidadePublicacoes}}</span></p>
+        </div>
+        <div class="col-md-6">
+            <p style="text-align:center">Seguidores <br /><span>{{ctrl.quantidadeSeguidores}}</span></p>
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <strong>Seguindo</strong>
+            <ul class="list-inline">
+                <li class="list-inline-item fotinha" ng-repeat="item in ctrl.usuariosSeguidos" style="width: 25%; text-align: center;">
+                    <div style="text-align: center">
+                        <a ng-click="ctrl.exibirPerfilUsuario(item.Id)">
+                            <img src="~/Assets/Images/foto.jpg" @*src="~/Images/Profile/{{item.Avatar}}"*@ class="fotinha">
+                        </a>
+                    </div>
+                    <span>{{ctrl.exibirPrimeiroNome(item.Nome)}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

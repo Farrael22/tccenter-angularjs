@@ -22,6 +22,9 @@ Colocar neste arquivo toda configuracao global relacionada ao Angular
         "tccenter.cadastroCliente",
         "tccenter.home",
         "tccenter.editarPerfil",
+        "tccenter.perfil",
+        "tccenter.pesquisa",
+        "tccenter.publicacaoCompleta",
         "tccenter.modalCadastroPublicacao"
     ]);
     
