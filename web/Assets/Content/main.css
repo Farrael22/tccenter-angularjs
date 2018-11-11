@@ -104,8 +104,18 @@ a {
     width: calc(100% - 120px);
 }
 
+.input-formulario-editar {
+    display: inline-block;
+    width: calc(100% - 170px);
+}
+
+.label-formulario-editar {
+    display: inline-block;
+    width: 150px;
+}
+
 .texto-branco {
-    color: white;
+    color: white !important;
     cursor: pointer;
 }
 

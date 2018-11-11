@@ -164,6 +164,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="Modules\BaseController.cs" />
     <Compile Include="Modules\CadastroCliente\CadastroClienteController.cs" />
+    <Compile Include="Modules\EditarPerfil\EditarPerfilController.cs" />
     <Compile Include="Modules\Home\HomeController.cs" />
     <Compile Include="Modules\Login\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -182,6 +183,7 @@
     <Content Include="Assets\Content\Shared\informacaoPerfil.css" />
     <Content Include="Assets\Content\Shared\modalAlertaErro.css" />
     <Content Include="Assets\Content\Shared\modalLoading.css" />
+    <Content Include="Assets\Content\Shared\modalSucesso.css" />
     <Content Include="Assets\Content\Shared\notificacao.css" />
     <Content Include="Assets\Content\Shared\tituloPagina.css" />
     <Content Include="Assets\Images\find-in-page.png" />
@@ -210,6 +212,10 @@
     <Content Include="Modules\CadastroCliente\cadastroCliente-module.js" />
     <Content Include="Modules\CadastroCliente\cadastroCliente-router.js" />
     <Content Include="Modules\CadastroCliente\cadastroCliente-service.js" />
+    <Content Include="Modules\EditarPerfil\editarPerfil-controller.js" />
+    <Content Include="Modules\EditarPerfil\editarPerfil-module.js" />
+    <Content Include="Modules\EditarPerfil\editarPerfil-router.js" />
+    <Content Include="Modules\EditarPerfil\editarPerfil-service.js" />
     <Content Include="Modules\Home\home-controller.js" />
     <Content Include="Modules\Home\home-module.js" />
     <Content Include="Modules\Home\home-router.js" />
@@ -244,6 +250,9 @@
     <Content Include="Modules\Login\login-service.js" />
     <Content Include="Modules\Login\login-router.js" />
     <Content Include="Modules\Login\login-module.js" />
+    <Content Include="Modules\Shared\ModalSucesso\modalSucesso-controller.js" />
+    <Content Include="Modules\Shared\ModalSucesso\modalSucesso-directive.js" />
+    <Content Include="Modules\Shared\ModalSucesso\modalSucesso-module.js" />
     <Content Include="Modules\Shared\Rodape\rodape-controller.js" />
     <Content Include="Modules\Shared\Rodape\rodape-directive.js" />
     <Content Include="Modules\Shared\Rodape\rodape-module.js" />
@@ -298,6 +307,8 @@
     <Content Include="Modules\Home\Home.cshtml" />
     <Content Include="Modules\Shared\InformacaoPerfil\informacaoperfil.cshtml" />
     <Content Include="Modules\Home\ModalCadastroPublicacao\ModalCadastroPublicacao.cshtml" />
+    <Content Include="Modules\Shared\ModalSucesso\ModalSucesso.cshtml" />
+    <Content Include="Modules\EditarPerfil\EditarPerfil.cshtml" />
     <None Include="Properties\PublishProfiles\araujo.balcao.pubxml" />
     <None Include="Properties\PublishProfiles\araujo.web.pubxml" />
     <None Include="Properties\PublishProfiles\LOCAL.pubxml" />

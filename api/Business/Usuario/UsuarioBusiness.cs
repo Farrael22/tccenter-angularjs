@@ -7,6 +7,7 @@ using tccenter.api.DataAccess.Repository.TopicosInteressantes;
 using tccenter.api.DataAccess.Repository.Usuario;
 using tccenter.api.Domain.DTO;
 using tccenter.api.Domain.Entity;
+using tccenter.api.Helpers;
 using tccenter.api.Helpers.Exceptions;
 
 namespace tccenter.api.Business.Usuario
@@ -31,7 +32,9 @@ namespace tccenter.api.Business.Usuario
             if (string.IsNullOrWhiteSpace(infoLogin.Email) || string.IsNullOrWhiteSpace(infoLogin.Senha))
                 throw new BadRequestException("A informação de Email e Senha devem ser enviados");
 
-            var idUsuarioCadastrado = _usuarioRepository.ValidarInformacoesLogin(infoLogin.Email, infoLogin.Senha);
+            var senhaCriptografada = CriptografiaSenha.Crypt(infoLogin.Senha);
+
+            var idUsuarioCadastrado = _usuarioRepository.ValidarInformacoesLogin(infoLogin.Email, senhaCriptografada);
 
             if (idUsuarioCadastrado.Count() == 0)
                 throw new BadRequestException("As informações de login estão inválidas");
@@ -46,8 +49,17 @@ namespace tccenter.api.Business.Usuario
 
         public int AlterarUsuario(UsuarioDTO infoUsuario)
         {
-            if (infoUsuario == null)
-                throw new BadRequestException("As informações do usuário não foram enviadas para a API");
+            if (!string.IsNullOrWhiteSpace(infoUsuario.Senha) && !string.IsNullOrWhiteSpace(infoUsuario.SenhaAntiga))
+            {
+                var senhaAntigaCriptografada = CriptografiaSenha.Crypt(infoUsuario.SenhaAntiga);
+                var idUsuarioValido = _usuarioRepository.ValidarSenha(infoUsuario.Id, senhaAntigaCriptografada);
+
+                if (idUsuarioValido != infoUsuario.Id)
+                    throw new BadRequestException("A senha antiga informada está incorreta.");
+
+                var senhaNovaCriptografada = CriptografiaSenha.Crypt(infoUsuario.Senha);
+                _usuarioRepository.AlterarSenhaUsuario(infoUsuario.Id, senhaNovaCriptografada);
+            }
 
             var usuarioEntity = Mapper.Map<UsuarioEntity>(infoUsuario);
 
@@ -67,8 +79,7 @@ namespace tccenter.api.Business.Usuario
 
         public int CadastrarUsuario(UsuarioDTO infoUsuario)
         {
-            if (infoUsuario == null)
-                throw new BadRequestException("As informações do usuário não foram enviadas para a API");
+            infoUsuario.Senha = CriptografiaSenha.Crypt(infoUsuario.Senha);
 
             var usuarioEntity = Mapper.Map<UsuarioEntity>(infoUsuario);
 
@@ -104,8 +115,10 @@ namespace tccenter.api.Business.Usuario
                     topicoMestre.TopicosInteressantes = new List<TopicosInteressantesDTO>();
 
                 topicoMestre.TopicosInteressantes.Add(new TopicosInteressantesDTO()
-                                                        { IdTopicosInteressantes = item.IdTopicosInteressantes,
-                                                          DescricaoTopico = item.DescricaoTopico });
+                {
+                    IdTopicosInteressantes = item.IdTopicosInteressantes,
+                    DescricaoTopico = item.DescricaoTopico
+                });
             }
             usuarioDTO.TopicosInteressesMestre = listaTopicoMestre;
 
@@ -126,6 +139,16 @@ namespace tccenter.api.Business.Usuario
         {
             var listaUsuarios = Mapper.Map<List<UsuarioDTO>>(_usuarioRepository.BuscarUsuariosSeguidos(idUsuario));
             return listaUsuarios.ToList();
+        }
+
+        public UsuarioDTO BuscarPorId(int idUsuario)
+        {
+            var usuarioDTO = this.BuscarInformacoesUsuario(idUsuario);
+
+            if (usuarioDTO == null)
+                throw new NotFoundException("Usuario não encontrado");
+
+            return usuarioDTO;
         }
     }
 }

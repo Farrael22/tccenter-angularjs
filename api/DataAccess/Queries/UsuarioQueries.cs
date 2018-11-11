@@ -21,6 +21,20 @@ namespace tccenter.api.DataAccess.Queries
             }
         }
 
+        public static string VALIDAR_SENHA_USUARIO
+        {
+            get
+            {
+                return @"
+                    SELECT 
+                    	IdUsuario
+                    FROM USUARIO
+                    WHERE IdUsuario = @IdUsuario 
+                    AND SenhaUsuario = @Senha
+            ";
+            }
+        }
+
         public static string CADASTRAR_USUARIO
         {
             get
@@ -39,6 +53,18 @@ namespace tccenter.api.DataAccess.Queries
             }
         }
 
+        public static string ALTERAR_SENHA_USUARIO
+        {
+            get
+            {
+                return @"
+                        UPDATE Usuario
+                        SET 
+                            SenhaUsuario = @Senha
+                        WHERE IdUsuario = @IdUsuario";
+            }
+        }
+
         public static string ALTERAR_USUARIO
         {
             get
@@ -47,7 +73,6 @@ namespace tccenter.api.DataAccess.Queries
                         UPDATE Usuario
                         SET 
                             NomeUsuario = @Nome, 
-                            SenhaUsuario = @Senha, 
                             ProfissaoUsuario = @Profissao
                         WHERE IdUsuario = @IdUsuario";
             }

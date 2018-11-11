@@ -11,5 +11,6 @@ namespace tccenter.api.Business.Usuario
         int BuscarQuantidadePublicacao(int idUsuario);
         int BuscarQuantidadeSeguidores(int idUsuario);
         List<UsuarioDTO> BuscarUsuariosSeguidos(int idUsuario);
+        UsuarioDTO BuscarPorId(int idUsuario);
     }
 }

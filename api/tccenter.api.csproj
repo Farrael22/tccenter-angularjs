@@ -244,6 +244,7 @@
     <Compile Include="Domain\Entity\TopicosInteressantesEntity.cs" />
     <Compile Include="Domain\Entity\UsuarioEntity.cs" />
     <Compile Include="Domain\Enum\SqlExceptionEnum.cs" />
+    <Compile Include="Helpers\CriptografiaSenha.cs" />
     <Compile Include="Helpers\DataAccess\ClienteApiBase.cs" />
     <Compile Include="Helpers\DataAccess\ConfigCtor.cs" />
     <Compile Include="Helpers\DataAccess\RequisicaoRest.cs" />

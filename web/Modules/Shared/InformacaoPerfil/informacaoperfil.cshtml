@@ -1,4 +1,4 @@
-﻿<div class="borda-perfil" style="margin-top:15px;">
+﻿<div class="borda-perfil" style="margin-top:15px;" ng-init="ctrl.iniciarInformacoesPerfil()">
     <div class="row">
         <div class="col-md-12">
             <div class="row" style="text-align: center">
@@ -16,8 +16,8 @@
                     </h4>
                 </div>
                 <div class="col-md-3 espacamento-formulario">
-                    <a ng-click="ctrl.editarUsuario(ctrl.Usuario)">
-                        <i class="material-icons">edit</i>
+                    <a ng-click="ctrl.editarUsuario()">
+                        <i class="material-icons" style="cursor: pointer">edit</i>
                     </a>
                 </div>
             </div>

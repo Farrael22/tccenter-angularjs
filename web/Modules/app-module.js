@@ -18,8 +18,10 @@ Colocar neste arquivo toda configuracao global relacionada ao Angular
         "tccenter.cabecalho",
         "tccenter.rodape",
         "tccenter.modalAlertaErro",
+        "tccenter.modalSucesso",
         "tccenter.cadastroCliente",
         "tccenter.home",
+        "tccenter.editarPerfil",
         "tccenter.modalCadastroPublicacao"
     ]);
     

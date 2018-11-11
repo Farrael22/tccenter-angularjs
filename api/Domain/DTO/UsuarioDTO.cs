@@ -9,6 +9,7 @@ namespace tccenter.api.Domain.DTO
         public string Avatar { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
+        public string SenhaAntiga { get; set; }
         public string Profissao { get; set; }
         public List<TopicoMestreDTO> TopicosInteressesMestre { get; set; }
     }

@@ -1,4 +1,4 @@
-﻿angular.module("balcao.modalSucesso").controller("modalSucessoController", function ($scope, $rootScope, $timeout, Util, ElementoAtivoFactory, AtalhosFactory) {
+﻿angular.module("tccenter.modalSucesso").controller("modalSucessoController", function ($scope, $rootScope, $timeout, Util, ElementoAtivoFactory, AtalhosFactory) {
     var vm = this;
 
     vm.exibirModal = false;

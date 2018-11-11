@@ -1,4 +1,4 @@
-﻿angular.module("balcao.modalSucesso").directive('modalsucesso', function () {
+﻿angular.module("tccenter.modalSucesso").directive('modalsucesso', function () {
     return {
         templateUrl: "/Shared/ModalSucesso/ModalSucesso"
     };

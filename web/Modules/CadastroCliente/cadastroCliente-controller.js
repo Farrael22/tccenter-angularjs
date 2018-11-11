@@ -62,7 +62,6 @@
 
     vm.cadastrarUsuario = function () {
         var topicos = [];
-        var topicosInteressantes = [];
         vm.validarNomeUsuario();
         vm.validarEmailUsuario();
         vm.validarSenhaUsuario();

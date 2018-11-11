@@ -103,6 +103,7 @@
 
     function cadastrarPublicacaoSucessoCallBack() {
         vm.limparFormulario();
+        EventosFactory.mensagemDeSucesso($scope, "A publicação foi cadastrada com sucesso!");
     }
 
     function cadastrarPublicacaoErroCallBack(mensagem) {
@@ -125,5 +126,7 @@
         vm.esc();
     });
 
-    AtalhosFactory.criarAtalho($scope, ['tab'], function () {});
+    AtalhosFactory.criarAtalho($scope, ['esc'], function () {
+        vm.esc();
+    });
 });

@@ -15,6 +15,16 @@ namespace tccenter.api.DataAccess.Repository.Usuario
                     new { Email = email, Senha = senha });
             }
         }
+
+        public int ValidarSenha(int idUsuario, string senha)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.ExecuteScalar<int>(UsuarioQueries.VALIDAR_SENHA_USUARIO,
+                    new { IdUsuario = idUsuario, Senha = senha });
+            }
+        }
+
         public int CadastarUsuario(UsuarioEntity usuario)
         {
             using (var transaction = new TransactionHelperTccenter())
@@ -65,7 +75,16 @@ namespace tccenter.api.DataAccess.Repository.Usuario
             using (var transaction = new TransactionHelperTccenter())
             {
                 transaction.Execute(UsuarioQueries.ALTERAR_USUARIO,
-                    new { IdUsuario = usuario.Id, Nome = usuario.Nome, Senha = usuario.Senha, Profissao = usuario.Profissao });
+                    new { IdUsuario = usuario.Id, Nome = usuario.Nome, Profissao = usuario.Profissao });
+            }
+        }
+
+        public void AlterarSenhaUsuario(int idUsuario, string senha)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                transaction.Execute(UsuarioQueries.ALTERAR_SENHA_USUARIO,
+                    new { IdUsuario = idUsuario, Senha = senha });
             }
         }
     }

@@ -10,14 +10,16 @@
     };
 });
 
-informacaoperfilController.$inject = ['$scope', 'ElementoAtivoFactory', 'TccenterStorage', 'InformacaoPerfilService'];
-function informacaoperfilController($scope, ElementoAtivoFactory, TccenterStorage, InformacaoPerfilService) {
+informacaoperfilController.$inject = ['$scope', '$location', 'ElementoAtivoFactory', 'TccenterStorage', 'InformacaoPerfilService'];
+function informacaoperfilController($scope, $location, ElementoAtivoFactory, TccenterStorage, InformacaoPerfilService) {
     var vm = this;
-    vm.Usuario = TccenterStorage.obterUsuario();
 
-    buscarQuantidadePublicacoesUsuario();
-    buscarQuantidadeSeguidoresUsuario();
-    buscarUsuariosSeguidos();
+    vm.iniciarInformacoesPerfil = function () {
+        vm.Usuario = TccenterStorage.obterUsuario();
+        buscarQuantidadePublicacoesUsuario();
+        buscarQuantidadeSeguidoresUsuario();
+        buscarUsuariosSeguidos();
+    };
 
     function buscarQuantidadePublicacoesUsuario() {
         InformacaoPerfilService.buscarQuantidadePublicacoesUsuario(vm.Usuario.Id, buscarQuantidadePublicacoesUsuarioSucesso, buscarQuantidadePublicacoesUsuarioErro);
@@ -56,10 +58,14 @@ function informacaoperfilController($scope, ElementoAtivoFactory, TccenterStorag
     };
 
     vm.editarUsuario = function () {
-
+        $location.path("editarPerfil");
     };
 
     vm.exibirPrimeiroNome = function (nome) {
         return nome.split(' ')[0];
     };
+
+    var eventoAbrirModalLoading = $scope.$root.$on('atualizarInfoPerfil', function () {
+        vm.iniciarInformacoesPerfil();
+    });
 }

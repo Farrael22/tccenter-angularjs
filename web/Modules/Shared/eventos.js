@@ -11,6 +11,10 @@
                 ElementoAtivoFactory.definirElementoFocoRetornoModal('AlertaErro', elemento);
                 scope.$emit('abrirModalAlerta', mensagem, config);
             },
+            mensagemDeSucesso: function (scope, mensagem, elemento, config) {
+                ElementoAtivoFactory.definirElementoFocoRetornoModal('Sucesso', elemento);
+                scope.$emit('abrirModalSucesso', mensagem, config);
+            },
             abrirModal: function (scope, nome, parametros, elementoFocoRetorno) {
                 ElementoAtivoFactory.definirElementoFocoRetornoModal(nome, elementoFocoRetorno);
                 scope.$emit('abrirModal' + nome, parametros);

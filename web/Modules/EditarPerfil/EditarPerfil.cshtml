@@ -1,0 +1,94 @@
+﻿<cabecalho></cabecalho>
+
+<div ng-controller="EditarPerfilController as ctrl" ng-init="ctrl.iniciarEditarPerfil()">
+    <modalSucesso></modalSucesso>
+    <modalAlertaErro></modalAlertaErro>
+    <div class="row container-principal">
+        <div class="col-md-3">
+            <informacaoperfil></informacaoperfil>
+        </div>
+        <div class="col-md-9 espacamento-formulario centralizar">
+            <form id="editar-perfil">
+                <div class="form-group row">
+                    <div class="alinhamento-esquerda inline">
+                        <label class="label-formulario-editar  label-16 alinhamento-esquerda">
+                            Nome: <span class="campo-obrigatorio">*</span>
+                        </label>
+                    </div>
+                    <div class="input-formulario-editar">
+                        <input ng-model="ctrl.Usuario.Nome"
+                               class="form-control {{ctrl.nomeValido ? '' : 'input-valor-invalido'}}"
+                               type="text">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="alinhamento-esquerda inline">
+                        <label class="label-formulario-editar  label-16 alinhamento-esquerda">
+                            Profissão: <span class="campo-obrigatorio">*</span>
+                        </label>
+                    </div>
+                    <div class="input-formulario-editar">
+                        <input ng-model="ctrl.Usuario.Profissao"
+                               class="form-control {{ctrl.profissaoValida ? '' : 'input-valor-invalido'}}"
+                               type="text">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="alinhamento-esquerda">
+                        <label class="label-16 label-formulario-editar">Interesses:</label>
+                    </div>
+                    <br />
+                    <div class="col-sm-12 alinhamento-esquerda scroll-topicos">
+                        <div class="espacamento-formulario" ng-repeat="(idx, item) in ctrl.topicoMestre">
+                            <label class="label-14">{{idx+1}} - {{item.DescricaoTopicoMestre}}:</label>
+                            <div ng-repeat="(idx, item) in item.TopicosInteressantes">
+                                <div class="col-sm-4 nopad chk-topicos-interessantes alinhamento-esquerda" style="height:50px">
+                                    <div class="chk-id-topico alinhamento-esquerda">
+                                        <input type="checkbox" value="{{item.IdTopicosInteressantes}}" ng-click="ctrl.marcarCheck(item)" ng-checked="{{item.checked}}" />
+                                    </div><div class="chk-descricao-topico">
+                                        <label>{{item.DescricaoTopico}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="alinhamento-esquerda inline">
+                        <label class="label-formulario-editar  label-16 alinhamento-esquerda">
+                            Senha Antiga: <span class="campo-obrigatorio"></span>
+                        </label>
+                    </div>
+                    <div class="input-formulario-editar" style="text-align: left">
+                        <input ng-model="ctrl.Usuario.SenhaAntiga"
+                               class="form-control {{ctrl.senhaAntigaValida ? '' : 'input-valor-invalido'}}"
+                               type="password">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="alinhamento-esquerda inline">
+                        <label class="label-formulario-editar  label-16 alinhamento-esquerda">
+                            Senha Nova: <span class="campo-obrigatorio"></span>
+                        </label>
+                    </div>
+                    <div class="input-formulario-editar" style="text-align: left">
+                        <input ng-model="ctrl.Usuario.Senha"
+                               class="form-control {{ctrl.senhaValida ? '' : 'input-valor-invalido'}}"
+                               type="password">
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-md-12 margin-50">
+                        <input type="button" value="Salvar" class="botao-modal" ng-click="ctrl.salvarAlteracoesUsuario();" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<rodape></rodape>

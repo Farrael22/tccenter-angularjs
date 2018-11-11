@@ -12,5 +12,7 @@ namespace tccenter.api.DataAccess.Repository.Usuario
         int BuscarQuantidadePublicacao(int idUsuario);
         int BuscarQuantidadeSeguidores(int idUsuario);
         IEnumerable<UsuarioEntity> BuscarUsuariosSeguidos(int idUsuario);
+        int ValidarSenha(int idUsuario, string senha);
+        void AlterarSenhaUsuario(int idUsuario, string senha);
     }
 }

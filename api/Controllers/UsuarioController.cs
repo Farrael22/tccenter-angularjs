@@ -55,6 +55,18 @@ namespace tccenter.api.Controllers
         }
 
         [AllowAnonymous]
+        [Route("buscarPorId", Name = "buscarPorId")]
+        [HttpGet]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "ObterListagemKitsVirtuais", Type = typeof(UsuarioDTO))]
+        [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
+        public IHttpActionResult BuscarPorId([FromUri] int idUsuario)
+        {
+            var result = _camadaBusiness.BuscarPorId(idUsuario);
+
+            return Encontrado(result);
+        }
+
+        [AllowAnonymous]
         [Route("quantidadePublicacao", Name = "quantidadePublicacao")]
         [HttpGet]
         [SwaggerResponse(HttpStatusCode.OK, Description = "ObterListagemKitsVirtuais", Type = typeof(int))]

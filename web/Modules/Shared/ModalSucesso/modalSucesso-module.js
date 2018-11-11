@@ -1,1 +1,1 @@
-﻿angular.module('balcao.modalSucesso', []);
+﻿angular.module('tccenter.modalSucesso', []);

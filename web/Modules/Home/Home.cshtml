@@ -7,17 +7,8 @@
         <div class="col-md-3">
             <informacaoperfil usuario="ctrl.Usuario"></informacaoperfil>
         </div>
-        <div class="col-md-6">
-            <div class="div-cadastro-publicacao" ng-click="ctrl.exibirEsconderCadastro()">
-                <div ng-show="!ctrl.exibirCadastroPublicacao">
-                    Exibir Cadastro de Publicacao (CTRL + P)
-                    <i class="material-icons">keyboard_arrow_down</i>
-                </div>
-                <div ng-show="ctrl.exibirCadastroPublicacao">
-                    Ocultar Cadastro de Publicacao (CTRL + P)
-                    <i class="material-icons">keyboard_arrow_up</i>
-                </div>
-            </div>
+        <div class="col-md-6 espacamento-formulario centralizar">
+            <input type="button" class="botao-modal" value="Cadastrar Publicação" ng-click="$event.stopPropagation(); ctrl.exibirCadastro()">
         </div>
         <div class="col-md-3">
 

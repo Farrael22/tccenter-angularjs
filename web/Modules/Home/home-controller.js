@@ -6,7 +6,6 @@
 
     var vm = this;
     vm.TopicosInteressantes = [];
-    vm.exibirCadastroPublicacao = false;
 
     vm.iniciarHome = function () {
         AtalhosFactory.iniciarAtalhosDaTela($scope);
