@@ -13,5 +13,15 @@ namespace tccenter.api.DataAccess.Repository.InteressesUsuarios
                     new { IdUsuario = idUsuario, IdTopicoMestre = idTopicoMestre, IdTopicoInteresse = idTopicoInteresse });
             }
         }
+
+
+        public void DeletarInteressesUsuario(int idUsuario)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                transaction.Execute(InteressesUsuariosQueries.DELETAR_INTERESSES_USUARIO,
+                    new { IdUsuario = idUsuario });
+            }
+        }
     }
 }

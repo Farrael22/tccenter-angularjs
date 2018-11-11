@@ -31,6 +31,18 @@ namespace tccenter.api.Controllers
         }
 
         [AllowAnonymous]
+        [Route("alterar", Name = "alterar")]
+        [HttpPost]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "Cadastro realizado com sucesso", Type = typeof(int))]
+        [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
+        public IHttpActionResult AlterarUsuario([FromBody] UsuarioDTO infoUsuario)
+        {
+            var result = _camadaBusiness.AlterarUsuario(infoUsuario);
+
+            return Encontrado(result);
+        }
+
+        [AllowAnonymous]
         [Route("login", Name = "login")]
         [HttpPost]
         [SwaggerResponse(HttpStatusCode.OK, Description = "ObterListagemKitsVirtuais", Type = typeof(UsuarioDTO))]

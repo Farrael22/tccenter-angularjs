@@ -11,6 +11,5 @@ namespace tccenter.api.Domain.DTO
         public string Senha { get; set; }
         public string Profissao { get; set; }
         public List<TopicoMestreDTO> TopicosInteressesMestre { get; set; }
-        public List<PublicacaoDTO> Publicacoes { get; set; }
     }
 }

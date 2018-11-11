@@ -39,6 +39,20 @@ namespace tccenter.api.DataAccess.Queries
             }
         }
 
+        public static string ALTERAR_USUARIO
+        {
+            get
+            {
+                return @"
+                        UPDATE Usuario
+                        SET 
+                            NomeUsuario = @Nome, 
+                            SenhaUsuario = @Senha, 
+                            ProfissaoUsuario = @Profissao
+                        WHERE IdUsuario = @IdUsuario";
+            }
+        }
+
         public static string BUSCAR_INFORMACOES_USUARIO
         {
             get

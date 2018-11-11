@@ -44,6 +44,27 @@ namespace tccenter.api.Business.Usuario
             return usuarioDTO;
         }
 
+        public int AlterarUsuario(UsuarioDTO infoUsuario)
+        {
+            if (infoUsuario == null)
+                throw new BadRequestException("As informações do usuário não foram enviadas para a API");
+
+            var usuarioEntity = Mapper.Map<UsuarioEntity>(infoUsuario);
+
+            _usuarioRepository.AlterarUsuario(usuarioEntity);
+            _interesseUsuarioRepositoy.DeletarInteressesUsuario(infoUsuario.Id);
+
+            foreach (var item in infoUsuario.TopicosInteressesMestre)
+            {
+                foreach (var topico in item.TopicosInteressantes)
+                {
+                    _interesseUsuarioRepositoy.CadastrarTopicoInteressante(infoUsuario.Id, item.IdTopicoMestre, topico.IdTopicosInteressantes);
+                }
+            }
+
+            return infoUsuario.Id;
+        }
+
         public int CadastrarUsuario(UsuarioDTO infoUsuario)
         {
             if (infoUsuario == null)

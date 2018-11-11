@@ -7,6 +7,7 @@ namespace tccenter.api.Business.Usuario
     {
         UsuarioDTO EfetuarLogin(LoginDTO infoLogin);
         int CadastrarUsuario(UsuarioDTO infoUsuario);
+        int AlterarUsuario(UsuarioDTO infoUsuario);
         int BuscarQuantidadePublicacao(int idUsuario);
         int BuscarQuantidadeSeguidores(int idUsuario);
         List<UsuarioDTO> BuscarUsuariosSeguidos(int idUsuario);

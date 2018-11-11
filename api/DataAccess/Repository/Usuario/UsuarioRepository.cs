@@ -59,5 +59,14 @@ namespace tccenter.api.DataAccess.Repository.Usuario
                     new { IdUsuario = idUsuario });
             }
         }
+
+        public void AlterarUsuario(UsuarioEntity usuario)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                transaction.Execute(UsuarioQueries.ALTERAR_USUARIO,
+                    new { IdUsuario = usuario.Id, Nome = usuario.Nome, Senha = usuario.Senha, Profissao = usuario.Profissao });
+            }
+        }
     }
 }

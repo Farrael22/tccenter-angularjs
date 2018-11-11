@@ -33,5 +33,6 @@ namespace tccenter.api.DataAccess.Repository.TopicosInteressantes
                     new { IdUsuario = idUsuario });
             }
         }
+
     }
 }

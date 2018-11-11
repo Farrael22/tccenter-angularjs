@@ -19,5 +19,16 @@ namespace tccenter.api.DataAccess.Queries
             ";
             }
         }
+
+        public static string DELETAR_INTERESSES_USUARIO
+        {
+            get
+            {
+                return @"
+                    DELETE InteresseUsuario
+                    WHERE IdUsuario = @IdUsuario
+            ";
+            }
+        }
     }
 }
