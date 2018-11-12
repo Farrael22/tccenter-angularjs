@@ -87,5 +87,23 @@ namespace tccenter.api.DataAccess.Repository.Usuario
                     new { IdUsuario = idUsuario, Senha = senha });
             }
         }
+
+        public int SeguirUsuario(int idUsuarioLogado, int idSeguir)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.ExecuteScalar<int>(UsuarioQueries.SEGUIR_USUARIO,
+                    new { IdUsuarioSeguidor = idUsuarioLogado, IdUsuarioSeguir = idSeguir });
+            }
+        }
+
+        public void PararSeguirUsuario(int idUsuarioLogado, int idPararSeguir)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                transaction.Execute(UsuarioQueries.PARAR_SEGUIR_USUARIO,
+                    new { IdUsuarioSeguidor = idUsuarioLogado, IdPararSeguir = idPararSeguir });
+            }
+        }
     }
 }

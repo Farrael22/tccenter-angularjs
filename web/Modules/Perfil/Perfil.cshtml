@@ -1,17 +1,41 @@
 ﻿<cabecalho></cabecalho>
 
 <div ng-controller="PerfilController as ctrl" ng-init="ctrl.iniciarPerfil()">
-    <modalcadastropublicacao></modalcadastropublicacao>
     <modalAlertaErro></modalAlertaErro>
     <div class="row container-principal">
         <div class="col-md-3">
-            <informacaoperfil usuario="ctrl.Usuario"></informacaoperfil>
+            <informacaoperfil></informacaoperfil>
         </div>
-        <div class="col-md-6 espacamento-formulario centralizar">
-            <input type="button" class="botao-modal" value="Cadastrar Publicação" ng-click="$event.stopPropagation(); ctrl.exibirCadastro()">
-        </div>
-        <div class="col-md-3">
-
+        <div class="col-md-9 espacamento-formulario centralizar">
+            <div class="row" style="text-align: center">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <img src="~/Assets/Images/foto.jpg" @*src="~/Images/Profile/{{ctrl.Usuario.Avatar}}"*@ class="fotinha-perfil">
+                </div>
+                <div class="col-md-3">
+                    <div ng-show="ctrl.UsuarioPerfil.Id !== ctrl.UsuarioLogado.Id">
+                        <i class="material-icons" style="cursor: pointer" ng-show="!ctrl.usuarioSeguido" ng-click="ctrl.seguirUsuario()">add_circle</i>
+                        <i class="material-icons" style="cursor: pointer" ng-show="ctrl.usuarioSeguido" ng-click="ctrl.pararDeSeguirUsuario()">remove_circle</i>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="text-align: center">
+                <div class="col-md-12">
+                    <h3>
+                        {{ctrl.UsuarioPerfil.Nome}}
+                    </h3>
+                </div>
+            </div>
+            <br />
+            <div class="row" style="text-align: center">
+                <div class="col-md-6">
+                    <p style="text-align:center">Publicações <br /><span>{{ctrl.quantidadePublicacoes}}</span></p>
+                </div>
+                <div class="col-md-6">
+                    <p style="text-align:center">Seguidores <br /><span>{{ctrl.quantidadeSeguidores}}</span></p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -53,8 +53,9 @@ function informacaoperfilController($scope, $location, ElementoAtivoFactory, Tcc
         vm.usuariosSeguidos = data;
     }
 
-    vm.exibirPerfilUsuario = function () {
-
+    vm.exibirPerfilUsuario = function (idUsuario) {
+        $scope.$root.$emit('exibirPerfilUsuario', idUsuario);
+        $location.path("perfil");
     };
 
     vm.editarUsuario = function () {

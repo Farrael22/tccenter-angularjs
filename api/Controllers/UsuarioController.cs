@@ -101,5 +101,29 @@ namespace tccenter.api.Controllers
 
             return Encontrado(result);
         }
+
+        [AllowAnonymous]
+        [Route("seguirUsuario", Name = "seguirUsuario")]
+        [HttpPost]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "ObterListagemKitsVirtuais", Type = typeof(int))]
+        [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
+        public IHttpActionResult SeguirUsuario([FromUri] int idUsuarioLogado, [FromUri] int idSeguir)
+        {
+            var result = _camadaBusiness.SeguirUsuario(idUsuarioLogado, idSeguir);
+
+            return Encontrado(result);
+        }
+
+        [AllowAnonymous]
+        [Route("pararSeguirUsuario", Name = "pararSeguirUsuario")]
+        [HttpPost]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "ObterListagemKitsVirtuais", Type = typeof(int))]
+        [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
+        public IHttpActionResult PararSeguirUsuario([FromUri] int idUsuarioLogado, [FromUri] int idPararSeguir)
+        {
+            _camadaBusiness.PararSeguirUsuario(idUsuarioLogado, idPararSeguir);
+
+            return Encontrado("OK");
+        }
     }
 }

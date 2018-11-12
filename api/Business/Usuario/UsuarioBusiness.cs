@@ -150,5 +150,21 @@ namespace tccenter.api.Business.Usuario
 
             return usuarioDTO;
         }
+
+        public int SeguirUsuario(int idUsuarioLogado, int idSeguir)
+        {
+            if(idUsuarioLogado == 0 || idSeguir == 0)
+                throw new BadRequestException("Impossível seguir usuário com as informações fornecidas.");
+
+            return _usuarioRepository.SeguirUsuario(idUsuarioLogado, idSeguir);
+        }
+
+        public void PararSeguirUsuario(int idUsuarioLogado, int idPararSeguir)
+        {
+            if (idUsuarioLogado == 0 || idPararSeguir == 0)
+                throw new BadRequestException("Impossível parar de seguir usuário com as informações fornecidas.");
+
+            _usuarioRepository.PararSeguirUsuario(idUsuarioLogado, idPararSeguir);
+        }
     }
 }

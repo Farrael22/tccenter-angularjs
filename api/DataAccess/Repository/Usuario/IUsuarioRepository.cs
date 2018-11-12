@@ -14,5 +14,7 @@ namespace tccenter.api.DataAccess.Repository.Usuario
         IEnumerable<UsuarioEntity> BuscarUsuariosSeguidos(int idUsuario);
         int ValidarSenha(int idUsuario, string senha);
         void AlterarSenhaUsuario(int idUsuario, string senha);
+        int SeguirUsuario(int idUsuarioLogado, int idSeguir);
+        void PararSeguirUsuario(int idUsuarioLogado, int idPararSeguir);
     }
 }

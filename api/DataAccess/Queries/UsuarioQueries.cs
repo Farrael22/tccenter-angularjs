@@ -133,5 +133,28 @@ namespace tccenter.api.DataAccess.Queries
                         WHERE IdUsuarioSeguidor = @IdUsuario";
             }
         }
+
+        public static string SEGUIR_USUARIO
+        {
+            get
+            {
+                return @"
+                        INSERT INTO UsuarioSeguido
+                        VALUES (@IdUsuarioSeguidor, @IdUsuarioSeguir)
+
+                        SELECT SCOPE_IDENTITY()";
+            }
+        }
+
+        public static string PARAR_SEGUIR_USUARIO
+        {
+            get
+            {
+                return @"
+                        DELETE UsuarioSeguido
+                        WHERE IdUsuarioSeguidor = @IdUsuarioSeguidor
+                        AND IdUsuarioSeguir = @IdPararSeguir";
+            }
+        }
     }
 }

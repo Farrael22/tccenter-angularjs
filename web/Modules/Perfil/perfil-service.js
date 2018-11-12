@@ -2,28 +2,40 @@
     var that = this;
     var cancelarAnterior = $q.defer();
 
-    this.buscarTopicosInteressantes = function (callbackSucesso, callbackErro) {
+    this.buscarUsuarioPorId = function (data, callbackSucesso, callbackErro) {
         cancelarAnterior.resolve();
         cancelarAnterior = $q.defer();
 
         var request = $http({
             method: "GET",
-            url: config.urlAPITccenter + 'topicosInteressantes/obter'
+            url: config.urlAPITccenter + 'usuario/buscarPorId?idUsuario=' + data
         });
 
-        Interceptor.executarCallbacks(request, null, callbackSucesso, callbackErro);
+        Interceptor.executarCallbacks(request, data, callbackSucesso, callbackErro);
     };
-
-    this.cadastrarPublicacao = function (param, callbackSucesso, callbackErro) {
+    
+    this.seguirUsuario = function (data, callbackSucesso, callbackErro) {
         cancelarAnterior.resolve();
         cancelarAnterior = $q.defer();
 
         var request = $http({
             method: "POST",
-            url: config.urlAPITccenter + 'publicacao/cadastrarPublicacao',
-            data: param
+            url: config.urlAPITccenter + 'seguirUsuario?idUsuarioLogado=' + data.idUsuarioLogado + '&idSeguir=' + data.idUsuarioSeguir
         });
 
-        Interceptor.executarCallbacks(request, param, callbackSucesso, callbackErro);
+        Interceptor.executarCallbacks(request, data, callbackSucesso, callbackErro);
     };
+
+    this.pararSeguirUsuario = function (data, callbackSucesso, callbackErro) {
+        cancelarAnterior.resolve();
+        cancelarAnterior = $q.defer();
+
+        var request = $http({
+            method: "POST",
+            url: config.urlAPITccenter + 'pararSeguirUsuario?idUsuarioLogado=' + data.idUsuarioLogado + '&idPararSeguir=' + data.idUsuarioPararSeguir
+        });
+
+        Interceptor.executarCallbacks(request, data, callbackSucesso, callbackErro);
+    };
+
 });
