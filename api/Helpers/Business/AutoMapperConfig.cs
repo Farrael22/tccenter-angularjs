@@ -17,6 +17,7 @@ namespace tccenter.api.Helpers.Business
                 cfg.CreateMap<TopicoMestreEntity, TopicoMestreDTO>();
                 cfg.CreateMap<PublicacaoEntity, PublicacaoDTO>();
                 cfg.CreateMap<OrientadorEntity, OrientadorDTO>();
+                cfg.CreateMap<MensagemDTO, MensagemEntity>();
             });
         }
 

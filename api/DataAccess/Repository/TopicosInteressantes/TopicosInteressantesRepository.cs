@@ -25,6 +25,15 @@ namespace tccenter.api.DataAccess.Repository.TopicosInteressantes
             }
         }
 
+        public IEnumerable<TopicosInteressantesEntity> ObterTopicosInteressantesPorPublicacao(int idPublicacao)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.Query<TopicosInteressantesEntity>(TopicosInteressantesQueries.OBTER_TOPICOS_INTERESSANTES_POR_PUBLICACAO,
+                    new { IdPublicacao = idPublicacao });
+            }
+        }
+
         public IEnumerable<TopicoMestreEntity> ObterTopicosMestrePorUsuario(int idUsuario)
         {
             using (var transaction = new TransactionHelperTccenter())

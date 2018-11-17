@@ -14,6 +14,8 @@ using tccenter.api.DataAccess.Repository.Publicacao;
 using tccenter.api.Business.Publicacao;
 using tccenter.api.DataAccess.Repository.Orientador;
 using tccenter.api.Business.Orientador;
+using tccenter.api.DataAccess.Repository.Mensagem;
+using tccenter.api.DataAccess.Repository.Curtida;
 
 namespace IoC
 {
@@ -30,6 +32,8 @@ namespace IoC
                 container.Register<ITopicoMestreRepository, TopicoMestreRepository>();
                 container.Register<IPublicacaoRepository, PublicacaoRepository>();
                 container.Register<IOrientadorRepository, OrientadorRepository>();
+                container.Register<IMensagemRepository, MensagemRepository>();
+                container.Register<ICurtidaRepository, CurtidaRepository>();
 
                 //Business
                 container.Register<IUsuarioBusiness, UsuarioBusiness>();

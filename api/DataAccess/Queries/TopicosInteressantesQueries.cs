@@ -36,6 +36,26 @@
             }
         }
 
+        public static string OBTER_TOPICOS_INTERESSANTES_POR_PUBLICACAO
+        {
+            get
+            {
+                return @"
+                    SELECT
+	                	mestre.IdTopicoMestre,
+						topicos.IdTopicosInteressantes,
+	                	topicos.DescTopico as DescricaoTopico
+	                FROM InteresseUsuario interesses
+	                INNER JOIN TopicosInteressantes topicos
+	                	ON interesses.IdTopicosInteressantes = topicos.IdTopicosInteressantes
+					INNER JOIN TopicoMestre mestre
+						ON mestre.IdTopicoMestre = topicos.IdTopicoMestre
+					INNER JOIN Publicacao pub
+						ON pub.IdTopicosInteressantes = topicos.IdTopicosInteressantes
+					WHERE IdPublicacao = @IdPublicacao";
+            }
+        }
+
         public static string OBTER_TOPICOS_MESTRE_POR_USUARIO
         {
             get

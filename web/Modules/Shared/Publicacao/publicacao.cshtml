@@ -1,52 +1,84 @@
-﻿<div class="borda-perfil" style="margin-top:15px;" ng-init="ctrl.iniciarPublicacao()">
+﻿<div ng-repeat="(key, n) in ctrl.array"
+     class="caxinha borda"
+     style="width: 95%">
     <div class="row">
-        <div class="col-md-12">
-            <div class="row" style="text-align: center">
-                <div class="col-md-3">
-                    <a ng-click="ctrl.exibirPerfilUsuario(ctrl.Usuario.Id)">
-                        <img src="~/Assets/Images/foto.jpg" @*src="~/Images/Profile/{{ctrl.Usuario.Avatar}}"*@ class="fotinha-perfil">
-                    </a>
-                </div>
-                <div class="col-md-6">
-
-                    <h4 style="margin-top:5%">
-                        <a ng-click="ctrl.exibirPerfilUsuario(ctrl.Usuario.Id)">
-                            {{ctrl.Usuario.Nome}}
-                        </a>
-                    </h4>
-                </div>
-                <div class="col-md-3 espacamento-formulario">
-                    <a ng-click="ctrl.editarUsuario()">
-                        <i class="material-icons" style="cursor: pointer">edit</i>
-                    </a>
-                </div>
+        <div class="col-md-12 alinhamento-esquerda">
+            <a ng-click="ctrl.exibirPerfilUsuario(n.Usuario.Id);">
+                <img src="~/Assets/Images/foto.jpg" @*src="~/Images/Profile/{{n.Usuario.Avatar}}"*@ class="fotinha">
+                <strong>{{n.Usuario.Nome}}</strong>
+            </a>
+        </div>
+    </div>
+    <div class="row espacamento-formulario">
+        <div class="alinhamento-esquerda info-publicacao">
+            <strong>Título:</strong><br />
+            <span style="text-align:justify;">{{n.TituloPublicacao}}</span>
+        </div>
+    </div>
+    <div class="row espacamento-formulario">
+        <div class="alinhamento-esquerda info-publicacao">
+            <strong>Resumo:</strong><br />
+            <span style="text-align:justify;">{{n.DescPublicacao}}</span>
+        </div>
+    </div>
+    <div class="row espacamento-formulario">
+        <div class="alinhamento-esquerda info-publicacao">
+            <strong> Produto Gerado:</strong><br />
+            <span style="text-align:justify;">{{n.ResultadoPublicacao}}</span>
+        </div>
+    </div>
+    <div class="row espacamento-formulario">
+        <div class="alinhamento-esquerda info-publicacao">
+            <strong> Orientador:</strong><br />
+            <span style="text-align:justify;">{{n.Orientador.NomeOrientador}}</span>
+        </div>
+    </div>
+    <div class="row espacamento-formulario">
+        <div class="alinhamento-esquerda info-publicacao">
+            <i>
+                <strong>Link:</strong> <br />
+                <a href="{{n.LinkPublicacao}}" style="color:gray">{{n.LinkPublicacao}}</a>
+            </i>
+        </div>
+    </div>
+    <div class="row espacamento-formulario">
+        <div class="alinhamento-esquerda info-publicacao">
+            <strong>Categoria:</strong> <br />
+            <span>{{n.TopicoInteresse.DescricaoTopico}}</span>
+        </div>
+    </div>
+    <br />
+    <div class="row espacamento-formulario">
+        <div class="col-md-12 alinhamento-direita">
+            <a ng-click="ctrl.descurtirPublicacao(n.IdPublicacao)">
+                <i class="material-icons" style="cursor: pointer" ng-show="n.Curtida">favorite</i>
+            </a>
+            <a ng-click="ctrl.curtirPublicacao(n.IdPublicacao)">
+                <i class="material-icons" style="cursor: pointer" ng-show="!n.Curtida">favorite_border</i>
+            </a>
+            <a ng-click="ctrl.exibirMensagens(key)">
+                <i class="material-icons" style="cursor: pointer">message</i>
+            </a>
+        </div>
+    </div>
+    <div class="row espacamento-formulario" ng-show="n.exibirMensagens">
+        <div class="alinhamento-esquerda">
+            <strong>Comentários:</strong> <br />
+        </div>
+        <div class="alinhamento-esquerda info-publicacao caixa-comentario">
+            <div ng-repeat="item in n.Mensagens" style="padding-top: 5px;">
+                <a ng-click="ctrl.exibirPerfilUsuario(ctrl.Usuario.Id);">
+                    <img src="~/Assets/Images/foto.jpg" @*src="~/Images/Profile/{{ctrl.Usuario.Avatar}}"*@ class="fotinha-micro">
+                    <strong>{{item.Usuario.Nome}}: </strong>
+                </a>
+                <span>{{item.DescMensagem}}</span>
             </div>
         </div>
-    </div>
-    <br />
-    <div class="row" style=" text-align: center">
-        <div class="col-md-6">
-            <p style="text-align:center">Publicações <br /><span>{{ctrl.quantidadePublicacoes}}</span></p>
-        </div>
-        <div class="col-md-6">
-            <p style="text-align:center">Seguidores <br /><span>{{ctrl.quantidadeSeguidores}}</span></p>
-        </div>
-    </div>
-
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            <strong>Seguindo</strong>
-            <ul class="list-inline">
-                <li class="list-inline-item fotinha" ng-repeat="item in ctrl.usuariosSeguidos" style="width: 25%; text-align: center;">
-                    <div style="text-align: center">
-                        <a ng-click="ctrl.exibirPerfilUsuario(item.Id)">
-                            <img src="~/Assets/Images/foto.jpg" @*src="~/Images/Profile/{{item.Avatar}}"*@ class="fotinha">
-                        </a>
-                    </div>
-                    <span>{{ctrl.exibirPrimeiroNome(item.Nome)}}</span>
-                </li>
-            </ul>
-        </div>
+        <input ng-model="n.Comentario"
+               type="text"
+               class="info-publicacao"
+               style="width: 80% !important; display:inline-block"
+               placeholder="Digite um comentário...">
+        <input type="button" value="Enviar" class="botao-modal botao-comentario" ng-click="ctrl.enviarComentario(n)" />
     </div>
 </div>

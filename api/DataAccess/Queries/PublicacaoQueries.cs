@@ -40,5 +40,26 @@
                     SELECT SCOPE_IDENTITY();";
             }
         }
+
+        public static string OBTER_PUBLICACOES_POR_INTERESSE_USUARIO
+        {
+            get
+            {
+                return @"
+                    SELECT TOP 20
+                    	IdPublicacao,
+                    	pub.IdUsuario,
+                    	TituloPublicacao,
+                    	LinkPublicacao,
+                    	DescPublicacao,
+                    	DataPublicacao,
+                    	ResultadoPublicacao
+                    FROM Publicacao pub
+                    INNER JOIN InteresseUsuario intusu
+                    ON pub.IdTopicosInteressantes = intusu.IdTopicosInteressantes
+                    AND intusu.IdUsuario = @IdUsuario
+                    ORDER BY DataPublicacao DESC";
+            }
+        }
     }
 }

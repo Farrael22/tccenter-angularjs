@@ -14,5 +14,17 @@ namespace tccenter.api.DataAccess.Repository.Orientador
                 return transaction.Query<OrientadorEntity>(OrientadorQueries.BUSCAR_ORIENTADORES);
             }
         }
+
+        public IEnumerable<OrientadorEntity> ObterOrientadorPorPublicacao(int idOrientador)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.Query<OrientadorEntity>(OrientadorQueries.OBTER_ORIENTADOR_POR_PUBLICACAO,
+                    new
+                    {
+                        IdOrientador = idOrientador
+                    });
+            }
+        }
     }
 }

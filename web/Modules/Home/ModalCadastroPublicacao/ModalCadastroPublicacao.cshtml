@@ -74,6 +74,10 @@
                                 <select ng-model="ctrl.CadastroPublicacao.TopicoInteresse" ng-options="item.DescricaoTopico for item in ctrl.TopicosInteressantes"></select>
                             </div>
                         </div>
+                        <div class="row espacamento-formulario" style="padding-left:10px; padding-right:5px;">
+                            <input type="checkbox" ng-click="ctrl.marcarCheckDireitosAutorais()" /> 
+                            <span>Aceito ceder os Direitos Autorais do meu Trabalho de Conclusão de Curso para a PUC Minas.</span>
+                        </div>
                         <div class="row" style="padding-top: 20px;">
                             <div class="col-md-12 inline centralizar">
                                 <input type="button" class="botao-modal" value="Cadastrar" ng-click="$event.stopPropagation(); ctrl.cadastrarPublicacao()">

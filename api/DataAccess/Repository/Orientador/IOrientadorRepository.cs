@@ -6,5 +6,6 @@ namespace tccenter.api.DataAccess.Repository.Orientador
     public interface IOrientadorRepository
     {
         IEnumerable<OrientadorEntity> ObterOrientadores();
+        IEnumerable<OrientadorEntity> ObterOrientadorPorPublicacao(int idOrientador);
     }
 }

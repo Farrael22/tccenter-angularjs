@@ -14,8 +14,8 @@
         TopicoInteresse: null,
         Orientador: null
     };
-
     vm.exibirModal = false;
+    var CederDireitos = false;
 
     vm.iniciarCadastroPublicacao = function () {
     };
@@ -88,16 +88,21 @@
     };
 
     vm.cadastrarPublicacao = function () {
-        validarTituloPublicacao();
-        validarResumoPublicacao();
-        validarResultadoPublicacao();
-        validarLinkPublicacao();
-        validarInteressePublicacao();
+        if (CederDireitos) {
+            validarTituloPublicacao();
+            validarResumoPublicacao();
+            validarResultadoPublicacao();
+            validarLinkPublicacao();
+            validarInteressePublicacao();
 
-        if (vm.tituloPublicacaoValido && vm.resumoPublicacaoValido && vm.resultadoPublicacaoValido &&
-            vm.linkPublicacaoValido && validarInteressePublicacao() && validarOrientadorPublicacao()) {
-            vm.CadastroPublicacao.IdUsuario = vm.Usuario.Id;
-            CadastroPublicacaoService.cadastrarPublicacao(vm.CadastroPublicacao, cadastrarPublicacaoSucessoCallBack, cadastrarPublicacaoErroCallBack);
+            if (vm.tituloPublicacaoValido && vm.resumoPublicacaoValido && vm.resultadoPublicacaoValido &&
+                vm.linkPublicacaoValido && validarInteressePublicacao() && validarOrientadorPublicacao()) {
+                vm.CadastroPublicacao.IdUsuario = vm.Usuario.Id;
+                CadastroPublicacaoService.cadastrarPublicacao(vm.CadastroPublicacao, cadastrarPublicacaoSucessoCallBack, cadastrarPublicacaoErroCallBack);
+            }
+        }
+        else {
+            mensagemDeErro("Para submeter seu trabalho no TCCenter é necessário ceder seus Direitos Autorais sobre o mesmo à PUC Minas.");
         }
     };
 
@@ -113,6 +118,14 @@
     function mensagemDeErro(mensagem) {
         EventosFactory.mensagemDeErro($scope, mensagem);
     }
+
+    vm.marcarCheckDireitosAutorais = function () {
+        if (CederDireitos) {
+            CederDireitos = false;
+            return;
+        }
+        CederDireitos = true;
+    };
 
     AtalhosFactory.criarTelaDeAtalhosGenericos($scope);
     

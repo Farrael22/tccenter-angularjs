@@ -8,7 +8,12 @@
             <informacaoperfil usuario="ctrl.Usuario"></informacaoperfil>
         </div>
         <div class="col-md-6 espacamento-formulario centralizar">
-            <input type="button" class="botao-modal" value="Cadastrar Publicação" ng-click="$event.stopPropagation(); ctrl.exibirCadastro()">
+            <div class="row">
+                <input type="button" class="botao-modal" value="Cadastrar Publicação" ng-click="$event.stopPropagation(); ctrl.exibirCadastro()">
+            </div>
+            <div class="row">
+                <publicacao ng-if="ctrl.Publicacoes.length > 0" array="ctrl.Publicacoes"></publicacao>
+            </div>
         </div>
         <div class="col-md-3">
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace tccenter.api.Domain.DTO
 {
@@ -13,5 +14,6 @@ namespace tccenter.api.Domain.DTO
         public DateTime DataPublicacao { get; set; }
         public TopicosInteressantesDTO TopicoInteresse { get; set; }
         public OrientadorDTO Orientador { get; set; }
+        public List<MensagemDTO> Mensagens { get; set; }
     }
 }

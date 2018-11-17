@@ -6,10 +6,13 @@
 
     var vm = this;
     vm.TopicosInteressantes = [];
+    vm.Publicacoes = [];
 
     vm.iniciarHome = function () {
         AtalhosFactory.iniciarAtalhosDaTela($scope);
+        vm.Usuario = TccenterStorage.obterUsuario();
         HomeService.buscarTopicosInteressantes(buscarTopicosInteressantesSucesso);
+        HomeService.obterPublicacoesPorInteresse(vm.Usuario.Id, obterPublicacoesPorInteresseSucesso);
     };
 
     function buscarTopicosInteressantesSucesso(data) {
@@ -23,6 +26,10 @@
                 TccenterStorage.salvarTopicosInteressantes(vm.TopicosInteressantes);
             }
         }
+    }
+
+    function obterPublicacoesPorInteresseSucesso(data) {
+        vm.Publicacoes = data;
     }
     
     vm.exibirCadastro = function () {

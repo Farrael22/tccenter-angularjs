@@ -7,19 +7,13 @@
     var vm = this;
     vm.usuarioSeguido = false;
 
-    vm.iniciarPerfil = function () {
-        $timeout(function () {
-            vm.UsuarioLogado = TccenterStorage.obterUsuario();
-            buscarQuantidadePublicacoesUsuario();
-            buscarQuantidadeSeguidoresUsuario();
-            verificarUsuarioJaSeguido();
-        });
-        AtalhosFactory.iniciarAtalhosDaTela($scope);
-
-    };
-
     var eventoExibirPerfilUsuario = $rootScope.$on('exibirPerfilUsuario', function (event, idUsuario) {
         PerfilService.buscarUsuarioPorId(idUsuario, buscarUsuarioPorIdSucessoCallback);
+        vm.UsuarioLogado = TccenterStorage.obterUsuario();
+        buscarQuantidadePublicacoesUsuario();
+        buscarQuantidadeSeguidoresUsuario();
+        verificarUsuarioJaSeguido();
+        AtalhosFactory.iniciarAtalhosDaTela($scope);
     });
 
     function buscarUsuarioPorIdSucessoCallback(data) {

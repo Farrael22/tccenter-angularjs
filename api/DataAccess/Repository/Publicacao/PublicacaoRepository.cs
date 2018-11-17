@@ -34,5 +34,17 @@ namespace tccenter.api.DataAccess.Repository.Publicacao
                     });
             }
         }
+
+        public IEnumerable<PublicacaoEntity> ObterPublicacoesPorInteresseUsuario(int idUsuario)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.Query<PublicacaoEntity>(PublicacaoQueries.OBTER_PUBLICACOES_POR_INTERESSE_USUARIO,
+                    new
+                    {
+                        IdUsuario = idUsuario
+                    });
+            }
+        }
     }
 }

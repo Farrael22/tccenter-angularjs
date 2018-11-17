@@ -3,12 +3,49 @@
     background-color: #ffe5e5 !important;
 }
 
+.caxinha {
+    margin: 15px auto;
+    width: 100%;
+    background: #F5f5f5;
+    box-shadow: 5px 5px 8px #a9a9a9;
+}
+
+.borda {
+    position: relative;
+    border: 3px solid #dadada;
+    padding: 5px;
+    padding-left: 20px !important;
+}
+
+.botao-comentario {
+    width: 15% !important;
+    height: 28px !important;
+}
+
 .inline{
     display: inline-block;
 }
 
+.caixa-comentario {
+    max-height: 200px;
+    overflow: scroll;
+}
+
+.info-publicacao {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 5px;
+    word-wrap: break-word;
+}
+
 .fotinha-perfil {
     width: 50px;
+    height: auto;
+    border-radius: 100%;
+}
+
+.fotinha-micro {
+    width: 20px;
     height: auto;
     border-radius: 100%;
 }

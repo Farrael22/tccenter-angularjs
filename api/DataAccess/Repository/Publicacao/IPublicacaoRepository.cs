@@ -7,5 +7,6 @@ namespace tccenter.api.DataAccess.Repository.Publicacao
     {
         IEnumerable<PublicacaoEntity> BuscarPublicacaoPorUsuario(int idUsuario);
         int CadastrarPublicacao(PublicacaoEntity publicacao);
+        IEnumerable<PublicacaoEntity> ObterPublicacoesPorInteresseUsuario(int idUsuario);
     }
 }
