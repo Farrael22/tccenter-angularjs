@@ -156,5 +156,32 @@ namespace tccenter.api.DataAccess.Queries
                         AND IdUsuarioSeguir = @IdPararSeguir";
             }
         }
+
+        public static string OBTER_SUGESTAO_USUARIOS
+        {
+            get
+            {
+                return @"
+                        SELECT DISTINCT TOP 3
+                        	usu.IdUsuario AS Id,
+                            usu.NomeUsuario AS Nome,
+                            usu.AvatarUsuario AS Avatar,
+                            usu.ProfissaoUsuario AS Profissao 
+                        FROM Usuario usu
+                        INNER JOIN InteresseUsuario interesse
+                        	ON interesse.IdUsuario = usu.IdUsuario
+                        	AND usu.IdUsuario <> @IdUsuario
+                        WHERE interesse.IdTopicosInteressantes IN ( SELECT 
+                        												interesse.IdTopicosInteressantes 
+                        											FROM Usuario usu
+                        											INNER JOIN InteresseUsuario interesse
+                        												ON interesse.IdUsuario = usu.IdUsuario
+                        											AND usu.IdUsuario = @IdUsuario)
+                        AND usu.IdUsuario NOT IN (  SELECT 
+                        								IdUsuarioSeguir
+                        							FROM UsuarioSeguido
+                        							WHERE IdUsuarioSeguidor = @IdUsuario)";
+            }
+        }
     }
 }

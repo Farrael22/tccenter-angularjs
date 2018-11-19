@@ -105,5 +105,14 @@ namespace tccenter.api.DataAccess.Repository.Usuario
                     new { IdUsuarioSeguidor = idUsuarioLogado, IdPararSeguir = idPararSeguir });
             }
         }
+
+        public IEnumerable<UsuarioEntity> ObterSugestaoUsuarios(int idUsuario)
+        {
+            using (var transaction = new TransactionHelperTccenter())
+            {
+                return transaction.Query<UsuarioEntity>(UsuarioQueries.OBTER_SUGESTAO_USUARIOS,
+                    new { IdUsuario = idUsuario });
+            }
+        }
     }
 }

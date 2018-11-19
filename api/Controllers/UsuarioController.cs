@@ -125,5 +125,17 @@ namespace tccenter.api.Controllers
 
             return Encontrado("OK");
         }
+
+        [AllowAnonymous]
+        [Route("sugestaoUsuario", Name = "sugestaoUsuario")]
+        [HttpGet]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "ObterListagemKitsVirtuais", Type = typeof(List<UsuarioDTO>))]
+        [SwaggerResponse(HttpStatusCode.NotFound, Description = " Não encontrado", Type = typeof(RetornoErro))]
+        public IHttpActionResult ObterSugestaoUsuarios([FromUri] int idUsuario)
+        {
+            var result = _camadaBusiness.ObterSugestaoUsuarios(idUsuario);
+
+            return Encontrado(result);
+        }
     }
 }

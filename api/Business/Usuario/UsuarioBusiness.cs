@@ -166,5 +166,10 @@ namespace tccenter.api.Business.Usuario
 
             _usuarioRepository.PararSeguirUsuario(idUsuarioLogado, idPararSeguir);
         }
+
+        public List<UsuarioDTO> ObterSugestaoUsuarios(int idUsuario)
+        {
+            return Mapper.Map<List<UsuarioDTO>>(_usuarioRepository.ObterSugestaoUsuarios(idUsuario));
+        }
     }
 }
